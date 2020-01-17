@@ -21,20 +21,59 @@ a {
 }
 
 header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px #00000059;
+          box-shadow: 0px 5px 10px #00000059;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (3rem)[1];
+      grid-template-rows: repeat(1, 3rem);
+      grid-template-areas: "a b c";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: white;
-  height: 10vh;
-  width: 100%;
-  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.login-btn {
-  float: right;
+.logoContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a;
+}
+
+.logo {
+  width: auto;
+  height: 35px;
+  margin: 5px 0px 0px 20px;
+}
+
+.header-b {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b;
+  color: transparent;
+  font-size: 0.1em;
+}
+
+.loginBtnContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: right;
+}
+
+.loginBtn {
   display: inline-block;
   border: none;
   background: #0015ff;
@@ -43,9 +82,63 @@ header {
   cursor: pointer;
   margin-right: 20px;
   font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .login-btn:hover {
   background: #ff8900;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #ff8900;
+  -webkit-box-shadow: 0px -5px 10px #00000059;
+          box-shadow: 0px -5px 10px #00000059;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (3rem)[1];
+      grid-template-rows: repeat(1, 3rem);
+      grid-template-areas: "a2 b2 c2";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.footer-a {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a2;
+  color: transparent;
+  font-size: 0.1em;
+}
+
+.github-icon {
+  text-align: right;
+  margin-right: 20px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c2;
+}
+
+#github-icon {
+  height: 30px;
+}
+
+#copyright {
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.8em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b2;
 }
 /*# sourceMappingURL=App.css.map */
