@@ -1,6 +1,5 @@
 * {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -21,16 +20,13 @@ a {
 }
 
 header {
-  display: -ms-grid;
+  // position: relative;
   display: grid;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background-color: white;
   height: 10vh;
   width: 100%;
-  -webkit-box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.5);
 }
 
 .login-btn {
@@ -48,4 +44,3 @@ header {
 .login-btn:hover {
   background: #ff8900;
 }
-/*# sourceMappingURL=App.css.map */
