@@ -3,11 +3,11 @@ const Schema = mongoose.Schema;
 
 const dateSchema = new Schema({
     date: {
-        type: Date,
+        type: Schema.Types.Date,
         required: true
     },
     completed: {
-        type: Boolean,
+        type: Schema.Types.Boolean,
         default: false,
     },
     acitivites: [{
