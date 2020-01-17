@@ -9,6 +9,10 @@ const groupSchema = new Schema({
     users: [{
         type: Schema.Types.ObjectId,
         ref: "User",
+    }],
+    date: [{
+        type: Schema.Types.ObjectId,
+        ref: "Date"
     }]
 });
 
