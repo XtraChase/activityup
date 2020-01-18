@@ -1,9 +1,8 @@
 const router = require("express").Router();
+const { userController } = require("../../controllers");
 
-router.get("/", (req, res) => {
-    res.json({
-        cool: "beans"
-    })
-})
+router.route("/")
+    .get(userController.findAll)
+    .post(userController.create);
 
 module.exports = router;
