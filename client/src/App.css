@@ -55,7 +55,53 @@ header {
   margin: 5px 0px 0px 20px;
 }
 
-.homeBodyContainer {
+.loginBtnContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c;
+  text-align: right;
+}
+
+.loginBtn {
+  display: inline-block;
+  border: none;
+  background: none;
+  color: #868686;
+  cursor: pointer;
+  margin-right: 20px;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.loginBtn:hover {
+  color: #ff8900;
+}
+
+.newGroupContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c;
+}
+
+.newGroupBtn {
+  display: inline-block;
+  border: none;
+  background: #0015ff;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+  margin-right: 0px;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.newGroupBtn:hover {
+  background: #ff8900;
+}
+
+.bodyContainer {
   width: 100%;
   display: -ms-grid;
   display: grid;
@@ -128,33 +174,6 @@ header {
   text-align: center;
   color: #ff8900;
   font-size: 1.75em;
-}
-
-.loginBtnContainer {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: c;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  text-align: right;
-}
-
-.loginBtn {
-  display: inline-block;
-  border: none;
-  background: #0015ff;
-  color: #fff;
-  padding: 7px 20px;
-  cursor: pointer;
-  margin-right: 20px;
-  font-weight: bold;
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
-}
-
-.loginBtn:hover {
-  background: #ff8900;
 }
 
 footer {

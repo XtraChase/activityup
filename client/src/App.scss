@@ -44,7 +44,47 @@ header {
   margin: 5px 0px 0px 20px;
 }
 
-.homeBodyContainer {
+.loginBtnContainer {
+  grid-area: c;
+  text-align: right;
+}
+
+.loginBtn {
+  display: inline-block;
+  border: none;
+  background: none;
+  color: rgb(134, 134, 134);
+  cursor: pointer;
+  margin-right: 20px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.loginBtn:hover {
+  color: #ff8900;
+}
+
+.newGroupContainer {
+  grid-area: c;
+}
+
+.newGroupBtn {
+  display: inline-block;
+  border: none;
+  background: #0015ff;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+  margin-right: 0px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.newGroupBtn:hover {
+  background: #ff8900;
+}
+
+.bodyContainer {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -99,28 +139,6 @@ header {
   text-align: center;
   color: #ff8900;
   font-size: 1.75em;
-}
-
-.loginBtnContainer {
-  grid-area: c;
-  align-items: center;
-  text-align: right;
-}
-
-.loginBtn {
-  display: inline-block;
-  border: none;
-  background: #0015ff;
-  color: #fff;
-  padding: 7px 20px;
-  cursor: pointer;
-  margin-right: 20px;
-  font-weight: bold;
-  transition: 0.5s;
-}
-
-.loginBtn:hover {
-  background: #ff8900;
 }
 
 footer {

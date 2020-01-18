@@ -9,6 +9,9 @@ function Header() {
         <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
       </Link>
       <h1 className="dashboardTitle">Dashboard</h1>
+      <Link to="#" className="newGroupBtnContainer">
+        <button className="newGroupBtn">Create A New Group</button>
+      </Link>
       <Link to="/" className="loginBtnContainer">
         <button className="loginBtn">Logout</button>
       </Link>
