@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../images/ActivityUP-Logo.png";
+import LogoSVG from "../../../images/activityup.svg";
 
 function Header() {
   return (
