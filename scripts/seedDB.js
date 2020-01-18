@@ -17,11 +17,15 @@ User.remove({})
   .then(() => Group.remove({}))
   .then(() => User.collection.insertMany(newUser))
   .then(data => {
+    // console.log(objToArray(data.insertedIds))
     console.log(data.result.n + " Users inserted");
-    Group.collection.insert({
+    return Group.collection.insert({
       name: "GroupA",
-      users: objToArray(data.insertedIds)
+      users: data.insertedIds
     });
+  })
+  .then(data => {
+    console.log(data)
     process.exit(0);
   })
   .catch(err => {
