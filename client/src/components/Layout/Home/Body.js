@@ -9,122 +9,126 @@ function Body() {
       <div className="titleImageContainer">
         <img className="titleImage" src={TitleImage} alt="" />
       </div>
-      <div className="activityTypes">
-        {/* <ul>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-          <li className="activityType">
-            <img
-              className="activityTypeImage"
-              src={ActivityImage}
-              alt="activity type"
-            />
-          </li>
-        </ul> */}
-      </div>
+
+      {/* <div className="activityTypes container">
+        <div className=" row">
+          <ul col-12>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+            <li className="activityType">
+              <img
+                className="activityTypeImage"
+                src={ActivityImage}
+                alt="activity type"
+              />
+            </li>
+          </ul>
+        </div>
+      </div> */}
+
       <div className="trending"></div>
     </div>
   );

@@ -13,11 +13,11 @@ import Footer from "../Layout/Dashboard/Footer";
 class Dashboard extends Component {
   render() {
     return (
-      <Router>
+      <div>
         <Header />
         <Body />
         <Footer />
-      </Router>
+      </div>
     );
   }
 }

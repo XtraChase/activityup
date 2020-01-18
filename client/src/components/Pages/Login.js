@@ -10,12 +10,12 @@ import {
 class Login extends Component {
   render() {
     return (
-      <Router>
+      <div>
         <h1>This is the login page</h1>
         <Link exact to="/Dashboard" className="loginBtnContainer">
           <button className="loginBtn">Login</button>
         </Link>
-      </Router>
+      </div>
     );
   }
 }
