@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Logo from "../../images/ActivityUP-Logo.png";
+import Logo from "../../../images/ActivityUP-Logo.png";
 
 function Header() {
   return (
@@ -8,8 +8,9 @@ function Header() {
       <Link to="/" className="logoContainer">
         <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
       </Link>
-      <Link to="/Login" className="loginBtnContainer">
-        <button className="loginBtn">Login</button>
+      <h1 className="dashboardTitle">Dashboard</h1>
+      <Link to="/" className="loginBtnContainer">
+        <button className="loginBtn">Logout</button>
       </Link>
     </header>
   );

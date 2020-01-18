@@ -6,12 +6,15 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
+import Header from "../Layout/Dashboard/Header";
+import Footer from "../Layout/Dashboard/Footer";
 
 class Dashboard extends Component {
   render() {
     return (
       <Router>
-        <h1>Welcome to your dashboard!</h1>
+        <Header />
+        <Footer />
       </Router>
     );
   }

@@ -44,10 +44,39 @@ header {
   margin: 5px 0px 0px 20px;
 }
 
-.header-b {
+.homeBodyContent {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 3rem);
+  grid-template-areas: "a1 b1 c1";
+  align-items: center;
+  justify-content: center;
+}
+
+.body-a {
+  grid-area: a1;
+}
+
+.titleImageContainer {
+  grid-area: b1;
+  margin-top: 350px;
+}
+
+.body-c {
+  grid-area: c1;
+}
+
+.titleImage {
+  width: 600px;
+  height: auto;
+}
+
+.dashboardTitle {
   grid-area: b;
-  color: transparent;
-  font-size: 0.1em;
+  text-align: center;
+  color: #ff8900;
+  font-size: 1.75em;
 }
 
 .loginBtnContainer {
@@ -68,7 +97,7 @@ header {
   transition: 0.5s;
 }
 
-.login-btn:hover {
+.loginBtn:hover {
   background: #ff8900;
 }
 
