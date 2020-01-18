@@ -3,19 +3,19 @@ const Schema = mongoose.Schema;
 
 const activitySchema = new Schema({
     name: {
-        type: String,
+        type: Schema.Types.String,
         required: true
     },
     price: {
-        type: String,
+        type: Schema.Types.String,
         required: true,
     },
     category: {
-        type: String,
+        type: Schema.Types.String,
         required: true,
     },
     votes: {
-        type: Number,
+        type: Schema.Types.Number,
     }
 });
 
