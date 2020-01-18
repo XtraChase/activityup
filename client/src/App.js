@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import {
   BrowserRouter as Router,
   Switch,
+  withRouter,
   Route,
   Link,
   useRouteMatch
@@ -29,8 +30,8 @@ class App extends Component {
               </React.Fragment>
             )}
           />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/dashboard" component={Dashboard} />
+          <Route path="/login" component={Login} />
+          <Route path="/dashboard" component={Dashboard} />
         </div>
       </Router>
     );

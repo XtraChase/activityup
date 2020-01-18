@@ -10,7 +10,7 @@ function Body() {
         <img className="titleImage" src={TitleImage} alt="" />
       </div>
 
-      <div className="activityTypes container">
+      {/* <div className="activityTypes container">
         <div className=" row">
           <ul col-12>
             <li className="activityType">
@@ -127,7 +127,7 @@ function Body() {
             </li>
           </ul>
         </div>
-      </div>
+      </div> */}
 
       <div className="trending"></div>
     </div>
