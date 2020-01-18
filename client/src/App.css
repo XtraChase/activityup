@@ -55,12 +55,54 @@ header {
   margin: 5px 0px 0px 20px;
 }
 
-.header-b {
+.homeBodyContent {
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (3rem)[1];
+      grid-template-rows: repeat(1, 3rem);
+      grid-template-areas: "a1 b1 c1";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.body-a {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: a1;
+}
+
+.titleImageContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b1;
+  margin-top: 350px;
+}
+
+.body-c {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c1;
+}
+
+.titleImage {
+  width: 600px;
+  height: auto;
+}
+
+.dashboardTitle {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: b;
-  color: transparent;
-  font-size: 0.1em;
+  text-align: center;
+  color: #ff8900;
+  font-size: 1.75em;
 }
 
 .loginBtnContainer {
@@ -86,7 +128,7 @@ header {
   transition: 0.5s;
 }
 
-.login-btn:hover {
+.loginBtn:hover {
   background: #ff8900;
 }
 
