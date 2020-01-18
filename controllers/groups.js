@@ -1,13 +1,14 @@
-const { User } = require("../models");
+const { Group } = require("../models");
 
 module.exports = {
   findAll: (req, res) => {
-    User.find(req.query)
+    Group.find(req.query)
+      .populate("users")
       .then(data => res.json(data))
       .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
-    User.create(req.body)
+    Group.create(req.body)
       .then(data => res.json(data))
       .catch(err => res.status(422).json(err));
   }
