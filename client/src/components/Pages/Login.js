@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { FacebookLoginButton } from "react-social-login-buttons";
+import { GoogleLoginButton } from "react-social-login-buttons";
 import {
   BrowserRouter as Router,
   Switch,
@@ -10,12 +12,10 @@ import {
 class Login extends Component {
   render() {
     return (
-      <div>
-        <h1>This is the login page</h1>
-        <Link exact to="/Dashboard" className="loginBtnContainer">
-          <button className="loginBtn">Login</button>
+        <Link> 
+          <FacebookLoginButton onClick={() => alert("Hello")} />
+          <GoogleLoginButton onClick={() => alert("Hello")} />
         </Link>
-      </div>
     );
   }
 }
