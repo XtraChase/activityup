@@ -44,27 +44,49 @@ header {
   margin: 5px 0px 0px 20px;
 }
 
-.homeBodyContent {
-  position: absolute;
+.homeBodyContainer {
+  width: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 3rem);
-  grid-template-areas: "a1 b1 c1";
+  grid-template-rows: repeat(3, 400px);
+  grid-template-areas:
+    "top1 top2 top3"
+    "middle middle middle"
+    "bottom bottom bottom";
   align-items: center;
   justify-content: center;
 }
 
 .body-a {
-  grid-area: a1;
+  grid-area: top1;
 }
 
 .titleImageContainer {
-  grid-area: b1;
-  margin-top: 350px;
+  grid-area: top2;
 }
 
 .body-c {
-  grid-area: c1;
+  grid-area: top3;
+}
+
+.activityTypes {
+  grid-area: middle;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.activityType {
+  float: left;
+}
+
+.activityTypeImage {
+  width: 9em;
+  height: auto;
+}
+
+.trending {
+  grid-area: bottom;
+  background-color: blue;
 }
 
 .titleImage {

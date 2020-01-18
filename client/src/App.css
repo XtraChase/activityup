@@ -55,15 +55,15 @@ header {
   margin: 5px 0px 0px 20px;
 }
 
-.homeBodyContent {
-  position: absolute;
+.homeBodyContainer {
+  width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (3rem)[1];
-      grid-template-rows: repeat(1, 3rem);
-      grid-template-areas: "a1 b1 c1";
+  -ms-grid-rows: (400px)[3];
+      grid-template-rows: repeat(3, 400px);
+      grid-template-areas: "top1 top2 top3" "middle middle middle" "bottom bottom bottom";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -75,20 +75,45 @@ header {
 .body-a {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: a1;
+  grid-area: top1;
 }
 
 .titleImageContainer {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
-  grid-area: b1;
-  margin-top: 350px;
+  grid-area: top2;
 }
 
 .body-c {
   -ms-grid-row: 1;
   -ms-grid-column: 3;
-  grid-area: c1;
+  grid-area: top3;
+}
+
+.activityTypes {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: middle;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.activityType {
+  float: left;
+}
+
+.activityTypeImage {
+  width: 9em;
+  height: auto;
+}
+
+.trending {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: bottom;
+  background-color: blue;
 }
 
 .titleImage {
