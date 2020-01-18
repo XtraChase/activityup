@@ -5,7 +5,7 @@ import ActivityImage from "../../../images/hiker.jpg";
 
 function Body() {
   return (
-    <div className="homeBodyContainer">
+    <div className="bodyContainer">
       <div className="titleImageContainer">
         <img className="titleImage" src={TitleImage} alt="" />
       </div>

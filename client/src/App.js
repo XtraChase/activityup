@@ -12,6 +12,7 @@ import Body from "./components/Layout/Home/Body";
 import Footer from "./components/Layout/Home/Footer";
 import Login from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
+import Group from "./components/Pages/Group";
 import "./App.css";
 
 class App extends Component {
@@ -32,6 +33,7 @@ class App extends Component {
           />
           <Route path="/login" component={Login} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/group" component={Group} />
         </div>
       </Router>
     );
