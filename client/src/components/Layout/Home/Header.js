@@ -9,12 +9,14 @@ function Header() {
       <Link to="/" className="logoContainer">
         <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
       </Link>
-      <Link to="/Dashboard" className="newGroupBtnContainer">
-        <button className="newGroupBtn">Create A New Group</button>
-      </Link>
-      <Link to="/Login" className="loginBtnContainer">
-        <button className="loginBtn">Login</button>
-      </Link>
+      <div className="navBtnContainer">
+        <Link to="/Dashboard" className="newGroupBtn">
+          Create A New Group
+        </Link>
+        <Link to="/Login" className="loginBtn">
+          Login
+        </Link>
+      </div>
     </header>
   );
 }

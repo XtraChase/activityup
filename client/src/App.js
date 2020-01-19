@@ -7,9 +7,7 @@ import {
   Link,
   useRouteMatch
 } from "react-router-dom";
-import Header from "./components/Layout/Home/Header";
-import Body from "./components/Layout/Home/Body";
-import Footer from "./components/Layout/Home/Footer";
+import Home from "./components/Layout/Home/Home";
 import Login from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
 import Group from "./components/Pages/Group";
@@ -25,9 +23,7 @@ class App extends Component {
             path="/"
             render={props => (
               <React.Fragment>
-                <Header />
-                <Body />
-                <Footer />
+                <Home />
               </React.Fragment>
             )}
           />
