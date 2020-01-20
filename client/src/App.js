@@ -1,17 +1,10 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  withRouter,
-  Route,
-  Link,
-  useRouteMatch
-} from "react-router-dom";
-import Home from "./components/Layout/Home/Home";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./components/Home/Home";
 import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
-import Dashboard from "./components/Layout/Dashboard/Dashboard";
-import Group from "./components/Layout/Group/Group";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Group from "./components/Group/Group";
 import "./App.css";
 
 class App extends Component {

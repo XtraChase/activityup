@@ -1,5 +1,5 @@
 import React from "react";
-import GithubLogo from "../../../images/GitHub-Mark-Light-64px.png";
+import GithubLogo from "../../images/GitHub-Mark-Light-64px.png";
 
 function Footer() {
   return (
@@ -8,8 +8,12 @@ function Footer() {
         Copyright ActivityUP &copy; {new Date().getFullYear()}
       </p>
 
-      <div class="github-icon">
-        <a href="https://github.com/XtraChase/activityup" target="_blank">
+      <div className="github-icon">
+        <a
+          href="https://github.com/XtraChase/activityup"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <img id="github-icon" src={GithubLogo} alt="github" />
         </a>
       </div>
