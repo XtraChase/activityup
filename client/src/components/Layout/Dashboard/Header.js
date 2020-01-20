@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../../images/ActivityUP-Logo.png";
+import LogoSVG from "../../../images/activityup.svg";
 
 function Header() {
   return (
@@ -8,13 +9,14 @@ function Header() {
       <Link to="/" className="logoContainer">
         <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
       </Link>
-      <h1 className="dashboardTitle">Dashboard</h1>
-      <Link to="#" className="newGroupBtnContainer">
-        <button className="newGroupBtn">Create A New Group</button>
-      </Link>
-      <Link to="/" className="loginBtnContainer">
-        <button className="loginBtn">Logout</button>
-      </Link>
+      <div className="navBtnContainer">
+        <Link to="/Dashboard" className="newGroupBtn">
+          Create A New Group
+        </Link>
+        <Link to="/" className="loginBtn">
+          Logout
+        </Link>
+      </div>
     </header>
   );
 }
