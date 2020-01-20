@@ -9,10 +9,10 @@ import {
 } from "react-router-dom";
 import Home from "./components/Layout/Home/Home";
 import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
 import Dashboard from "./components/Layout/Dashboard/Dashboard";
 import Group from "./components/Layout/Group/Group";
 import "./App.css";
-import Register from "./components/Pages/Register";
 
 class App extends Component {
   render() {
