@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-function TrendingActivities() {
+function AdvertisedActivities() {
   return (
     <div>
-      <div className="trending">
-        <div className="trendingRow">
-          <div className="trendingColumn">
+      <div className="advertised">
+        <div className="advertisedRow">
+          <div className="advertisedColumn">
             <img
               className="activityTypesImage"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
@@ -14,7 +13,7 @@ function TrendingActivities() {
               width="100%"
             />
           </div>
-          <div className="trendingColumn">
+          <div className="advertisedColumn">
             <img
               className="activityTypesImage"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
@@ -28,4 +27,4 @@ function TrendingActivities() {
   );
 }
 
-export default TrendingActivities;
+export default AdvertisedActivities;

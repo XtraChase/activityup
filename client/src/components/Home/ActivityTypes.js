@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import ActivityImage from "../../../images/hiker.jpg";
+import ActivityImage from "../../images/hiker.jpg";
 
 function ActivityTypes() {
   return (
