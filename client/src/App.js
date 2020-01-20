@@ -13,6 +13,7 @@ import Footer from "./components/Layout/Home/Footer";
 import Login from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
 import "./App.css";
+import Register from "./components/Pages/Register";
 
 class App extends Component {
   render() {
@@ -32,6 +33,8 @@ class App extends Component {
           />
           <Route path="/login" component={Login} />
           <Route path="/dashboard" component={Dashboard} />
+          <Route path="/register" component={Register} />
+
         </div>
       </Router>
     );
