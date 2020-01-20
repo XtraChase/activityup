@@ -12,6 +12,7 @@ import Login from "./components/Login/Login";
 import Dashboard from "./components/Layout/Dashboard/Dashboard";
 import Group from "./components/Layout/Group/Group";
 import "./App.css";
+import Register from "./components/Pages/Register";
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
         <div className="App">
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/group" component={Group} />
         </div>
