@@ -12,6 +12,7 @@ import Login from "./components/Pages/Login";
 import Dashboard from "./components/Pages/Dashboard";
 import Group from "./components/Pages/Group";
 import "./App.css";
+import Register from "./components/Pages/Register";
 
 class App extends Component {
   render() {
@@ -28,6 +29,7 @@ class App extends Component {
             )}
           />
           <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/group" component={Group} />
         </div>
