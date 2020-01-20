@@ -28,10 +28,8 @@ header {
   box-shadow: 0px 5px 10px #00000059;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  // grid-template-rows: repeat(1, 3rem);
   grid-template-areas: "a";
   align-items: center;
-  // justify-content: center;
 }
 
 .logoContainer {
@@ -89,22 +87,17 @@ header {
   text-decoration: none;
 }
 
-.bodyContainer {
-  width: 100%;
-  margin-top: 30px;
-}
-
 .titleImageContainer {
   text-align: center;
-  margin: 8% 20% 5% 20%;
-  @media screen and (max-width: 640px) {
-    margin: 10% 15% 5% 15%;
-  }
 }
 
 .titleImage {
-  width: 100%;
+  width: 60%;
   height: auto;
+  margin: 8% 20% 5% 20%;
+  @media screen and (max-width: 640px) {
+    margin: 12% 15% 5% 15%;
+  }
 }
 
 .activityTypesColumn {

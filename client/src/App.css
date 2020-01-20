@@ -109,25 +109,20 @@ header {
   text-decoration: none;
 }
 
-.bodyContainer {
-  width: 100%;
-  margin-top: 30px;
-}
-
 .titleImageContainer {
   text-align: center;
+}
+
+.titleImage {
+  width: 60%;
+  height: auto;
   margin: 8% 20% 5% 20%;
 }
 
 @media screen and (max-width: 640px) {
-  .titleImageContainer {
-    margin: 10% 15% 5% 15%;
+  .titleImage {
+    margin: 12% 15% 5% 15%;
   }
-}
-
-.titleImage {
-  width: 100%;
-  height: auto;
 }
 
 .activityTypesColumn {

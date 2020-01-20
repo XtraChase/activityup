@@ -8,26 +8,18 @@ import {
   useRouteMatch
 } from "react-router-dom";
 import Home from "./components/Layout/Home/Home";
-import Login from "./components/Pages/Login";
-import Dashboard from "./components/Pages/Dashboard";
-import Group from "./components/Pages/Group";
+import Login from "./components/Login/Login";
+import Register from "./components/Login/Register";
+import Dashboard from "./components/Layout/Dashboard/Dashboard";
+import Group from "./components/Layout/Group/Group";
 import "./App.css";
-import Register from "./components/Pages/Register";
 
 class App extends Component {
   render() {
     return (
       <Router>
         <div className="App">
-          <Route
-            exact
-            path="/"
-            render={props => (
-              <React.Fragment>
-                <Home />
-              </React.Fragment>
-            )}
-          />
+          <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/dashboard" component={Dashboard} />
