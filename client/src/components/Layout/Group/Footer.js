@@ -17,4 +17,11 @@ function Footer() {
   );
 }
 
+const logoStyle = {
+  left: "0",
+  width: "180px",
+  height: "auto",
+  marginLeft: "20px"
+};
+
 export default Footer;

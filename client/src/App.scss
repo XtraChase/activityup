@@ -27,92 +27,57 @@ header {
   background-color: #ffffff;
   box-shadow: 0px 5px 10px #00000059;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 3rem);
-  grid-template-areas: "a b c";
+  grid-template-columns: repeat(1, 1fr);
+  // grid-template-rows: repeat(1, 3rem);
+  grid-template-areas: "a";
   align-items: center;
-  justify-content: center;
+  // justify-content: center;
 }
 
 .logoContainer {
   grid-area: a;
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
 }
 
 .logo {
   width: auto;
   height: 35px;
   margin: 5px 0px 0px 20px;
+  @media screen and (max-width: 400px) {
+    display: none;
+  }
 }
 
-.homeBodyContainer {
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 400px);
-  grid-template-areas:
-    "top1 top2 top3"
-    "middle middle middle"
-    "bottom bottom bottom";
-  align-items: center;
-  justify-content: center;
+.navBtnContainer {
+  grid-area: a;
+  justify-self: end;
+  margin-right: 30px;
+  @media screen and (max-width: 640px) {
+    margin-right: 10px;
+  }
 }
 
-.body-a {
-  grid-area: top1;
+.newGroupBtn {
+  border: none;
+  background: none;
+  color: #0015ff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.5s;
 }
 
-.titleImageContainer {
-  grid-area: top2;
-}
-
-.body-c {
-  grid-area: top3;
-}
-
-.activityTypes {
-  grid-area: middle;
-  width: 100%;
-  margin-top: 100px;
-}
-
-.activityType {
-  float: left;
-}
-
-.activityTypeImage {
-  width: 9em;
-  height: auto;
-}
-
-.trending {
-  grid-area: bottom;
-  background-color: blue;
-}
-
-.titleImage {
-  width: 600px;
-  height: auto;
-}
-
-.dashboardTitle {
-  grid-area: b;
-  text-align: center;
+.newGroupBtn:hover {
   color: #ff8900;
-  font-size: 1.75em;
-}
-
-.loginBtnContainer {
-  grid-area: c;
-  align-items: center;
-  text-align: right;
+  text-decoration: none;
 }
 
 .loginBtn {
-  display: inline-block;
   border: none;
-  background: #0015ff;
-  color: #fff;
-  padding: 7px 20px;
+  margin-left: 50px;
+  background: none;
+  color: rgb(134, 134, 134);
   cursor: pointer;
   margin-right: 20px;
   font-weight: bold;
@@ -120,7 +85,91 @@ header {
 }
 
 .loginBtn:hover {
-  background: #ff8900;
+  color: #ff8900;
+  text-decoration: none;
+}
+
+.bodyContainer {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.titleImageContainer {
+  text-align: center;
+  margin: 8% 20% 5% 20%;
+  @media screen and (max-width: 640px) {
+    margin: 10% 15% 5% 15%;
+  }
+}
+
+.titleImage {
+  width: 100%;
+  height: auto;
+}
+
+.activityTypesColumn {
+  float: left;
+  width: 20%;
+  // padding: 5px;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.activityTypesRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.trending {
+}
+
+.trendingRow {
+}
+
+.trendingRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.trendingColumn {
+  float: left;
+  width: 50%;
+  padding: 30px;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.advertised {
+}
+
+.advertisedRow {
+  padding-bottom: 5%;
+}
+
+.advertisedRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.advertisedColumn {
+  float: left;
+  width: 50%;
+  padding: 30px;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
+
+.dashboardTitle {
+  grid-area: a;
+  text-align: center;
+  color: #ff8900;
+  font-size: 1.75em;
 }
 
 footer {
@@ -135,13 +184,10 @@ footer {
   grid-template-rows: repeat(1, 3rem);
   grid-template-areas: "a2 b2 c2";
   align-items: center;
-  justify-content: center;
 }
 
 .footer-a {
   grid-area: a2;
-  color: transparent;
-  font-size: 0.1em;
 }
 
 .github-icon {
@@ -151,12 +197,13 @@ footer {
 }
 
 #github-icon {
-  height: 30px;
+  height: 25px;
 }
 
 #copyright {
+  grid-area: b2;
   text-align: center;
+  margin-top: auto;
   color: #ffffff;
   font-size: 0.8em;
-  grid-area: b2;
 }
