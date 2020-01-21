@@ -10,7 +10,7 @@ function Header() {
         <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
       </Link>
       <div className="navBtnContainer">
-        <Link to="/Dashboard" className="newGroupBtn">
+        <Link to="#" className="newGroupBtn">
           Create A New Group
         </Link>
         <Link to="/" className="loginBtn">
