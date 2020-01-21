@@ -23,7 +23,7 @@ input,
   display: inline-block;
   font-size: 17px;
   line-height: 20px;
-  text-decoration: none; /* remove underline from anchors */
+  text-decoration: none;
 }
 
 input:hover,
@@ -94,6 +94,11 @@ input[type="submit"]:hover {
   width: 40%;
   float: right;
   margin-right: 5%;
+}
+
+.forgotPasswordBtn,
+.signUpBtn {
+  padding: 10px;
 }
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
