@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { User, Activity, Date, Group } = require("../models");
-const { pad } = require("./helpers")
+// const { pad } = require("./helpers");
 
 mongoose.connect("mongodb://localhost/activityUp");
 
@@ -25,10 +25,14 @@ User.remove({})
     });
   })
   .then(data => {
-    console.log(data)
+    console.log(data);
     process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
   });
+
+function pad(str, max) {
+  return str.length < max ? pad("0" + str, max) : str;
+}
