@@ -1,46 +1,67 @@
-import React from "react";
-import { Button } from "react-bootstrap";
+import React, { Component } from "react";
+import { Modal, Button, Row, Col, Form } from "react-bootstrap";
+import axios from "axios";
 
-function CreateGroup(props) {
-  return (
-    <Modal
-      {...props}
-      size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
-      centered
-    >
-      <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
-          Modal heading
-        </Modal.Title>
-      </Modal.Header>
-      <Modal.Body>
-        <h4>Centered Modal</h4>
-        <p>
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-      </Modal.Body>
-      <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer>
-    </Modal>
-  );
+export class CreateGroup extends Component {
+  state = {
+    selectedFile: null
+  };
+
+  constructor(props) {
+    super(props);
+  }
+
+  fileSelectedHandler = event => {
+    this.setState({
+      selectedFile: event.target.files[0]
+    });
+  };
+
+  fileUploadHandler = () => {
+    const fd = new FormData();
+    fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
+    // Firebase Storage
+    axios
+      .post(
+        "https://us-central1-activityup-vote.cloudfunctions.net/uploadFile",
+        fd,
+        {
+          onUploadProgress: progressEvent => {
+            console.log(
+              "Upload Progress: " +
+                Math.round((progressEvent.loaded / progressEvent.total) * 100) +
+                "%"
+            );
+          }
+        }
+      )
+      .then(res => {
+        console.log(res);
+      });
+  };
+
+  render() {
+    return (
+      <Modal
+        {...this.props}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            Add A New Group
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <input type="file" onChange={this.fileSelectedHandler} />
+          <button onClick={this.fileUploadHandler}>Upload</button>
+          <div className="container">Input group details</div>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={this.props.onHide}>Add Group</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 }
-
-function App() {
-  const [modalShow, setModalShow] = React.useState(false);
-
-  return (
-    <ButtonToolbar>
-      <Button variant="primary" onClick={() => setModalShow(true)}>
-        Launch vertically centered modal
-      </Button>
-
-      <CreateGroup show={modalShow} onHide={() => setModalShow(false)} />
-    </ButtonToolbar>
-  );
-}
-
-render(<App />);

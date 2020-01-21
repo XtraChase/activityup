@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/XtraChase/activityup#readme",
   "dependencies": {
+    "@google-cloud/storage": "^4.2.0",
     "axios": "^0.19.1",
     "bootstrap": "^4.4.1",
     "express": "^4.17.1",
