@@ -1,6 +1,14 @@
 import React from "react";
-import Outdoors from "../../images/hiker.jpg";
 import Drinks from "../../images/Drinks.jpg";
+import Sports from "../../images/sports.jpg";
+import Food from "../../images/food.jpg";
+import Outdoors from "../../images/hiker.jpg";
+import Movies from "../../images/movies.jpg";
+import Professional from "../../images/Professional.png";
+import Shopping from "../../images/shopping.jpeg";
+import Music from "../../images/music.jpg";
+import Gaming from "../../images/gaming.jpeg";
+import Sites from "../../images/sites.jpg";
 
 function ActivityTypes() {
   return (
@@ -21,7 +29,15 @@ function ActivityTypes() {
           <img
             className="activityTypesImage"
             src={Drinks}
-            alt="activity type"
+            alt="drinks"
+            width="100%"
+          />
+        </div>
+        <div className="activityTypesColumn">
+          <img
+            className="activityTypesImage"
+            src={Food}
+            alt="food"
             width="100%"
           />
         </div>
@@ -29,63 +45,55 @@ function ActivityTypes() {
           <img
             className="activityTypesImage"
             src={Outdoors}
-            alt="activity type"
+            alt="outdoors"
             width="100%"
           />
         </div>
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
+            src={Movies}
+            alt="movies"
             width="100%"
           />
         </div>
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
+            src={Professional}
+            alt="professional"
             width="100%"
           />
         </div>
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
+            src={Shopping}
+            alt="shopping"
             width="100%"
           />
         </div>
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
+            src={Music}
+            alt="music"
             width="100%"
           />
         </div>
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
+            src={Gaming}
+            alt="gaming"
             width="100%"
           />
         </div>
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
-            width="100%"
-          />
-        </div>
-        <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
+            src={Sites}
+            alt="sites"
             width="100%"
           />
         </div>
