@@ -21,11 +21,16 @@ User.deleteMany({})
     // Make users with random names and passwords and added group id to their groups array
     const newUser = [];
     for (let i = 0; i < 5; i++) {
+      const _u = "user" + pad(Math.floor(Math.random() * 100).toString(), 3);
+      const _p = "password" + pad(Math.floor(Math.random() * 100).toString(), 3);
+      console.log({
+        _u,
+        _p
+      })
       newUser.push(
         new User({
-          username: "user" + pad(Math.floor(Math.random() * 100).toString(), 3),
-          password:
-            "password" + pad(Math.floor(Math.random() * 100).toString(), 3),
+          username: _u,
+          password: _p,
           groups: [data._id]
         })
       );
