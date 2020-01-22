@@ -119,15 +119,49 @@ header {
   // overflow: hidden;
 }
 
+.activityTypeContainer {
+  font-size: 2em;
+  position: relative;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 1.8px 1.8px 2.75px rgba(0, 0, 0, 1);
+  @media screen and (max-width: 940px) {
+    font-size: 1.5em;
+  }
+  @media screen and (max-width: 640px) {
+    font-size: 1.2em;
+  }
+  @media screen and (max-width: 500px) {
+    font-size: 4em;
+  }
+}
+
 .activityTypesImage {
   height: 250px;
   object-fit: cover;
+  filter: opacity(50%);
+  transition: 0.5s;
+  cursor: pointer;
   @media screen and (max-width: 940px) {
     height: 150px;
   }
   @media screen and (max-width: 500px) {
     height: 350px;
+    -webkit-filter: none;
+    filter: none;
   }
+}
+
+.activityTypesImage:hover {
+  -webkit-filter: none;
+  filter: none;
+}
+
+.activityTypesText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .GroupImage {

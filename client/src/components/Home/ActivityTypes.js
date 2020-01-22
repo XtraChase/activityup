@@ -7,12 +7,15 @@ function ActivityTypes() {
     <div>
       <div className="activityTypesRow">
         <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Outdoors}
-            alt="activity type"
-            width="100%"
-          />
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Outdoors}
+              alt="activity type"
+              width="100%"
+            />
+            <p class="activityTypesText">OUTDOORS</p>
+          </div>
         </div>
         <div className="activityTypesColumn">
           <img
