@@ -12,7 +12,7 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      email: "",
+      username: "",
       password: ""
     };
 
@@ -30,11 +30,11 @@ class Login extends Component {
 
   displayLogin(e) {
     e.preventDefault();
-    API.findUser(this.state)
+    API.logIn(this.state)
       .then(user => console.log(user.data))
       .catch(err => console.log(err));
     this.setState({
-      email: "",
+      username: "",
       password: ""
     });
   }
@@ -53,9 +53,9 @@ class Login extends Component {
                 <input
                   type="text"
                   placeholder="Username..."
-                  value={this.state.email}
+                  value={this.state.username}
                   onChange={this.update}
-                  name="email"
+                  name="username"
                 />
               </div>
               <div className="password">
