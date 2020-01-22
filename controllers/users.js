@@ -12,7 +12,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
-    User.create(req.body)
+    const newUser = new User({
+      username: req.body.username,
+      password: req.body.password
+    })
+    newUser.save()
       .then(data => res.json(data))
       .catch(err => res.status(422).json(err));
   }
