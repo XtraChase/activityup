@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const { User, Activity, Date, Group } = require("../models");
-// const { pad } = require("./helpers");
+const { User, Group } = require("../models");
 
 mongoose.connect("mongodb://localhost/activityUp");
 

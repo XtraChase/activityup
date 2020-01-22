@@ -5,6 +5,7 @@ import Logo from "../../images/ActivityUP-Logo.png";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import "./styles.css";
+import API from "../../utils/API"
 
 class Login extends Component {
   constructor(props) {
@@ -29,8 +30,9 @@ class Login extends Component {
 
   displayLogin(e) {
     e.preventDefault();
-    console.log("You are logged in");
-    console.log(this.state);
+    API.findUser(this.state)
+      .then(user => console.log(user.data))
+      .catch(err => console.log(err));
     this.setState({
       email: "",
       password: ""

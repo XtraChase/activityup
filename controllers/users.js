@@ -6,6 +6,11 @@ module.exports = {
       .then(data => res.json(data))
       .catch(err => res.status(422).json(err));
   },
+  findOne: (req, res) => {
+    User.findOne(req.query)
+      .then(data => res.json(data))
+      .catch(err => res.status(422).json(err));
+  },
   create: (req, res) => {
     User.create(req.body)
       .then(data => res.json(data))
