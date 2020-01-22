@@ -9,7 +9,7 @@ function AdvertisedActivities() {
         <div className="advertisedRow">
           <div className="advertisedColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
               alt="activity type"
               width="100%"
@@ -25,7 +25,7 @@ function AdvertisedActivities() {
           </div>
           <div className="advertisedColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
               alt="activity type"
               width="100%"

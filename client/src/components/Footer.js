@@ -1,5 +1,5 @@
 import React from "react";
-import GithubLogo from "../../images/GitHub-Mark-Light-64px.png";
+import GithubLogo from "../images/GitHub-Mark-Light-64px.png";
 
 function Footer() {
   return (

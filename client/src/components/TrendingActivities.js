@@ -8,7 +8,7 @@ function TrendingActivities() {
         <div className="trendingRow">
           <div className="trendingColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
               alt="activity type"
               width="100%"
@@ -24,7 +24,7 @@ function TrendingActivities() {
           </div>
           <div className="trendingColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
               alt="activity type"
               width="100%"
