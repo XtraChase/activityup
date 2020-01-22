@@ -17,6 +17,6 @@ passport.deserializeUser((id, done) => {
   });
 });
 
-passport.use(LocalStrategy)
+passport.use("local", LocalStrategy)
 
 module.exports = passport;
