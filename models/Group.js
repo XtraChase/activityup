@@ -16,6 +16,11 @@ const groupSchema = new Schema({
     }]
 });
 
+groupSchema.pre('save', function (next) {
+    console.log("group saved");
+    next();
+})
+
 const Group = mongoose.model("group", groupSchema);
 
 module.exports = Group;

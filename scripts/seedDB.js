@@ -1,28 +1,46 @@
 const mongoose = require("mongoose");
-const { User, Activity, Date, Group } = require("../models");
-// const { pad } = require("./helpers");
+const { User, Group } = require("../models");
 
-mongoose.connect("mongodb://localhost/activityUp");
+mongoose.connect("mongodb://localhost/activityUp", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+});
 
-// random user dummy data
-const newUser = [];
-for (let i = 0; i < 5; i++) {
-  newUser.push({
-    username: "user" + pad(Math.floor(Math.random() * 100).toString(), 3),
-    password: "password" + pad(Math.floor(Math.random() * 100).toString(), 3)
-  });
-}
-
-// create users on db
-User.remove({})
-  .then(() => Group.remove({}))
-  .then(() => User.collection.insertMany(newUser))
+// Delete existing user collection
+User.deleteMany({})
+  // Delete existing group collection
+  .then(() => Group.deleteMany({}))
+  .then(() => {
+    // Make a group
+    return new Group({
+      name: "GroupA"
+    }).save();
+  })
   .then(data => {
-    console.log(data.result.n + " Users inserted");
-    return Group.collection.insert({
-      name: "GroupA",
-      users: data.insertedIds
-    });
+    // Make users with random names and passwords and added group id to their groups array
+    const newUser = [];
+    for (let i = 0; i < 5; i++) {
+      const _u = "user" + pad(Math.floor(Math.random() * 100).toString(), 3);
+      const _p = "password" + pad(Math.floor(Math.random() * 100).toString(), 3);
+      console.log({
+        _u,
+        _p
+      })
+      newUser.push(
+        new User({
+          username: _u,
+          password: _p,
+          groups: [data._id]
+        })
+      );
+    }
+    return User.create(newUser);
+  })
+  .then(data => {
+    // update group with ids of users
+    let ids = data.map(d => d._id);
+    return Group.findOneAndUpdate({ name: "GroupA" }, { users: ids });
   })
   .then(data => {
     console.log(data);

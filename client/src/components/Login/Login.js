@@ -5,13 +5,14 @@ import Logo from "../../images/ActivityUP-Logo.png";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import "./styles.css";
+import API from "../../utils/API"
 
 class Login extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: "",
+      username: "",
       password: ""
     };
 
@@ -29,10 +30,11 @@ class Login extends Component {
 
   displayLogin(e) {
     e.preventDefault();
-    console.log("You are logged in");
-    console.log(this.state);
+    API.logIn(this.state)
+      .then(user => console.log(user.data))
+      .catch(err => console.log(err));
     this.setState({
-      email: "",
+      username: "",
       password: ""
     });
   }
@@ -51,9 +53,9 @@ class Login extends Component {
                 <input
                   type="text"
                   placeholder="Username..."
-                  value={this.state.email}
+                  value={this.state.username}
                   onChange={this.update}
-                  name="email"
+                  name="username"
                 />
               </div>
               <div className="password">
@@ -72,10 +74,8 @@ class Login extends Component {
         <div className="col rightColumn">
           <div className="oAuthlogin">
             <form>
-              <Link>
                 <FacebookLoginButton onClick={() => alert("Hello")} />
                 <GoogleLoginButton onClick={() => alert("Hello")} />
-              </Link>
             </form>
           </div>
         </div>
