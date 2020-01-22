@@ -5,9 +5,9 @@ import Food from "../../images/food.jpg";
 import Outdoors from "../../images/hiker.jpg";
 import Movies from "../../images/movies.jpg";
 import Professional from "../../images/Professional.png";
-import Shopping from "../../images/shopping.jpeg";
+import Shopping from "../../images/shopping.jpg";
 import Music from "../../images/music.jpg";
-import Gaming from "../../images/gaming.jpeg";
+import Gaming from "../../images/gaming.jpg";
 import Sites from "../../images/sites.jpg";
 
 function ActivityTypes() {
@@ -17,6 +17,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Sports}
               alt="Sports"
@@ -28,6 +29,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Drinks}
               alt="Drinks"
@@ -39,6 +41,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Food}
               alt="Food"
@@ -50,6 +53,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Outdoors}
               alt="Outdoors"
@@ -61,6 +65,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Movies}
               alt="Movies"
@@ -72,6 +77,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Professional}
               alt="Professional"
@@ -83,6 +89,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Shopping}
               alt="Shopping"
@@ -94,6 +101,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Music}
               alt="Music"
@@ -105,6 +113,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Gaming}
               alt="Gaming"
@@ -116,6 +125,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <div className="activityTypeContainer">
             <img
+              rel="preload"
               className="activityTypesImage"
               src={Sites}
               alt="Sites"

@@ -6,6 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClic
 
 import "./calender.scss";
 
+// Resource: https://fullcalendar.io/
 export default class DemoApp extends React.Component {
   calendarComponentRef = React.createRef();
   state = {
@@ -19,11 +20,11 @@ export default class DemoApp extends React.Component {
   render() {
     return (
       <div className="demo-app">
-        <div className="demo-app-top">
+        {/* <div className="demo-app-top">
           <button onClick={this.toggleWeekends}>toggle weekends</button>&nbsp;
           <button onClick={this.gotoPast}>go to a date in the past</button>
           &nbsp; (also, click a date/time to add an event)
-        </div>
+        </div> */}
         <div className="demo-app-calendar">
           <FullCalendar
             defaultView="dayGridMonth"
@@ -43,17 +44,17 @@ export default class DemoApp extends React.Component {
     );
   }
 
-  toggleWeekends = () => {
-    this.setState({
-      // update a property
-      calendarWeekends: !this.state.calendarWeekends
-    });
-  };
+  // toggleWeekends = () => {
+  //   this.setState({
+  //     // update a property
+  //     calendarWeekends: !this.state.calendarWeekends
+  //   });
+  // };
 
-  gotoPast = () => {
-    let calendarApi = this.calendarComponentRef.current.getApi();
-    calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
-  };
+  // gotoPast = () => {
+  //   let calendarApi = this.calendarComponentRef.current.getApi();
+  //   calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
+  // };
 
   handleDateClick = arg => {
     this.setState({
