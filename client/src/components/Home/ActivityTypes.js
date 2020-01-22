@@ -18,84 +18,111 @@ function ActivityTypes() {
           <div className="activityTypeContainer">
             <img
               className="activityTypesImage"
+              src={Sports}
+              alt="Sports"
+              width="100%"
+            />
+            <p class="activityTypesText">SPORTS</p>
+          </div>
+        </div>
+        <div className="activityTypesColumn">
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Drinks}
+              alt="Drinks"
+              width="100%"
+            />
+            <p class="activityTypesText">DRINKS</p>
+          </div>
+        </div>
+        <div className="activityTypesColumn">
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Food}
+              alt="Food"
+              width="100%"
+            />
+            <p class="activityTypesText">FOOD</p>
+          </div>
+        </div>
+        <div className="activityTypesColumn">
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
               src={Outdoors}
-              alt="activity type"
+              alt="Outdoors"
               width="100%"
             />
             <p class="activityTypesText">OUTDOORS</p>
           </div>
         </div>
         <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Drinks}
-            alt="drinks"
-            width="100%"
-          />
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Movies}
+              alt="Movies"
+              width="100%"
+            />
+            <p class="activityTypesText">MOVIES</p>
+          </div>
         </div>
         <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Food}
-            alt="food"
-            width="100%"
-          />
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Professional}
+              alt="Professional"
+              width="100%"
+            />
+            <p class="activityTypesText">PROFESSIONAL</p>
+          </div>
         </div>
         <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Outdoors}
-            alt="outdoors"
-            width="100%"
-          />
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Shopping}
+              alt="Shopping"
+              width="100%"
+            />
+            <p class="activityTypesText">SHOPPING</p>
+          </div>
         </div>
         <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Movies}
-            alt="movies"
-            width="100%"
-          />
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Music}
+              alt="Music"
+              width="100%"
+            />
+            <p class="activityTypesText">MUSIC</p>
+          </div>
         </div>
         <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Professional}
-            alt="professional"
-            width="100%"
-          />
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Gaming}
+              alt="Gaming"
+              width="100%"
+            />
+            <p class="activityTypesText">GAMING</p>
+          </div>
         </div>
         <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Shopping}
-            alt="shopping"
-            width="100%"
-          />
-        </div>
-        <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Music}
-            alt="music"
-            width="100%"
-          />
-        </div>
-        <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Gaming}
-            alt="gaming"
-            width="100%"
-          />
-        </div>
-        <div className="activityTypesColumn">
-          <img
-            className="activityTypesImage"
-            src={Sites}
-            alt="sites"
-            width="100%"
-          />
+          <div className="activityTypeContainer">
+            <img
+              className="activityTypesImage"
+              src={Sites}
+              alt="Sites"
+              width="100%"
+            />
+            <p class="activityTypesText">SITES</p>
+          </div>
         </div>
       </div>
     </div>

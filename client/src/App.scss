@@ -129,7 +129,7 @@ header {
     font-size: 1.5em;
   }
   @media screen and (max-width: 640px) {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
   @media screen and (max-width: 500px) {
     font-size: 4em;
@@ -139,28 +139,24 @@ header {
 .activityTypesImage {
   height: 250px;
   object-fit: cover;
-  filter: opacity(50%);
-  transition: 0.5s;
   cursor: pointer;
   @media screen and (max-width: 940px) {
     height: 150px;
   }
   @media screen and (max-width: 500px) {
     height: 350px;
-    -webkit-filter: none;
-    filter: none;
   }
 }
 
-.activityTypesImage:hover {
-  -webkit-filter: none;
-  filter: none;
+.activityTypesColumn:hover {
+  filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
 .activityTypesText {
   position: absolute;
   top: 50%;
   left: 50%;
+  cursor: pointer;
   transform: translate(-50%, -50%);
 }
 
@@ -213,6 +209,10 @@ header {
   // padding: 5px;
   @media screen and (max-width: 500px) {
     width: 100%;
+  }
+  @media screen and (max-width: 500px) {
+    -webkit-filter: none;
+    filter: none;
   }
 }
 

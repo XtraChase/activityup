@@ -155,7 +155,7 @@ header {
 
 @media screen and (max-width: 640px) {
   .activityTypeContainer {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 }
 
@@ -169,10 +169,6 @@ header {
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-filter: opacity(50%);
-          filter: opacity(50%);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
   cursor: pointer;
 }
 
@@ -185,20 +181,19 @@ header {
 @media screen and (max-width: 500px) {
   .activityTypesImage {
     height: 350px;
-    -webkit-filter: none;
-    filter: none;
   }
 }
 
-.activityTypesImage:hover {
-  -webkit-filter: none;
-  filter: none;
+.activityTypesColumn:hover {
+  -webkit-filter: saturate(1.2) contrast(100%) brightness(120%);
+          filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
 .activityTypesText {
   position: absolute;
   top: 50%;
   left: 50%;
+  cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
@@ -262,6 +257,13 @@ header {
 @media screen and (max-width: 500px) {
   .activityTypesColumn {
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypesColumn {
+    -webkit-filter: none;
+    filter: none;
   }
 }
 
