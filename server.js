@@ -1,9 +1,11 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
+const socketio = require("socket.io");
 
 const session = require("express-session");
-const passport = require("./passport")
+const passport = require("./passport");
+const io = socketio(app);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -17,17 +19,29 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(session({ secret: "secret", resave: false, saveUninitialized: false }))
+app.use(session({ secret: "secret", resave: false, saveUninitialized: false }));
 
 // PASSPORT CONFIG
 app.use(passport.initialize());
-app.use(passport.session())
+app.use(passport.session());
 
 // MONGO CONNECTION
 mongoose.Promise = Promise;
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost:27017/activityUp", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost:27017/activityUp",
+  {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+  }
+);
+
+// SOCKET.IO CONNECTION(group chat feature)
+io.on("connection", socket => {
+  console.log("Socket.io is connected!!!!!!");
+
+  socket.on("disconnect", () => {
+    console.log("User had left");
+  });
 });
 
 // ROUTES

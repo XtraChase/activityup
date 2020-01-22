@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-import Chat from ".//Chat/Chat";
+import ChatApp from "./Chat/ChatApp";
 import Calender from "./Calender";
 import Footer from "../Footer";
 
@@ -9,7 +9,7 @@ function Group() {
     <div>
       <Header />
       <div className="headerBuffer"></div>
-      <Chat />
+      <ChatApp />
       <Calender />
       <Footer />
     </div>
