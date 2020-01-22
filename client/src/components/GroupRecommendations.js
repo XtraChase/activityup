@@ -8,7 +8,7 @@ function GroupRecommendations() {
         <div className="advertisedRow">
           <div className="advertisedColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://s3.amazonaws.com/activejunky-cdn/aj-content/hikinggroup.jpg"
               alt="activity type"
               width="100%"
@@ -20,7 +20,7 @@ function GroupRecommendations() {
           </div>
           <div className="advertisedColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2017/01/falconsflags_getty_oneuseonly.jpg"
               alt="activity type"
               width="100%"

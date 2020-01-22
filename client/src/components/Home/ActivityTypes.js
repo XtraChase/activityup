@@ -1,5 +1,6 @@
 import React from "react";
-import ActivityImage from "../../images/hiker.jpg";
+import Outdoors from "../../images/hiker.jpg";
+import Drinks from "../../images/Drinks.jpg";
 
 function ActivityTypes() {
   return (
@@ -8,7 +9,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -16,7 +17,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Drinks}
             alt="activity type"
             width="100%"
           />
@@ -24,7 +25,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -32,7 +33,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -40,7 +41,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -48,7 +49,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -56,7 +57,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -64,7 +65,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -72,7 +73,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />
@@ -80,7 +81,7 @@ function ActivityTypes() {
         <div className="activityTypesColumn">
           <img
             className="activityTypesImage"
-            src={ActivityImage}
+            src={Outdoors}
             alt="activity type"
             width="100%"
           />

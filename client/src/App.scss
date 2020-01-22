@@ -114,12 +114,37 @@ header {
   position: relative;
   text-align: center;
   cursor: pointer;
+  // width: 350px;
+  // height: auto;
+  // overflow: hidden;
+}
+
+.activityTypesImage {
+  height: 250px;
+  object-fit: cover;
+  @media screen and (max-width: 940px) {
+    height: 150px;
+  }
+  @media screen and (max-width: 500px) {
+    height: 350px;
+  }
+}
+
+.GroupImage {
+  height: 350px;
+  object-fit: cover;
+  @media screen and (max-width: 940px) {
+    height: 200px;
+  }
+  @media screen and (max-width: 500px) {
+    height: 350px;
+  }
 }
 
 .text-block {
   position: absolute;
-  width: 81%;
-  left: 30px;
+  width: 100%;
+  // left: 30px;
   background-color: rgba(0, 0, 0, 0.507);
   color: white;
   padding: 8px 20px;

@@ -139,10 +139,45 @@ header {
   cursor: pointer;
 }
 
+.activityTypesImage {
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 940px) {
+  .activityTypesImage {
+    height: 150px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypesImage {
+    height: 350px;
+  }
+}
+
+.GroupImage {
+  height: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 940px) {
+  .GroupImage {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .GroupImage {
+    height: 350px;
+  }
+}
+
 .text-block {
   position: absolute;
-  width: 81%;
-  left: 30px;
+  width: 100%;
   background-color: rgba(0, 0, 0, 0.507);
   color: white;
   padding: 8px 20px;

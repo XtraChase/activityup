@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { CreateGroup } from "./CreateEvent";
+import { CreateEvent } from "./CreateEvent";
 import Logo from "../../images/ActivityUP-Logo.png";
 // import LogoSVG from "../../../images/activityup.svg";
 
@@ -31,7 +31,7 @@ export class Header extends Component {
             </Link>{" "}
           </div>
         </header>
-        <CreateGroup
+        <CreateEvent
           show={this.state.addModalShow}
           onHide={addModalClose}
           style={{ background: "none" }}

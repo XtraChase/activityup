@@ -9,7 +9,7 @@ function YourGroups() {
         <div className="advertisedRow">
           <Link to="/Group" className="advertisedColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/09/National-Video-Game-Day-796x416.jpg"
               alt="activity type"
               width="100%"
@@ -22,7 +22,7 @@ function YourGroups() {
 
           <Link to="/Group" className="advertisedColumn upVoteableImage">
             <img
-              className="activityTypesImage"
+              className="GroupImage"
               src="https://www.iloveblackandwhitephotography.com/wp-content/uploads/MattMitschke.jpg"
               alt="activity type"
               width="100%"
