@@ -1,141 +1,90 @@
 import React from "react";
-import Drinks from "../../images/Drinks.jpg";
-import Sports from "../../images/sports.jpg";
-import Food from "../../images/food.jpg";
-import Outdoors from "../../images/hiker.jpg";
-import Movies from "../../images/movies.jpg";
-import Professional from "../../images/Professional.png";
-import Shopping from "../../images/shopping.jpg";
-import Music from "../../images/music.jpg";
-import Gaming from "../../images/gaming.jpg";
-import Sites from "../../images/sites.jpg";
+import images from "../../utils/activityTypes.json"
 
 function ActivityTypes() {
   return (
-    <div>
       <div className="activityTypesRow">
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Sports}
-              alt="Sports"
-              width="100%"
-            />
-            <p class="activityTypesText">SPORTS</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.sports}
+            alt="sports"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Drinks}
-              alt="Drinks"
-              width="100%"
-            />
-            <p class="activityTypesText">DRINKS</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.drinks}
+            alt="drinks"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Food}
-              alt="Food"
-              width="100%"
-            />
-            <p class="activityTypesText">FOOD</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.food}
+            alt="food"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Outdoors}
-              alt="Outdoors"
-              width="100%"
-            />
-            <p class="activityTypesText">OUTDOORS</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.outdoors}
+            alt="outdoors"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Movies}
-              alt="Movies"
-              width="100%"
-            />
-            <p class="activityTypesText">MOVIES</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.movies}
+            alt="movies"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Professional}
-              alt="Professional"
-              width="100%"
-            />
-            <p class="activityTypesText">PROFESSIONAL</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.professional}
+            alt="professional"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Shopping}
-              alt="Shopping"
-              width="100%"
-            />
-            <p class="activityTypesText">SHOPPING</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.shopping}
+            alt="shopping"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Music}
-              alt="Music"
-              width="100%"
-            />
-            <p class="activityTypesText">MUSIC</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.music}
+            alt="music"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Gaming}
-              alt="Gaming"
-              width="100%"
-            />
-            <p class="activityTypesText">GAMING</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.gaming}
+            alt="gaming"
+            width="100%"
+          />
         </div>
         <div className="activityTypesColumn">
-          <div className="activityTypeContainer">
-            <img
-              rel="preload"
-              className="activityTypesImage"
-              src={Sites}
-              alt="Sites"
-              width="100%"
-            />
-            <p class="activityTypesText">SITES</p>
-          </div>
+          <img
+            className="activityTypesImage"
+            src={images.sites}
+            alt="sites"
+            width="100%"
+          />
         </div>
       </div>
-    </div>
   );
 }
 
