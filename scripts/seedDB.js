@@ -3,21 +3,22 @@ const { User, Group } = require("../models");
 
 mongoose.connect("mongodb://localhost/activityUp", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useFindAndModify: false
 });
 
-// create users on db
-User.collection
-  .remove({})
-  .then(() => Group.collection.remove({}))
+// Delete existing user collection
+User.deleteMany({})
+  // Delete existing group collection
+  .then(() => Group.deleteMany({}))
   .then(() => {
-    console.log("yo");
+    // Make a group
     return new Group({
       name: "GroupA"
     }).save();
   })
-  .then((data) => {
-    // random user dummy data
+  .then(data => {
+    // Make users with random names and passwords and added group id to their groups array
     const newUser = [];
     for (let i = 0; i < 5; i++) {
       newUser.push(
@@ -32,9 +33,9 @@ User.collection
     return User.create(newUser);
   })
   .then(data => {
-    let ids = data.map((d) => d._id);
-    console.log(ids);
-    return Group.findOneAndUpdate({ name: "GroupA" }, { users: ids })
+    // update group with ids of users
+    let ids = data.map(d => d._id);
+    return Group.findOneAndUpdate({ name: "GroupA" }, { users: ids });
   })
   .then(data => {
     console.log(data);
@@ -44,8 +45,6 @@ User.collection
     console.error(err);
     process.exit(1);
   });
-
-// process.exit(0);
 
 function pad(str, max) {
   return str.length < max ? pad("0" + str, max) : str;
