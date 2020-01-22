@@ -74,10 +74,8 @@ class Login extends Component {
         <div className="col rightColumn">
           <div className="oAuthlogin">
             <form>
-              <Link>
                 <FacebookLoginButton onClick={() => alert("Hello")} />
                 <GoogleLoginButton onClick={() => alert("Hello")} />
-              </Link>
             </form>
           </div>
         </div>
