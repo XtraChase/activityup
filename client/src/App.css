@@ -37,54 +37,35 @@ header {
           box-shadow: 0px 5px 10px #00000059;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-areas: "a";
+      grid-template-areas: "header";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
 }
 
-.logoContainer {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  grid-area: a;
-}
-
-@media screen and (max-width: 400px) {
-  .logoContainer {
-    display: none;
-  }
-}
-
 .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: auto;
   height: 35px;
   margin: 5px 0px 0px 20px;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 640px) {
   .logo {
     display: none;
   }
 }
 
-.navBtnContainer {
+.newGroupBtn {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
-  grid-area: a;
+  grid-area: header;
   -ms-grid-column-align: end;
       justify-self: end;
-  margin-right: 30px;
-}
-
-@media screen and (max-width: 640px) {
-  .navBtnContainer {
-    margin-right: 10px;
-  }
-}
-
-.newGroupBtn {
+  margin-right: 280px;
+  margin-top: 5px;
   border: none;
   background: none;
   color: #0015ff;
@@ -94,18 +75,49 @@ header {
   transition: 0.5s;
 }
 
+@media screen and (max-width: 640px) {
+  .newGroupBtn {
+    -ms-grid-column-align: start;
+        justify-self: start;
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
 .newGroupBtn:hover {
   color: #ff8900;
   text-decoration: none;
 }
 
-.loginBtn {
+.welcomeUser {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin-right: 90px;
+  margin-top: 5px;
   border: none;
-  margin-left: 50px;
+  background: none;
+  color: #ff8900;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.loginBtn {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: header;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin-right: 20px;
+  margin-top: 5px;
+  border: none;
   background: none;
   color: #868686;
   cursor: pointer;
-  margin-right: 20px;
   font-weight: bold;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -322,8 +334,6 @@ header {
 }
 
 .dashboardTitle {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: a;
   text-align: center;
   color: #ff8900;

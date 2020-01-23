@@ -5,6 +5,7 @@ import ActivityTypes from "./ActivityTypes";
 import TrendingActivities from "../TrendingActivities";
 import AdvertisedActivities from "../AdvertisedActivities";
 import Footer from "../Footer";
+import "./home.scss";
 
 function Body() {
   return (

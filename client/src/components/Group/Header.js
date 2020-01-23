@@ -15,19 +15,22 @@ export class Header extends Component {
       <>
         <header>
           <Link to="/" className="logoContainer">
-            <img className="logo" src="images/ActivityUP-Logo.png" alt="ActivityUP Logo"></img>
+            <img
+              className="logo"
+              src="images/ActivityUP-Logo.png"
+              alt="ActivityUP Logo"
+            />
           </Link>
-          <div className="navBtnContainer">
-            <Link
-              className="newGroupBtn"
-              onClick={() => this.setState({ addModalShow: true })}
-            >
-              Create A New Event
-            </Link>
-            <Link to="/" className="loginBtn">
-              Logout
-            </Link>{" "}
+          <div
+            className="newGroupBtn"
+            onClick={() => this.setState({ addModalShow: true })}
+          >
+            Create A New Event
           </div>
+          <div className="welcomeUser">Welcome (username)</div>
+          <Link to="/" className="loginBtn">
+            Logout
+          </Link>
         </header>
         <CreateEvent
           show={this.state.addModalShow}

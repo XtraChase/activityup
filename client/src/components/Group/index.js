@@ -5,7 +5,7 @@ import Chat from "./Chat/Chat";
 import Calender from "./Calender";
 import AdvertisedActivities from "../AdvertisedActivities";
 import Footer from "../Footer";
-import "./Group.scss";
+import "./style.scss";
 
 function Group() {
   return (
