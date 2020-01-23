@@ -1,11 +1,9 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
-const socketio = require("socket.io");
 
 const session = require("express-session");
 const passport = require("./passport");
-const io = socketio(app);
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -34,15 +32,6 @@ mongoose.connect(
     useUnifiedTopology: true
   }
 );
-
-// SOCKET.IO CONNECTION(group chat feature)
-io.on("connection", socket => {
-  console.log("Socket.io is connected!!!!!!");
-
-  socket.on("disconnect", () => {
-    console.log("User had left");
-  });
-});
 
 // ROUTES
 app.use(routes);
