@@ -1,6 +1,4 @@
 import React from "react";
-import UpArrow from "../images/Arrow.png";
-import UpArrowOn from "../images/Arrow(clicked).png";
 
 function AdvertisedActivities() {
   return (
@@ -16,7 +14,7 @@ function AdvertisedActivities() {
             />
             <img
               className="upVoteArrow"
-              src={UpArrow}
+              src="images/Arrow.png"
               alt="Up Vote Arrow"
               width="15px"
               // onClick={this.state.UpVote()}
@@ -32,7 +30,7 @@ function AdvertisedActivities() {
             />
             <img
               className="upVoteArrow"
-              src={UpArrow}
+              src="images/Arrow.png"
               alt="Up Vote Arrow"
               width="15px"
               // onClick={this.state.UpVote()}
