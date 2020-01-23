@@ -12,11 +12,11 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
-          <Route path="/register" component={Register} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/group" component={Group} />
+          <Route exact path="/" component={Home} key={"root" + Date.now()}/>
+          <Route path="/login" component={Login} key={"login" + Date.now()}/>
+          <Route path="/register" component={Register} key={"register" + Date.now()}/>
+          <Route path="/dashboard" component={Dashboard} key={"dashboard" + Date.now()}/>
+          <Route path="/group" component={Group} key={"group" + Date.now()}/>
         </div>
       </Router>
     );
