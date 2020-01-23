@@ -1,15 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Header from "./Header";
+import EventDetails from "./EventDetails";
+import Chat from "./Chat/Chat";
+import Calender from "./Calender";
+import AdvertisedActivities from "../AdvertisedActivities";
 import Footer from "../Footer";
+import "./Group.scss";
 
 function Group() {
   return (
     <div>
       <Header />
-      <div className="bodyContainer">
-        <h1>welcome to your group</h1>
+      <div className="headerBuffer"></div>
+      <div className="upperGroupArea">
+        <EventDetails />
+        <Chat />
       </div>
+      <Calender />
+      <AdvertisedActivities />
       <Footer />
     </div>
   );

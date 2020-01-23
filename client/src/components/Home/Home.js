@@ -10,6 +10,7 @@ function Body() {
   return (
     <div>
       <Header />
+      <div className="headerBuffer"></div>
       <Title />
       <ActivityTypes />
       <TrendingActivities />

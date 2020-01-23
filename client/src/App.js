@@ -5,7 +5,7 @@ import Login from "./components/Login/Login";
 import Register from "./components/Login/Register";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Group from "./components/Group/Group";
-import "./App.css";
+import "./App.scss";
 
 class App extends Component {
   render() {

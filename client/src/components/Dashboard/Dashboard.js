@@ -8,6 +8,7 @@ function Dashboard() {
   return (
     <div>
       <Header />
+      <div className="headerBuffer"></div>
       <YourGroups />
       <GroupRecommendations />
       <Footer />

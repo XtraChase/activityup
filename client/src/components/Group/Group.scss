@@ -1,0 +1,85 @@
+.upperGroupArea {
+  width: 98%;
+  height: 400px;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "a1 b1";
+  grid-template-rows: repeat(2, 400px);
+  grid-column-gap: 10px;
+  @media screen and (max-width: 640px) {
+    grid-template-columns: 1fr;
+    grid-template-areas: "b1" "a1";
+    grid-column-gap: 0;
+    grid-row-gap: 10px;
+    grid-template-rows: 200px 400px;
+    height: 610px;
+  }
+}
+
+.eventDetailsPage {
+  grid-area: a1;
+  border-style: solid;
+}
+
+.eventDetailsHeader {
+  display: grid;
+  grid-template-columns: (3, 1fr);
+  grid-template-areas: "a2 b2 c2";
+  text-align: center;
+  border-bottom: solid;
+}
+
+.suggest {
+  grid-area: a2;
+  margin: 5px;
+}
+
+.eventDate {
+  grid-area: b2;
+  border-right: solid;
+  border-left: solid;
+}
+
+.leaveEvent {
+  grid-area: c2;
+  margin: 5px;
+}
+
+.eventSuggestions {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.eventSuggestions::-webkit-scrollbar {
+  width: 10px;
+}
+.eventSuggestions::-webkit-scrollbar-track {
+  background: #c7c7c74b;
+}
+.eventSuggestions::-webkit-scrollbar-thumb {
+  background: rgba(163, 163, 163, 0.445);
+}
+.eventSuggestions::-webkit-scrollbar-thumb:hover {
+  background: rgba(97, 97, 97, 0.39);
+}
+
+.chatPage {
+  grid-area: b1;
+  border-style: solid;
+}
+
+.suggestionRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.suggestionColumn {
+  float: left;
+  width: 50%;
+  padding: 8px;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+  }
+}
