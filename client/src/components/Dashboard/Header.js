@@ -15,10 +15,15 @@ class Header extends Component {
       <>
         <header>
           <Link to="/" className="logoContainer">
-            <img className="logo" src="images/ActivityUP-Logo.png" alt="ActivityUP Logo"></img>
+            <img
+              className="logo"
+              src="images/ActivityUP-Logo.png"
+              alt="ActivityUP Logo"
+            ></img>
           </Link>
           <div className="navBtnContainer">
             <Link
+              to="/"
               className="newGroupBtn"
               onClick={() => this.setState({ addModalShow: true })}
             >
@@ -26,7 +31,7 @@ class Header extends Component {
             </Link>
             <Link to="/" className="loginBtn">
               Logout
-            </Link>{" "}
+            </Link>
           </div>
         </header>
         <CreateGroup
