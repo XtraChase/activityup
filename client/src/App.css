@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -32,16 +33,26 @@ header {
   width: 100%;
   height: 3rem;
   background-color: #ffffff;
-  box-shadow: 0px 5px 10px #00000059;
+  -webkit-box-shadow: 0px 5px 10px #00000059;
+          box-shadow: 0px 5px 10px #00000059;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-areas: "a";
-  align-items: center;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas: "a";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .logoContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: a;
-  @media screen and (max-width: 400px) {
+}
+
+@media screen and (max-width: 400px) {
+  .logoContainer {
     display: none;
   }
 }
@@ -50,16 +61,25 @@ header {
   width: auto;
   height: 35px;
   margin: 5px 0px 0px 20px;
-  @media screen and (max-width: 400px) {
+}
+
+@media screen and (max-width: 400px) {
+  .logo {
     display: none;
   }
 }
 
 .navBtnContainer {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: a;
-  justify-self: end;
+  -ms-grid-column-align: end;
+      justify-self: end;
   margin-right: 30px;
-  @media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 640px) {
+  .navBtnContainer {
     margin-right: 10px;
   }
 }
@@ -70,6 +90,7 @@ header {
   color: #0015ff;
   cursor: pointer;
   font-weight: bold;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -82,10 +103,11 @@ header {
   border: none;
   margin-left: 50px;
   background: none;
-  color: rgb(134, 134, 134);
+  color: #868686;
   cursor: pointer;
   margin-right: 20px;
   font-weight: bold;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -102,7 +124,10 @@ header {
   width: 60%;
   height: auto;
   margin: 5% 20% 5% 20%;
-  @media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 640px) {
+  .titleImage {
     margin: 9% 15% 9% 15%;
   }
 }
@@ -112,10 +137,8 @@ header {
   top: 35px;
   right: 35px;
   cursor: pointer;
-  -webkit-filter: drop-shadow(0px 0px 0 rgb(255, 255, 255))
-    drop-shadow(-0px -0px 0 rgba(255, 255, 255, 0));
-  filter: drop-shadow(0px 0px 0 rgb(248, 248, 248))
-    drop-shadow(-0px -0px 0 rgba(255, 255, 255, 0));
+  -webkit-filter: drop-shadow(0px 0px 0 white) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
+  filter: drop-shadow(0px 0px 0 #f8f8f8) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
 }
 
 .upVoteableImage {
@@ -129,32 +152,49 @@ header {
   position: relative;
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
-  text-shadow: 1.8px 1.8px 2.75px rgba(0, 0, 0, 1);
-  @media screen and (max-width: 940px) {
+  text-shadow: 1.8px 1.8px 2.75px black;
+}
+
+@media screen and (max-width: 940px) {
+  .activityTypeContainer {
     font-size: 1.5em;
   }
-  @media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 640px) {
+  .activityTypeContainer {
     font-size: 1.1em;
   }
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypeContainer {
     font-size: 4em;
   }
 }
 
 .activityTypesImage {
   height: 250px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   cursor: pointer;
-  @media screen and (max-width: 940px) {
+}
+
+@media screen and (max-width: 940px) {
+  .activityTypesImage {
     height: 150px;
   }
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypesImage {
     height: 350px;
   }
 }
 
 .activityTypesColumn:hover {
-  filter: saturate(1.2) contrast(100%) brightness(120%);
+  -webkit-filter: saturate(1.2) contrast(100%) brightness(120%);
+          filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
 .activityTypesText {
@@ -162,16 +202,24 @@ header {
   top: 50%;
   left: 50%;
   cursor: pointer;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .GroupImage {
   height: 350px;
-  object-fit: cover;
-  @media screen and (max-width: 940px) {
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media screen and (max-width: 940px) {
+  .GroupImage {
     height: 200px;
   }
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+  .GroupImage {
     height: 350px;
   }
 }
@@ -179,23 +227,24 @@ header {
 .text-block {
   position: absolute;
   width: 100%;
-  // left: 30px;
   background-color: rgba(0, 0, 0, 0.507);
   color: white;
   padding: 8px 20px;
   padding-bottom: 0;
   bottom: 30px;
   left: 50%;
-  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   display: block;
   line-height: 0.25em;
-  @media screen and (max-width: 500px) {
-    h4 {
-      font-size: 1.2em;
-    }
-    p {
-      font-size: 0.7em;
-    }
+}
+
+@media screen and (max-width: 500px) {
+  .text-block h4 {
+    font-size: 1.2em;
+  }
+  .text-block p {
+    font-size: 0.7em;
   }
 }
 
@@ -211,11 +260,16 @@ header {
 .activityTypesColumn {
   float: left;
   width: 20%;
-  // padding: 5px;
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypesColumn {
     width: 100%;
   }
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypesColumn {
     -webkit-filter: none;
     filter: none;
   }
@@ -237,7 +291,10 @@ header {
   float: left;
   width: 50%;
   padding: 30px;
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+  .trendingColumn {
     width: 100%;
   }
 }
@@ -256,12 +313,17 @@ header {
   float: left;
   width: 50%;
   padding: 30px;
-  @media screen and (max-width: 500px) {
+}
+
+@media screen and (max-width: 500px) {
+  .advertisedColumn {
     width: 100%;
   }
 }
 
 .dashboardTitle {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: a;
   text-align: center;
   color: #ff8900;
@@ -272,23 +334,32 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  // height: 3rem;
   background-color: #ff8900;
-  box-shadow: 0px -5px 10px #00000059;
+  -webkit-box-shadow: 0px -5px 10px #00000059;
+          box-shadow: 0px -5px 10px #00000059;
+  display: -ms-grid;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(1, 3rem);
-  grid-template-areas: "a2 b2 c2";
-  align-items: center;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (3rem)[1];
+      grid-template-rows: repeat(1, 3rem);
+      grid-template-areas: "a2 b2 c2";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .footer-a {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: a2;
 }
 
 .github-icon {
   text-align: right;
   margin-right: 20px;
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
   grid-area: c2;
 }
 
@@ -297,9 +368,12 @@ footer {
 }
 
 #copyright {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
   grid-area: b2;
   text-align: center;
   margin-top: auto;
   color: #ffffff;
   font-size: 0.8em;
 }
+/*# sourceMappingURL=App.css.map */
