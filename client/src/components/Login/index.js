@@ -44,7 +44,7 @@ class Login extends Component {
         <Header />
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
-            <h2>Login</h2>
+             <h2>Login</h2>
             <div className="username">
               <input
                 type="text"
