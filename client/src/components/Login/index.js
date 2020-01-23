@@ -16,7 +16,7 @@ class Login extends Component {
     };
 
     this.update = this.update.bind(this);
-    this.displayLogin = this.displayLogin.bind(this);
+    this.login = this.login.bind(this);
   }
 
   update(e) {
@@ -27,7 +27,7 @@ class Login extends Component {
     });
   }
 
-  displayLogin(e) {
+  login(e) {
     e.preventDefault();
     API.logIn(this.state)
       .then(user => console.log(user.data))
@@ -43,7 +43,7 @@ class Login extends Component {
       <>
         <Header />
         <div className="col border-right leftColumn login">
-          <form onSubmit={this.displayLogin}>
+          <form onSubmit={this.login}>
             <h2>Login</h2>
             <div className="username">
               <input
