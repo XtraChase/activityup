@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { CreateGroup } from "./CreateGroup";
-import Logo from "../../images/ActivityUP-Logo.png";
-// import LogoSVG from "../../../images/activityup.svg";
 
-export class Header extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { addModalShow: false };
@@ -17,10 +15,15 @@ export class Header extends Component {
       <>
         <header>
           <Link to="/" className="logoContainer">
-            <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
+            <img
+              className="logo"
+              src="images/ActivityUP-Logo.png"
+              alt="ActivityUP Logo"
+            ></img>
           </Link>
           <div className="navBtnContainer">
             <Link
+              to="/"
               className="newGroupBtn"
               onClick={() => this.setState({ addModalShow: true })}
             >
@@ -28,7 +31,7 @@ export class Header extends Component {
             </Link>
             <Link to="/" className="loginBtn">
               Logout
-            </Link>{" "}
+            </Link>
           </div>
         </header>
         <CreateGroup

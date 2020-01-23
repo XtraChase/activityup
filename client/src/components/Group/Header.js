@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { CreateEvent } from "./CreateEvent";
-import Logo from "../../images/ActivityUP-Logo.png";
-// import LogoSVG from "../../../images/activityup.svg";
 
 export class Header extends Component {
   constructor(props) {
@@ -17,7 +15,7 @@ export class Header extends Component {
       <>
         <header>
           <Link to="/" className="logoContainer">
-            <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
+            <img className="logo" src="images/ActivityUP-Logo.png" alt="ActivityUP Logo"></img>
           </Link>
           <div className="navBtnContainer">
             <Link

@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-// import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import Logo from "../../images/ActivityUP-Logo.png";
+import Header from "../Home/Header"
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import "./styles.css";
-import API from "../../utils/API"
+import API from "../../utils/API";
 
 class Login extends Component {
   constructor(props) {
@@ -41,57 +40,49 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
-        <Link to="/" className="logoContainer">
-          <img className="logo" src={Logo} alt="ActivityUP Logo"></img>
-        </Link>
-        <div className="col border-right leftColumn">
-          <div className="login">
-            <form onSubmit={this.displayLogin}>
-              <h2>Login</h2>
-              <div className="username">
-                <input
-                  type="text"
-                  placeholder="Username..."
-                  value={this.state.username}
-                  onChange={this.update}
-                  name="username"
-                />
-              </div>
-              <div className="password">
-                <input
-                  type="password"
-                  placeholder="Password..."
-                  value={this.state.password}
-                  onChange={this.update}
-                  name="password"
-                />
-              </div>
-              <input type="submit" value="Login" />
-            </form>
-          </div>
+      <>
+        <Header />
+        <div className="col border-right leftColumn login">
+          <form onSubmit={this.displayLogin}>
+            <h2>Login</h2>
+            <div className="username">
+              <input
+                type="text"
+                placeholder="Username..."
+                value={this.state.username}
+                onChange={this.update}
+                name="username"
+              />
+            </div>
+            <div className="password">
+              <input
+                type="password"
+                placeholder="Password..."
+                value={this.state.password}
+                onChange={this.update}
+                name="password"
+              />
+            </div>
+            <input type="submit" value="Login" />
+          </form>
         </div>
-        <div className="col rightColumn">
-          <div className="oAuthlogin">
-            <form>
-                <FacebookLoginButton onClick={() => alert("Hello")} />
-                <GoogleLoginButton onClick={() => alert("Hello")} />
-            </form>
-          </div>
+        <div className="col rightColumn oAuthlogin">
+          <form>
+            <FacebookLoginButton onClick={() => alert("Hello")} />
+            <GoogleLoginButton onClick={() => alert("Hello")} />
+          </form>
         </div>
-        <div className="bottom-container">
-          <div className="row bottomButtons">
-            <div className="col signUp">
+        <div className="row bottomButtons bottom-container">
+          <div className="col signUp">
+            <Link to="/register">
               <button className="btn signUpBtn">Sign up</button>
-            </div>
-            <div className="col forgotPassword">
-              <button className="btn forgotPasswordBtn">
-                Forgot password?
-              </button>
-            </div>
+            </Link>
+          </div>
+          <div className="col forgotPassword">
+            <button className="btn forgotPasswordBtn">Forgot password?</button>
           </div>
         </div>
-      </div>
+      </>
     );
   }
 }

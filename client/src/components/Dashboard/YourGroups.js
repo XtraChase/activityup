@@ -14,7 +14,7 @@ function YourGroups() {
               alt="activity type"
               width="100%"
             />
-            <div class="text-block">
+            <div className="text-block">
               <h4>Gaming Group</h4>
               <p>Tuesday night is game night!</p>
             </div>
@@ -27,7 +27,7 @@ function YourGroups() {
               alt="activity type"
               width="100%"
             />
-            <div class="text-block">
+            <div className="text-block">
               <h4>Photography Group</h4>
             </div>
           </Link>

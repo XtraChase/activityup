@@ -13,7 +13,7 @@ function GroupRecommendations() {
               alt="activity type"
               width="100%"
             />
-            <div class="text-block">
+            <div className="text-block">
               <h4>Hiking Group</h4>
               <p>Just out here doin it!</p>
             </div>
@@ -25,7 +25,7 @@ function GroupRecommendations() {
               alt="activity type"
               width="100%"
             />
-            <div class="text-block">
+            <div className="text-block">
               <h4>Falcons Sports Group</h4>
             </div>
           </div>
