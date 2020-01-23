@@ -1,5 +1,5 @@
 import React from "react";
-import UpArrow from "../../images/Arrow.png";
+// import UpArrow from "../../images/Arrow.png";
 
 function GroupSuggestions() {
   return (
@@ -15,7 +15,7 @@ function GroupSuggestions() {
             />
             <img
               className="upVoteArrow"
-              src={UpArrow}
+              src="/images/Arrow.png"
               alt="Up Vote Arrow"
               width="15px"
               // onClick={this.state.UpVote()}
@@ -31,7 +31,7 @@ function GroupSuggestions() {
             />
             <img
               className="upVoteArrow"
-              src={UpArrow}
+              src="/images/Arrow.png"
               alt="Up Vote Arrow"
               width="15px"
               // onClick={this.state.UpVote()}
@@ -47,7 +47,7 @@ function GroupSuggestions() {
             />
             <img
               className="upVoteArrow"
-              src={UpArrow}
+              src="/images/Arrow.png"
               alt="Up Vote Arrow"
               width="15px"
               // onClick={this.state.UpVote()}
@@ -63,7 +63,7 @@ function GroupSuggestions() {
             />
             <img
               className="upVoteArrow"
-              src={UpArrow}
+              src="/images/Arrow.png"
               alt="Up Vote Arrow"
               width="15px"
               // onClick={this.state.UpVote()}
