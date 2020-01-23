@@ -6,13 +6,15 @@ function ActivityTypes() {
   for (const key in images) {
     activityImgs.push(
       <div className="activityTypesColumn" key={key + Date.now()}>
-        <img
-          src={images[key]}
-          alt={key}
-          width="100%"
-          className="activityTypesImage"
-        />
-        <p className="activityTypesText">{key.toUpperCase()}</p>
+        <div className="activityTypeContainer">
+          <img
+            src={images[key]}
+            alt={key}
+            width="100%"
+            className="activityTypesImage"
+          />
+          <p className="activityTypesText">{key.toUpperCase()}</p>
+        </div>
       </div>
     );
   }

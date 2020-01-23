@@ -19,20 +19,18 @@ class Header extends Component {
               className="logo"
               src="images/ActivityUP-Logo.png"
               alt="ActivityUP Logo"
-            ></img>
+            />
           </Link>
-          <div className="navBtnContainer">
-            <Link
-              to="/"
-              className="newGroupBtn"
-              onClick={() => this.setState({ addModalShow: true })}
-            >
-              Create A New Group
-            </Link>
-            <Link to="/" className="loginBtn">
-              Logout
-            </Link>
+          <div
+            className="newGroupBtn"
+            onClick={() => this.setState({ addModalShow: true })}
+          >
+            Create A New Group
           </div>
+          <div className="welcomeUser">Welcome (username)</div>
+          <Link to="/" className="loginBtn">
+            Logout
+          </Link>
         </header>
         <CreateGroup
           show={this.state.addModalShow}

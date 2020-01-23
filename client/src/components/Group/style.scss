@@ -1,3 +1,82 @@
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #ffffff;
+  box-shadow: 0px 5px 10px #00000059;
+  display: grid;
+  // grid-template-columns: repeat(1, 1fr);
+  grid-template-areas: "header";
+  align-items: center;
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 35px;
+  margin: 5px 0px 0px 20px;
+  @media screen and (max-width: 640px) {
+    display: none;
+  }
+}
+
+.newGroupBtn {
+  grid-area: header;
+  justify-self: end;
+  margin-right: 280px;
+  margin-top: 5px;
+  border: none;
+  background: none;
+  color: #0015ff;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.5s;
+  @media screen and (max-width: 640px) {
+    justify-self: start;
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+.newGroupBtn:hover {
+  color: #ff8900;
+  text-decoration: none;
+}
+
+.welcomeUser {
+  grid-area: header;
+  justify-self: end;
+  margin-right: 90px;
+  margin-top: 5px;
+  border: none;
+  background: none;
+  color: #ff8900;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.loginBtn {
+  grid-area: header;
+  justify-self: end;
+  margin-right: 20px;
+  margin-top: 5px;
+  border: none;
+  background: none;
+  color: rgb(134, 134, 134);
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+.loginBtn:hover {
+  color: #ff8900;
+  text-decoration: none;
+}
+
 .upperGroupArea {
   width: 98%;
   height: 400px;

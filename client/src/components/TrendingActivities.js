@@ -1,5 +1,5 @@
 import React from "react";
-// import UpArrow from "../images/Arrow.png";
+import UpVote from "./UpVote";
 
 function TrendingActivities() {
   return (
@@ -13,14 +13,7 @@ function TrendingActivities() {
               alt="activity type"
               width="100%"
             />
-            <img
-              className="upVoteArrow"
-              src="images/Arrow.png"
-              alt="Up Vote Arrow"
-              width="15px"
-              // onClick={this.state.UpVote()}
-            />
-            <p className="upVoteCount">575</p>
+            <UpVote activity="3" />
           </div>
           <div className="trendingColumn upVoteableImage">
             <img
@@ -29,14 +22,7 @@ function TrendingActivities() {
               alt="activity type"
               width="100%"
             />
-            <img
-              className="upVoteArrow"
-              src="images/Arrow.png"
-              alt="Up Vote Arrow"
-              width="15px"
-              // onClick={this.state.UpVote()}
-            />
-            <p className="upVoteCount">575</p>
+            <UpVote activity="4" />
           </div>
         </div>
       </div>
