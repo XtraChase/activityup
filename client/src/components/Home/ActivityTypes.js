@@ -12,6 +12,7 @@ function ActivityTypes() {
           width="100%"
           className="activityTypesImage"
         />
+        <p className="activityTypesText">{key.toUpperCase()}</p>
       </div>
     );
   }
