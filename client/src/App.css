@@ -192,9 +192,10 @@ header {
   }
 }
 
-.activityTypesColumn:hover {
-  -webkit-filter: saturate(1.2) contrast(100%) brightness(120%);
-          filter: saturate(1.2) contrast(100%) brightness(120%);
+.activityTypesRow::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 .activityTypesText {
@@ -204,6 +205,29 @@ header {
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+}
+
+.activityTypesColumn {
+  float: left;
+  width: 20%;
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypesColumn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .activityTypesColumn {
+    -webkit-filter: none;
+    filter: none;
+  }
+}
+
+.activityTypesColumn:hover {
+  -webkit-filter: saturate(1.2) contrast(100%) brightness(120%);
+          filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
 .GroupImage {
@@ -255,30 +279,6 @@ header {
   cursor: default;
   color: rgba(255, 255, 255, 0.534);
   -webkit-text-stroke: 0.1px black;
-}
-
-.activityTypesColumn {
-  float: left;
-  width: 20%;
-}
-
-@media screen and (max-width: 500px) {
-  .activityTypesColumn {
-    width: 100%;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .activityTypesColumn {
-    -webkit-filter: none;
-    filter: none;
-  }
-}
-
-.activityTypesRow::after {
-  content: "";
-  clear: both;
-  display: table;
 }
 
 .trendingRow::after {
