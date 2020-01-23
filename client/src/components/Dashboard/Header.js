@@ -1,10 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { CreateGroup } from "./CreateGroup";
-// import Logo from "../../images/ActivityUP-Logo.png";
-// import LogoSVG from "../../../images/activityup.svg";
 
-export class Header extends Component {
+class Header extends Component {
   constructor(props) {
     super(props);
     this.state = { addModalShow: false };

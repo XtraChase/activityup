@@ -1,15 +1,11 @@
 import React, { Component } from "react";
-import { Modal, Button, Row, Col, Form } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import axios from "axios";
 
 export class CreateGroup extends Component {
   state = {
     selectedFile: null
   };
-
-  constructor(props) {
-    super(props);
-  }
 
   fileSelectedHandler = event => {
     this.setState({
