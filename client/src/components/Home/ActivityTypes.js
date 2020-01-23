@@ -5,7 +5,7 @@ function ActivityTypes() {
   let activityImgs = [];
   for (const key in images) {
     activityImgs.push(
-      <div className="activityTypesColumn">
+      <div className="activityTypesColumn" key={key + Date.now()}>
         <img
           src={images[key]}
           alt={key}
