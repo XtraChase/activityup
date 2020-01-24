@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "../Home/Header"
+import Header from "../Home/Header";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import "./styles.css";
@@ -30,7 +30,7 @@ class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(user => console.log(user.data))
+      .then(user => console.log("(login.index.js)" + user.data))
       .catch(err => console.log(err));
     this.setState({
       username: "",
@@ -44,7 +44,7 @@ class Login extends Component {
         <Header />
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
-             <h2>Login</h2>
+            <h2>Login</h2>
             <div className="username">
               <input
                 type="text"
