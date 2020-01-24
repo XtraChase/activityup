@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "../Home/Header";
+import Header from "../Header";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import "./styles.css";
 import API from "../../utils/API";
 
-class Login extends Component {
+export default class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -86,5 +86,3 @@ class Login extends Component {
     );
   }
 }
-
-export default Login;

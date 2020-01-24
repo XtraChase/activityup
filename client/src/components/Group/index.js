@@ -1,9 +1,9 @@
 import React from "react";
-import GroupHeader from "./GroupHeader";
+import Header from "../Header";
 import EventDetails from "./EventDetails";
 import Chat from "./Chat/Chat";
 import Calender from "./Calender";
-import AdvertisedActivities from "../AdvertisedActivities";
+import AdvertisedActivities from "../Home/AdvertisedActivities";
 import Footer from "../Footer";
 import "./styleGroup.css";
 
