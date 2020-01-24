@@ -5,9 +5,34 @@ import Login from "./components/Login";
 import Register from "./components/Login/Register";
 import Dashboard from "./components/Dashboard";
 import Group from "./components/Group";
+import API from "./utils/API";
 import "./App.scss";
 
 class App extends Component {
+  state = {
+    authenticated: false,
+    username: null
+  };
+
+  componentDidMount() {
+    this.getUser();
+  }
+
+  getUser() {
+    API.getUser().then(response => {
+      if (response.data.user) {
+        console.log(response.data.user);
+        this.setState({
+          authenticated: true,
+          username: response.data.user.username
+        });
+      } else {
+        console.log("no user");
+        this.setState({ authenticated: false, username: null });
+      }
+    });
+  }
+
   render() {
     return (
       <Router>

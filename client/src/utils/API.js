@@ -6,5 +6,8 @@ export default {
   },
   register(registerObj) {
     return axios.post("api/users/register", registerObj)
+  },
+  getUser() {
+    return axios.get("api/users/sessionUser")
   }
 };

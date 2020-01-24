@@ -21,4 +21,13 @@ router.route("/login").post(
   }
 );
 
+router.route("/sessionUser")
+  .get((req, res) => {
+    if (req.user) {
+      res.json({ user: req.user })
+    } else {
+      res.json({ user: null })
+    }
+  })
+
 module.exports = router;
