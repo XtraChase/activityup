@@ -1,6 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -17,14 +17,6 @@ a {
 .App {
   position: relative;
   min-height: 100vh;
-}
-
-.headerBuffer {
-  position: relative;
-  height: 3vh;
-  padding-top: 3em;
-  display: hidden;
-  z-index: -1;
 }
 
 header {
@@ -78,7 +70,7 @@ header {
 @media screen and (max-width: 640px) {
   .newGroupBtn {
     -ms-grid-column-align: start;
-        justify-self: start;
+    justify-self: start;
     margin-right: 0;
     margin-left: 10px;
   }
@@ -87,6 +79,10 @@ header {
 .newGroupBtn:hover {
   color: #ff8900;
   text-decoration: none;
+}
+
+#newGroupBtnHome {
+  margin-right: 95px;
 }
 
 .welcomeUser {
@@ -126,6 +122,14 @@ header {
 .loginBtn:hover {
   color: #ff8900;
   text-decoration: none;
+}
+
+.headerBuffer {
+  position: relative;
+  height: 3vh;
+  padding-top: 3em;
+  display: hidden;
+  z-index: -1;
 }
 
 .titleImageContainer {
@@ -188,7 +192,7 @@ header {
 .activityTypesImage {
   height: 250px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 
@@ -216,7 +220,7 @@ header {
   left: 50%;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .activityTypesColumn {
@@ -239,7 +243,7 @@ header {
 
 .activityTypesColumn:hover {
   -webkit-filter: saturate(1.2) contrast(100%) brightness(120%);
-          filter: saturate(1.2) contrast(100%) brightness(120%);
+  filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
 .GroupImage {
@@ -262,7 +266,7 @@ header {
 
 .text-block {
   position: absolute;
-  width: 100%;
+  width: 90%;
   background-color: rgba(0, 0, 0, 0.507);
   color: white;
   padding: 8px 20px;
@@ -270,7 +274,7 @@ header {
   bottom: 30px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   display: block;
   line-height: 0.25em;
 }
@@ -344,6 +348,7 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 3rem;
   background-color: #ff8900;
   -webkit-box-shadow: 0px -5px 10px #00000059;
           box-shadow: 0px -5px 10px #00000059;
@@ -351,8 +356,6 @@ footer {
   display: grid;
   -ms-grid-columns: (1fr)[3];
       grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (3rem)[1];
-      grid-template-rows: repeat(1, 3rem);
       grid-template-areas: "a2 b2 c2";
   -webkit-box-align: center;
       -ms-flex-align: center;

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { CreateEvent } from "./CreateEvent";
 
-export class Header extends Component {
+export class GroupHeader extends Component {
   constructor(props) {
     super(props);
     this.state = { addModalShow: false };
@@ -42,4 +42,4 @@ export class Header extends Component {
   }
 }
 
-export default Header;
+export default GroupHeader;

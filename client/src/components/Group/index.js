@@ -1,16 +1,16 @@
 import React from "react";
-import Header from "./Header";
+import GroupHeader from "./GroupHeader";
 import EventDetails from "./EventDetails";
 import Chat from "./Chat/Chat";
 import Calender from "./Calender";
 import AdvertisedActivities from "../AdvertisedActivities";
 import Footer from "../Footer";
-import "./style.scss";
+import "./styleGroup.css";
 
 function Group() {
   return (
     <div>
-      <Header />
+      <GroupHeader />
       <div className="headerBuffer"></div>
       <div className="upperGroupArea">
         <EventDetails />

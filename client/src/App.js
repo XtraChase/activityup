@@ -5,8 +5,12 @@ import Login from "./components/Login";
 import Register from "./components/Login/Register";
 import Dashboard from "./components/Dashboard";
 import Group from "./components/Group";
+<<<<<<< HEAD
+import "./App.css";
+=======
 import API from "./utils/API";
 import "./App.scss";
+>>>>>>> 0d0741e5740b552e2bb23e9d495811d53ed97505
 
 class App extends Component {
   state = {

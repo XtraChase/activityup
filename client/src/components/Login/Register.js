@@ -47,10 +47,9 @@ class Register extends Component {
   render() {
     return (
       <>
-        <Header />
         <div className="register">
           <form onSubmit={this.register}>
-            <h2>Register</h2>
+            <h2>Create an account</h2>
             <div className="name">
               <input
                 type="text"
@@ -72,7 +71,7 @@ class Register extends Component {
             <div className="email">
               <input
                 type="text"
-                placeholder="Enter your email"
+                placeholder="Email"
                 name="email"
                 value={this.state.email}
                 onChange={this.update}
@@ -97,16 +96,14 @@ class Register extends Component {
               />
             </div>
 
-            <input type="submit" value="Login" />
+            <input className="blue" type="submit" value="Submit" />
           </form>
-
-          <Link to="/login">Login Here</Link>
+          <p>Already have an account?</p>
+          <Link to="/login">Login</Link>
         </div>
       </>
     );
   }
 }
-
-//PLEASE CONFIRM THE ROUTING IS GOOD - SENDING DATA TO THE DB ---- THANKS
 
 export default Register;
