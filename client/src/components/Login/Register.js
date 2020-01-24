@@ -8,7 +8,7 @@ class Register extends Component {
     super(props);
 
     this.state = {
-      fullname: "",
+      fullName: "",
       username: "",
       email: "",
       password: "",
@@ -35,7 +35,7 @@ class Register extends Component {
         .then(user => console.log(user))
         .catch(err => console.log(err));
       this.setState({
-        fullname: "",
+        fullName: "",
         username: "",
         email: "",
         password: "",
@@ -54,8 +54,8 @@ class Register extends Component {
               <input
                 type="text"
                 placeholder="Full Name"
-                name="fullname"
-                value={this.state.fullname}
+                name="fullName"
+                value={this.state.fullName}
                 onChange={this.update}
               />
             </div>
