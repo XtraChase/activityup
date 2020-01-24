@@ -5,17 +5,19 @@ function Header() {
   return (
     <>
       <header>
-        <img
-          className="logo"
-          src="images/ActivityUP-Logo.png"
-          alt="ActivityUP Logo"
-        />
-
-        <Link to="/dashboard" className="newGroupBtn">
-          Create A New Group
+        <Link to="/" className="logoContainer">
+          <img
+            className="logo"
+            src="images/ActivityUP-Logo.png"
+            alt="ActivityUP Logo"
+          />
         </Link>
-        <Link to="/login" className="loginBtn">
-          Login
+        <Link to="/dashboard" className="newGroupBtn">
+          Create A New Event
+        </Link>
+        {/* <div className="welcomeUser">Welcome (username)</div> */}
+        <Link to="/" className="loginBtn">
+          Logout
         </Link>
       </header>
     </>
