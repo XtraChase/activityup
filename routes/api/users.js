@@ -7,7 +7,7 @@ router
   .get(userController.findAll)
   .post(userController.create);
 
-router.route("/register").post(() => {
+router.route("/register").post((req, res) => {
   console.log("user signup");
 
   const { username, password } = req.body;
