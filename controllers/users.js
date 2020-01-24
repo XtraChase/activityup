@@ -13,7 +13,9 @@ module.exports = {
   },
   create: (req, res) => {
     const newUser = new User({
+      fullName: req.body.fullName,
       username: req.body.username,
+      email: req.body.email,
       password: req.body.password
     });
     newUser
@@ -22,7 +24,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   register: (req, res) => {
-    const { username, password } = req.body;
+    const { fullName, username, email, password } = req.body;
 
     // ADD VALIDATION
     User.findOne({ username: username }, (err, user) => {
@@ -34,7 +36,9 @@ module.exports = {
         });
       } else {
         const newUser = new User({
+          fullName: fullName,
           username: username,
+          email: email,
           password: password
         });
         newUser.save((err, savedUser) => {
