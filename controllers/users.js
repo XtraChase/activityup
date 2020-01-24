@@ -1,5 +1,7 @@
 const { User } = require("../models");
 
+// CONTROLLER: functions that are called at /api/users/
+
 module.exports = {
   findAll: (req, res) => {
     User.find(req.query)
@@ -23,6 +25,7 @@ module.exports = {
       .then(data => res.json(data))
       .catch(err => res.status(422).json(err));
   },
+  // registers new users by extractinng from data passed into req.body and creating new user on db with that data
   register: (req, res) => {
     const { fullName, username, email, password } = req.body;
 
