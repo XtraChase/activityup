@@ -14,24 +14,24 @@ class App extends Component {
     username: null
   };
 
-  componentDidMount() {
-    this.getUser();
-  }
+  // componentDidMount() {
+  //   this.getUser();
+  // }
 
-  getUser() {
-    API.getUser().then(response => {
-      if (response.data.user) {
-        console.log(response.data.user);
-        this.setState({
-          authenticated: true,
-          username: response.data.user.username
-        });
-      } else {
-        console.log("no user");
-        this.setState({ authenticated: false, username: null });
-      }
-    });
-  }
+  // getUser() {
+  //   API.getUser().then(response => {
+  //     if (response.data.user) {
+  //       console.log("(App.js)Logged in as: " + response.data.user);
+  //       this.setState({
+  //         authenticated: true,
+  //         username: response.data.user.username
+  //       });
+  //     } else {
+  //       console.log("App.js: no user");
+  //       this.setState({ authenticated: false, username: null });
+  //     }
+  //   });
+  // }
 
   render() {
     return (
@@ -48,6 +48,7 @@ class App extends Component {
             path="/dashboard"
             component={Dashboard}
             key={"dashboard" + Date.now()}
+            user={this.state.username}
           />
           <Route path="/group" component={Group} key={"group" + Date.now()} />
         </div>
