@@ -3,7 +3,6 @@ import Header from "./Header";
 import YourGroups from "./YourGroups";
 import GroupRecommendations from "../GroupRecommendations";
 import Footer from "../Footer";
-import "./style.css";
 
 function Dashboard() {
   return (

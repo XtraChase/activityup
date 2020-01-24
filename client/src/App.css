@@ -1,6 +1,6 @@
 * {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
@@ -17,6 +17,102 @@ a {
 .App {
   position: relative;
   min-height: 100vh;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 3rem;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0px 5px 10px #00000059;
+  box-shadow: 0px 5px 10px #00000059;
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas: "header";
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  /* background-color: red; */
+}
+
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: auto;
+  height: 35px;
+  margin: 5px 0px 0px 20px;
+}
+
+@media screen and (max-width: 640px) {
+  .logo {
+    display: none;
+  }
+}
+
+.newGroupBtn {
+  grid-area: header;
+  -ms-grid-column-align: end;
+  justify-self: end;
+  margin-right: 280px;
+  margin-top: 5px;
+  border: none;
+  background: none;
+  color: #0015ff;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+@media screen and (max-width: 640px) {
+  .newGroupBtn {
+    -ms-grid-column-align: start;
+    justify-self: start;
+    margin-right: 0;
+    margin-left: 10px;
+  }
+}
+
+.newGroupBtn:hover {
+  color: #ff8900;
+  text-decoration: none;
+}
+
+.welcomeUser {
+  grid-area: header;
+  -ms-grid-column-align: end;
+  justify-self: end;
+  margin-right: 90px;
+  margin-top: 5px;
+  border: none;
+  background: none;
+  color: #ff8900;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.loginBtn {
+  grid-area: header;
+  -ms-grid-column-align: end;
+  justify-self: end;
+  margin-right: 20px;
+  margin-top: 5px;
+  border: none;
+  background: none;
+  color: #868686;
+  cursor: pointer;
+  font-weight: bold;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.loginBtn:hover {
+  color: #ff8900;
+  text-decoration: none;
 }
 
 .headerBuffer {
@@ -48,8 +144,10 @@ a {
   top: 35px;
   right: 35px;
   cursor: pointer;
-  -webkit-filter: drop-shadow(0px 0px 0 white) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
-  filter: drop-shadow(0px 0px 0 #f8f8f8) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
+  -webkit-filter: drop-shadow(0px 0px 0 white)
+    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
+  filter: drop-shadow(0px 0px 0 #f8f8f8)
+    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
 }
 
 .upVoteableImage {
@@ -87,7 +185,7 @@ a {
 .activityTypesImage {
   height: 250px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   cursor: pointer;
 }
 
@@ -115,7 +213,7 @@ a {
   left: 50%;
   cursor: pointer;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 
 .activityTypesColumn {
@@ -138,13 +236,13 @@ a {
 
 .activityTypesColumn:hover {
   -webkit-filter: saturate(1.2) contrast(100%) brightness(120%);
-          filter: saturate(1.2) contrast(100%) brightness(120%);
+  filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
 .GroupImage {
   height: 350px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 940px) {
@@ -169,7 +267,7 @@ a {
   bottom: 30px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   display: block;
   line-height: 0.25em;
 }
@@ -245,17 +343,17 @@ footer {
   width: 100%;
   background-color: #ff8900;
   -webkit-box-shadow: 0px -5px 10px #00000059;
-          box-shadow: 0px -5px 10px #00000059;
+  box-shadow: 0px -5px 10px #00000059;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (3rem)[1];
-      grid-template-rows: repeat(1, 3rem);
-      grid-template-areas: "a2 b2 c2";
+  -ms-grid-columns: (1fr) [3];
+  grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (3rem) [1];
+  grid-template-rows: repeat(1, 3rem);
+  grid-template-areas: "a2 b2 c2";
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .footer-a {

@@ -5,7 +5,6 @@ import ActivityTypes from "./ActivityTypes";
 import TrendingActivities from "../TrendingActivities";
 import AdvertisedActivities from "../AdvertisedActivities";
 import Footer from "../Footer";
-// import "./style.css";
 
 function Body() {
   return (
