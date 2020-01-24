@@ -12,12 +12,12 @@ function Header() {
             alt="ActivityUP Logo"
           />
         </Link>
-        <Link to="/dashboard" className="newGroupBtn">
-          Create A New Event
+        <Link to="/dashboard" className="newGroupBtn" id="newGroupBtnHome">
+          Create A New Group
         </Link>
         {/* <div className="welcomeUser">Welcome (username)</div> */}
-        <Link to="/" className="loginBtn">
-          Logout
+        <Link to="/login" className="loginBtn">
+          Login
         </Link>
       </header>
     </>

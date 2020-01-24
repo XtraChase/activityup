@@ -25,14 +25,10 @@ header {
   width: 100%;
   height: 3rem;
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 5px 10px #00000059;
-          box-shadow: 0px 5px 10px #00000059;
-  display: -ms-grid;
+  box-shadow: 0px 5px 10px #00000059;
   display: grid;
-      grid-template-areas: "header";
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-areas: "header";
+  align-items: center;
 }
 
 .logo {
@@ -51,11 +47,9 @@ header {
 }
 
 .newGroupBtn {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: header;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   margin-right: 280px;
   margin-top: 5px;
   border: none;
@@ -86,11 +80,9 @@ header {
 }
 
 .welcomeUser {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: header;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   margin-right: 90px;
   margin-top: 5px;
   border: none;
@@ -103,11 +95,9 @@ header {
 }
 
 .loginBtn {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: header;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   margin-right: 20px;
   margin-top: 5px;
   border: none;
@@ -153,8 +143,10 @@ header {
   top: 35px;
   right: 35px;
   cursor: pointer;
-  -webkit-filter: drop-shadow(0px 0px 0 white) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
-  filter: drop-shadow(0px 0px 0 #f8f8f8) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
+  -webkit-filter: drop-shadow(0px 0px 0 white)
+    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
+  filter: drop-shadow(0px 0px 0 #f8f8f8)
+    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
 }
 
 .upVoteableImage {
@@ -248,8 +240,7 @@ header {
 
 .GroupImage {
   height: 350px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 940px) {
@@ -350,29 +341,20 @@ footer {
   width: 100%;
   height: 3rem;
   background-color: #ff8900;
-  -webkit-box-shadow: 0px -5px 10px #00000059;
-          box-shadow: 0px -5px 10px #00000059;
-  display: -ms-grid;
+  box-shadow: 0px -5px 10px #00000059;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "a2 b2 c2";
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-areas: "a2 b2 c2";
+  align-items: center;
 }
 
 .footer-a {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: a2;
 }
 
 .github-icon {
   text-align: right;
   margin-right: 20px;
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
   grid-area: c2;
 }
 
@@ -381,8 +363,6 @@ footer {
 }
 
 #copyright {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
   grid-area: b2;
   text-align: center;
   margin-top: auto;
