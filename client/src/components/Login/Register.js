@@ -42,8 +42,6 @@ class Register extends Component {
         confirmPassword: ""
       });
     }
-    console.log("Your are now register!");
-    console.log(this.state);
   }
 
   render() {
