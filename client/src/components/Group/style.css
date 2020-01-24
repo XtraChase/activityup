@@ -5,13 +5,13 @@ header {
   height: 3rem;
   background-color: #ffffff;
   -webkit-box-shadow: 0px 5px 10px #00000059;
-          box-shadow: 0px 5px 10px #00000059;
+  box-shadow: 0px 5px 10px #00000059;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: "header";
+  grid-template-areas: "header";
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .logo {
@@ -34,7 +34,7 @@ header {
   -ms-grid-column: 1;
   grid-area: header;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   margin-right: 280px;
   margin-top: 5px;
   border: none;
@@ -49,7 +49,7 @@ header {
 @media screen and (max-width: 640px) {
   .newGroupBtn {
     -ms-grid-column-align: start;
-        justify-self: start;
+    justify-self: start;
     margin-right: 0;
     margin-left: 10px;
   }
@@ -65,7 +65,7 @@ header {
   -ms-grid-column: 1;
   grid-area: header;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   margin-right: 90px;
   margin-top: 5px;
   border: none;
@@ -82,7 +82,7 @@ header {
   -ms-grid-column: 1;
   grid-area: header;
   -ms-grid-column-align: end;
-      justify-self: end;
+  justify-self: end;
   margin-right: 20px;
   margin-top: 5px;
   border: none;
@@ -106,22 +106,22 @@ header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 2fr 1fr;
-      grid-template-columns: 2fr 1fr;
-      grid-template-areas: "a1 b1";
-  -ms-grid-rows: (400px)[2];
-      grid-template-rows: repeat(2, 400px);
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "a1 b1";
+  -ms-grid-rows: (400px) [2];
+  grid-template-rows: repeat(2, 400px);
   grid-column-gap: 10px;
 }
 
 @media screen and (max-width: 640px) {
   .upperGroupArea {
     -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-        grid-template-areas: "b1" "a1";
+    grid-template-columns: 1fr;
+    grid-template-areas: "b1" "a1";
     grid-column-gap: 0;
     grid-row-gap: 10px;
     -ms-grid-rows: 200px 400px;
-        grid-template-rows: 200px 400px;
+    grid-template-rows: 200px 400px;
     height: 610px;
   }
 }
@@ -137,8 +137,8 @@ header {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3, 1fr;
-      grid-template-columns: 3, 1fr;
-      grid-template-areas: "a2 b2 c2";
+  grid-template-columns: 3, 1fr;
+  grid-template-areas: "a2 b2 c2";
   text-align: center;
   border-bottom: solid;
 }
