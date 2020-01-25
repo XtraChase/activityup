@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Header from "../Header";
+import { Link, Redirect } from "react-router-dom";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import API from "../../utils/API";
@@ -36,6 +35,29 @@ export default class Login extends Component {
       username: "",
       password: ""
     });
+    this.redirect();
+    console.log("Authenticated: " + this.props.authenticated);
+  }
+
+  redirect() {
+    // API.getUser().then(response => {
+    //   if (response.data.user) {
+    //     console.log("(App.js)Logged in as: " + response.data.user.username);
+    //     this.setState({
+    //       authenticated: true,
+    //       username: response.data.user.username
+    //     });
+    //   } else {
+    //     console.log("App.js: no user");
+    //     this.setState({ authenticated: false, username: null });
+    //   }
+    // });
+
+    // if (this.state.authenticated) {
+    return <Redirect to="/dashboard" />;
+    // } else {
+    //   alert("Please enter a valid username and password");
+    // }
   }
 
   render() {
@@ -70,6 +92,7 @@ export default class Login extends Component {
                 name="password"
               />
             </div>
+
             <input type="submit" value="Login" />
           </form>
         </div>
