@@ -41,7 +41,7 @@ export default class Login extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Header authenticated={this.props.authenticated}/>
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
             <h2>Login</h2>

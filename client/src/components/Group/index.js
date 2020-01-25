@@ -7,10 +7,10 @@ import AdvertisedActivities from "../Home/AdvertisedActivities";
 import Footer from "../Footer";
 import "./styleGroup.css";
 
-function Group() {
+function Group(props) {
   return (
     <div>
-      <GroupHeader />
+      <Header authenticated={props.authenticated} />
       <div className="headerBuffer"></div>
       <div className="upperGroupArea">
         <EventDetails />

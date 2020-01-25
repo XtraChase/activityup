@@ -4,10 +4,10 @@ import YourGroups from "./YourGroups";
 import GroupRecommendations from "./GroupRecommendations";
 import Footer from "../Footer";
 
-function Dashboard() {
+function Dashboard(props) {
   return (
     <div>
-      <Header />
+      <Header authenticated={props.authenticated}/>
       <div className="headerBuffer"></div>
       <YourGroups />
       <GroupRecommendations />

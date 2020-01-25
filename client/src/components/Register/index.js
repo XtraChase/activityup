@@ -47,7 +47,7 @@ class Register extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Header authenticated={this.props.authenticated}/>
         <div className="register">
           <form onSubmit={this.register}>
             <h2>Register</h2>
