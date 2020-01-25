@@ -129,17 +129,6 @@ header {
   }
 }
 
-.upVoteArrow {
-  position: absolute;
-  top: 35px;
-  right: 35px;
-  cursor: pointer;
-  -webkit-filter: drop-shadow(0px 0px 0 white)
-    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
-  filter: drop-shadow(0px 0px 0 #f8f8f8)
-    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
-}
-
 .activityTypeContainer {
   font-size: 2em;
   position: relative;
@@ -214,6 +203,16 @@ header {
   }
 }
 
+.imageRow {
+  padding-bottom: 5%;
+}
+
+.imageRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
 .imageColumn {
   position: relative;
   text-align: center;
@@ -261,38 +260,15 @@ header {
   -webkit-text-stroke: 0.1px black;
 }
 
-.trendingRow::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.trendingColumn {
-  float: left;
-  width: 50%;
-  padding: 30px;
-  @media screen and (max-width: 500px) {
-    width: 100%;
-  }
-}
-
-.imageRow {
-  padding-bottom: 5%;
-}
-
-.imageRow::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.imageColumn {
-  float: left;
-  width: 50%;
-  // padding: 30px;
-  @media screen and (max-width: 500px) {
-    width: 100%;
-  }
+.upVoteArrow {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 0 white)
+    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
+  filter: drop-shadow(0px 0px 0 #f8f8f8)
+    drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
 }
 
 .dashboardTitle {
