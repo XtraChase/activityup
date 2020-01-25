@@ -20,7 +20,7 @@ class AdvertisedActivities extends Component {
               alt="activity type"
               width="100%"
             />
-            <UpVote activity="1" />
+            <UpVote activity="1" handleArrowClick={() => console.log("upvote!")} />
           </div>
           <div className="advertisedColumn upVoteableImage">
             <img
@@ -29,7 +29,7 @@ class AdvertisedActivities extends Component {
               alt="activity type"
               width="100%"
             />
-            <UpVote activity="2" />
+            <UpVote activity="2" handleArrowClick={() => console.log("upvote!")} />
           </div>
         </div>
       </>
