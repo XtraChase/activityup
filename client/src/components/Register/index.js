@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "../Header";
 import API from "../../utils/API";
-import "./styles.css";
 
 class Register extends Component {
   constructor(props) {
@@ -48,7 +46,6 @@ class Register extends Component {
   render() {
     return (
       <>
-        <Header />
         <div className="register">
           <form onSubmit={this.register}>
             <h2>Register</h2>

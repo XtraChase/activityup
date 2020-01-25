@@ -20,11 +20,10 @@ class AdvertisedActivities extends Component {
               alt="activity type"
               width="100%"
             />
-<<<<<<< HEAD:client/src/components/Home/AdvertisedActivities.js
-            <UpVote activity="1" handleArrowClick={() => console.log("upvote!")} />
-=======
-            <UpVote activity="3" />
->>>>>>> css and classname cleanup related to images:client/src/components/AdvertisedActivities.js
+            <UpVote
+              activity="3"
+              handleArrowClick={() => console.log("upvote!")}
+            />
           </div>
           <div className="imageColumn">
             <img
@@ -33,11 +32,10 @@ class AdvertisedActivities extends Component {
               alt="activity type"
               width="100%"
             />
-<<<<<<< HEAD:client/src/components/Home/AdvertisedActivities.js
-            <UpVote activity="2" handleArrowClick={() => console.log("upvote!")} />
-=======
-            <UpVote activity="4" />
->>>>>>> css and classname cleanup related to images:client/src/components/AdvertisedActivities.js
+            <UpVote
+              activity="4"
+              handleArrowClick={() => console.log("upvote!")}
+            />
           </div>
         </div>
       </>
