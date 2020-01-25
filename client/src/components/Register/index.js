@@ -54,6 +54,7 @@ class Register extends Component {
           />
         </Link>
         <br />
+        {/* <Header authenticated={this.props.authenticated}/> */}
         <div className="register">
           <form onSubmit={this.register}>
             <h2>Create an account</h2>

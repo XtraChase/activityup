@@ -47,7 +47,7 @@ export default class Header extends Component {
             Create A New Group
           </div>
 
-          <div className="welcomeUser">Welcome {this.state.username}</div>
+          <Link to="/dashboard" className="welcomeUser">Welcome {this.state.username}</Link>
           <Link to="/" className="loginBtn">
             Logout
           </Link>

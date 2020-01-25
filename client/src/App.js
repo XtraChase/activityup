@@ -56,7 +56,6 @@ class App extends Component {
           <Route
             path="/login"
             component={() => <Login authenticated={this.state.authenticated} />}
-            authenticated={this.state.authenticated}
             key={"login" + Date.now()}
           />
           <Route
@@ -112,7 +111,6 @@ class App extends Component {
           <Route
             path="/group"
             component={() => <Group authenticated={this.state.authenticated} />}
-            authenticated={this.state.authenticated}
             key={"group" + Date.now()}
           />
           <Route

@@ -9,5 +9,8 @@ export default {
   },
   getUser() {
     return axios.get("api/users/sessionUser")
+  },
+  getGroupByUser(id) {
+    return axios.get(`api/groups/byUser?id=${id}`)
   }
 };
