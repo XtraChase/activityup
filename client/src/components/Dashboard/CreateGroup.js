@@ -2,10 +2,27 @@ import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
 import axios from "axios";
 
-export default class CreateGroup extends Component {
+export class CreateGroup extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { value: "" };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   state = {
     selectedFile: null
   };
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
+
+  handleSubmit(event) {
+    alert("Group Name: " + this.state.value);
+    event.preventDefault();
+  }
 
   fileSelectedHandler = event => {
     this.setState({
@@ -50,12 +67,26 @@ export default class CreateGroup extends Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <input type="file" onChange={this.fileSelectedHandler} />
-          <button onClick={this.fileUploadHandler}>Upload</button>
-          <div className="container">Input group details</div>
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Group Name:
+              <input
+                type="text"
+                value={this.state.value}
+                onChange={this.handleChange}
+              />
+            </label>
+            <input type="file" onChange={this.fileSelectedHandler} />
+            <button onClick={this.fileUploadHandler}>Upload</button>
+          </form>
         </Modal.Body>
         <Modal.Footer>
-          <Button onClick={this.props.onHide}>Add Group</Button>
+          <input
+            className="blue"
+            type="submit"
+            value="Add Group"
+            onClick={this.props.onHide}
+          />
         </Modal.Footer>
       </Modal>
     );
