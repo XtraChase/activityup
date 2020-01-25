@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { CreateGroup } from "./CreateGroup";
-import API from "../../utils/API";
+import CreateGroup from "./CreateGroup.js";
+import API from "../../utils/API"
 
-class Header extends Component {
+export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -31,9 +31,11 @@ class Header extends Component {
     });
   }
 
-  render() {
-    let addModalClose = () => this.setState({ addModalShow: false });
+  addModalClose() {
+    this.setState({ addModalShow: false });
+  }
 
+  render() {
     return (
       <>
         <header>
@@ -50,19 +52,17 @@ class Header extends Component {
           >
             Create A New Group
           </div>
-          <div className="welcomeUser">Welcome {this.state.username}</div>
+          <div className="welcomeUser">Welcome (username)</div>
           <Link to="/" className="loginBtn">
             Logout
           </Link>
+          <CreateGroup
+            show={this.state.addModalShow}
+            onHide={() => this.addModalClose()}
+            style={{ background: "none" }}
+          />
         </header>
-        <CreateGroup
-          show={this.state.addModalShow}
-          onHide={addModalClose}
-          style={{ background: "none" }}
-        />
       </>
     );
   }
 }
-
-export default Header;

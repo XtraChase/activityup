@@ -1,5 +1,7 @@
 const { Group } = require("../models");
 
+// CONTROLLER: functions that are called at /api/groups/
+
 module.exports = {
   findAll: (req, res) => {
     Group.find(req.query)

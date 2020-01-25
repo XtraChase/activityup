@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "../Home/Header";
+import Header from "../Header";
 import API from "../../utils/API";
 
 class Register extends Component {
@@ -8,7 +8,7 @@ class Register extends Component {
     super(props);
 
     this.state = {
-      fullName: "",
+      fullname: "",
       username: "",
       email: "",
       password: "",
@@ -35,7 +35,7 @@ class Register extends Component {
         .then(user => console.log(user))
         .catch(err => console.log(err));
       this.setState({
-        fullName: "",
+        fullname: "",
         username: "",
         email: "",
         password: "",
@@ -47,15 +47,16 @@ class Register extends Component {
   render() {
     return (
       <>
+        <Header />
         <div className="register">
           <form onSubmit={this.register}>
-            <h2>Create an account</h2>
+            <h2>Register</h2>
             <div className="name">
               <input
                 type="text"
                 placeholder="Full Name"
-                name="fullName"
-                value={this.state.fullName}
+                name="fullname"
+                value={this.state.fullname}
                 onChange={this.update}
               />
             </div>
@@ -71,7 +72,7 @@ class Register extends Component {
             <div className="email">
               <input
                 type="text"
-                placeholder="Email"
+                placeholder="Enter your email"
                 name="email"
                 value={this.state.email}
                 onChange={this.update}
@@ -96,14 +97,16 @@ class Register extends Component {
               />
             </div>
 
-            <input className="blue" type="submit" value="Submit" />
+            <input type="submit" value="Login" />
           </form>
-          <p>Already have an account?</p>
-          <Link to="/login">Login</Link>
+
+          <Link to="/login">Login Here</Link>
         </div>
       </>
     );
   }
 }
+
+//PLEASE CONFIRM THE ROUTING IS GOOD - SENDING DATA TO THE DB ---- THANKS
 
 export default Register;

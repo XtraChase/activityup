@@ -13,7 +13,7 @@ function TrendingActivities() {
               alt="activity type"
               width="100%"
             />
-            <UpVote activity="3" />
+            <UpVote activity="3" handleArrowClick={() => console.log("upvote!")} />
           </div>
           <div className="trendingColumn upVoteableImage">
             <img
@@ -22,7 +22,7 @@ function TrendingActivities() {
               alt="activity type"
               width="100%"
             />
-            <UpVote activity="4" />
+            <UpVote activity="4" handleArrowClick={() => console.log("upvote!")} />
           </div>
         </div>
       </div>
