@@ -3,12 +3,12 @@ import React from "react";
 function GroupRecommendations() {
   return (
     <div>
-      <div className="advertised">
+      <div>
         <h1>Recommended Groups</h1>
-        <div className="advertisedRow">
-          <div className="advertisedColumn upVoteableImage">
+        <div className="imageRow">
+          <div className="imageColumn">
             <img
-              className="GroupImage"
+              className="image"
               src="https://s3.amazonaws.com/activejunky-cdn/aj-content/hikinggroup.jpg"
               alt="activity type"
               width="100%"
@@ -18,9 +18,9 @@ function GroupRecommendations() {
               <p>Just out here doin it!</p>
             </div>
           </div>
-          <div className="advertisedColumn upVoteableImage">
+          <div className="imageColumn">
             <img
-              className="GroupImage"
+              className="image"
               src="https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2017/01/falconsflags_getty_oneuseonly.jpg"
               alt="activity type"
               width="100%"

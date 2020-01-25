@@ -157,12 +157,6 @@ header {
   filter: drop-shadow(0px 0px 0 #f8f8f8) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
 }
 
-.upVoteableImage {
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-}
-
 .activityTypeContainer {
   font-size: 2em;
   position: relative;
@@ -246,32 +240,35 @@ header {
   filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
-.GroupImage {
+.image {
   height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 @media screen and (max-width: 940px) {
-  .GroupImage {
+  .image {
     height: 200px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .GroupImage {
+  .image {
     height: 350px;
   }
 }
 
-.groupImageColumn {
+.imageColumn {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
   float: left;
   width: 50%;
   padding: 1%;
 }
 
 @media screen and (max-width: 500px) {
-  .groupImageColumn {
+  .imageColumn {
     width: 100%;
     padding: 1% 0;
   }
@@ -332,23 +329,23 @@ header {
   }
 }
 
-.advertisedRow {
+.imageRow {
   padding-bottom: 5%;
 }
 
-.advertisedRow::after {
+.imageRow::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.advertisedColumn {
+.imageColumn {
   float: left;
   width: 50%;
 }
 
 @media screen and (max-width: 500px) {
-  .advertisedColumn {
+  .imageColumn {
     width: 100%;
   }
 }
