@@ -7,7 +7,7 @@ function YourGroups() {
       <div className="advertised">
         <h1>Your Groups</h1>
         <div className="advertisedRow">
-          <Link to="/Group" className="advertisedColumn upVoteableImage">
+          <Link to="/Group" className="groupImageColumn upVoteableImage">
             <img
               className="GroupImage"
               src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/09/National-Video-Game-Day-796x416.jpg"
@@ -20,7 +20,7 @@ function YourGroups() {
             </div>
           </Link>
 
-          <Link to="/Group" className="advertisedColumn upVoteableImage">
+          <Link to="/Group" className="groupImageColumn upVoteableImage">
             <img
               className="GroupImage"
               src="https://www.iloveblackandwhitephotography.com/wp-content/uploads/MattMitschke.jpg"

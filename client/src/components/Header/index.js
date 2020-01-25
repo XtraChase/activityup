@@ -52,7 +52,12 @@ export default class Header extends Component {
           >
             Create A New Group
           </div>
+<<<<<<< HEAD:client/src/components/Header/index.js
           <div className="welcomeUser">Welcome (username)</div>
+=======
+
+          <div className="welcomeUser">Welcome {this.state.username}</div>
+>>>>>>> group images margin style fix:client/src/components/Dashboard/Header.js
           <Link to="/" className="loginBtn">
             Logout
           </Link>

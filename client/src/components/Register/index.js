@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Header from "../Header";
 import API from "../../utils/API";
+import "./styles.css";
 
 class Register extends Component {
   constructor(props) {
@@ -99,8 +100,10 @@ class Register extends Component {
 
             <input type="submit" value="Login" />
           </form>
-
-          <Link to="/login">Login Here</Link>
+          <div className="accountQuestionContainer">
+            <p>Already have an account?</p>
+            <Link to="/login">Login</Link>
+          </div>
         </div>
       </>
     );
