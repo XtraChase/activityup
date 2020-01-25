@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "../Home/Header";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
-import "./styles.css";
 import API from "../../utils/API";
+import "./styles.css";
 
 class Login extends Component {
   constructor(props) {
@@ -41,7 +40,13 @@ class Login extends Component {
   render() {
     return (
       <>
-        <Header />
+        <Link to="/">
+          <img
+            className="logo"
+            src="images/ActivityUP-Logo.png"
+            alt="ActivityUP Logo"
+          />
+        </Link>
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
             <h2>Login</h2>

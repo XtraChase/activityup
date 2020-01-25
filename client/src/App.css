@@ -264,15 +264,28 @@ header {
   }
 }
 
+.groupImageColumn {
+  float: left;
+  width: 50%;
+  padding: 1%;
+}
+
+@media screen and (max-width: 500px) {
+  .groupImageColumn {
+    width: 100%;
+    padding: 1% 0;
+  }
+}
+
 .text-block {
   position: absolute;
-  width: 90%;
+  width: 96%;
+  margin: 0 5%;
   background-color: rgba(0, 0, 0, 0.507);
   color: white;
   padding: 8px 20px;
-  padding-bottom: 0;
-  bottom: 30px;
-  left: 50%;
+  bottom: 3.5%;
+  left: 45%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   display: block;
@@ -280,11 +293,15 @@ header {
 }
 
 @media screen and (max-width: 500px) {
+  .text-block {
+    width: 100%;
+    bottom: 1.5%;
+  }
   .text-block h4 {
-    font-size: 1.2em;
+    font-size: 1.8em;
   }
   .text-block p {
-    font-size: 0.7em;
+    font-size: 1em;
   }
 }
 
@@ -328,7 +345,6 @@ header {
 .advertisedColumn {
   float: left;
   width: 50%;
-  padding: 30px;
 }
 
 @media screen and (max-width: 500px) {

@@ -5,13 +5,11 @@ function Header() {
   return (
     <>
       <header>
-        <Link to="/" className="logoContainer">
-          <img
-            className="logo"
-            src="images/ActivityUP-Logo.png"
-            alt="ActivityUP Logo"
-          />
-        </Link>
+        <img
+          className="logo"
+          src="images/ActivityUP-Logo.png"
+          alt="ActivityUP Logo"
+        />
         <Link to="/dashboard" className="newGroupBtn" id="newGroupBtnHome">
           Create A New Group
         </Link>

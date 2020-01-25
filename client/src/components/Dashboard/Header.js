@@ -50,6 +50,7 @@ class Header extends Component {
           >
             Create A New Group
           </div>
+
           <div className="welcomeUser">Welcome {this.state.username}</div>
           <Link to="/" className="loginBtn">
             Logout
