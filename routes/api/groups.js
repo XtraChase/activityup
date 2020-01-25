@@ -8,4 +8,7 @@ router.route("/")
     .get(groupController.findAll)
     .post(groupController.create);
 
+router.route("/byUser")
+    .get(groupController.byUser)
+
 module.exports = router;
