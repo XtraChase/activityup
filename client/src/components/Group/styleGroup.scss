@@ -19,7 +19,9 @@
 
 .eventDetailsPage {
   grid-area: a1;
-  border-style: solid;
+  // border-style: solid;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: #ff88002f;
 }
 
 .eventDetailsHeader {
@@ -27,7 +29,6 @@
   grid-template-columns: (3, 1fr);
   grid-template-areas: "a2 b2 c2";
   text-align: center;
-  border-bottom: solid;
 }
 
 .suggest {
@@ -37,13 +38,10 @@
 
 .eventDate {
   grid-area: b2;
-  border-right: solid;
-  border-left: solid;
-}
-
-.leaveEvent {
-  grid-area: c2;
-  margin: 5px;
+  margin: auto;
+  font-size: 1.2em;
+  color: #ff8900;
+  font-weight: bold;
 }
 
 .eventSuggestions {
@@ -64,11 +62,6 @@
   background: rgba(97, 97, 97, 0.39);
 }
 
-.chatPage {
-  grid-area: b1;
-  border-style: solid;
-}
-
 .suggestionRow::after {
   content: "";
   clear: both;
@@ -82,4 +75,23 @@
   @media screen and (max-width: 500px) {
     width: 100%;
   }
+}
+
+.leaveEvent {
+  grid-area: c2;
+  margin: 5px;
+}
+
+//Group Chat
+
+.chatPage {
+  grid-area: b1;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: #0015ff23;
+}
+
+.chatTitle {
+  font-size: 2em;
+  color: #0015ff;
+  text-align: center;
 }

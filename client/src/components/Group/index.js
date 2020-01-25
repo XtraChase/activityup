@@ -10,7 +10,7 @@ import "./styleGroup.css";
 function Group() {
   return (
     <div>
-      <GroupHeader />
+      <Header />
       <div className="headerBuffer"></div>
       <div className="upperGroupArea">
         <EventDetails />

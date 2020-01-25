@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CreateGroup from "./CreateGroup.js";
-import API from "../../utils/API"
+import API from "../../utils/API";
 
 export default class Header extends Component {
   constructor(props) {
@@ -52,7 +52,8 @@ export default class Header extends Component {
           >
             Create A New Group
           </div>
-          <div className="welcomeUser">Welcome (username)</div>
+
+          <div className="welcomeUser">Welcome {this.state.username}</div>
           <Link to="/" className="loginBtn">
             Logout
           </Link>

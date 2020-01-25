@@ -12,24 +12,30 @@ class AdvertisedActivities extends Component {
   render() {
     return (
       <>
-        <div className="advertised advertisedRow">
-          <div className="advertisedColumn upVoteableImage">
+        <div className="imageRow">
+          <div className="imageColumn">
             <img
-              className="GroupImage"
+              className="image"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
               alt="activity type"
               width="100%"
             />
-            <UpVote activity="1" handleArrowClick={() => console.log("upvote!")} />
+            <UpVote
+              activity="3"
+              handleArrowClick={() => console.log("upvote!")}
+            />
           </div>
-          <div className="advertisedColumn upVoteableImage">
+          <div className="imageColumn">
             <img
-              className="GroupImage"
+              className="image"
               src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
               alt="activity type"
               width="100%"
             />
-            <UpVote activity="2" handleArrowClick={() => console.log("upvote!")} />
+            <UpVote
+              activity="4"
+              handleArrowClick={() => console.log("upvote!")}
+            />
           </div>
         </div>
       </>

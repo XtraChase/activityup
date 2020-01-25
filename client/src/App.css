@@ -148,21 +148,6 @@ header {
   }
 }
 
-.upVoteArrow {
-  position: absolute;
-  top: 35px;
-  right: 35px;
-  cursor: pointer;
-  -webkit-filter: drop-shadow(0px 0px 0 white) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
-  filter: drop-shadow(0px 0px 0 #f8f8f8) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
-}
-
-.upVoteableImage {
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-}
-
 .activityTypeContainer {
   font-size: 2em;
   position: relative;
@@ -246,33 +231,59 @@ header {
   filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
-.GroupImage {
+.image {
   height: 350px;
   -o-object-fit: cover;
      object-fit: cover;
 }
 
 @media screen and (max-width: 940px) {
-  .GroupImage {
+  .image {
     height: 200px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .GroupImage {
+  .image {
     height: 350px;
+  }
+}
+
+.imageRow {
+  padding-bottom: 5%;
+}
+
+.imageRow::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.imageColumn {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  float: left;
+  width: 50%;
+  padding: 1%;
+}
+
+@media screen and (max-width: 500px) {
+  .imageColumn {
+    width: 100%;
+    padding: 1% 0;
   }
 }
 
 .text-block {
   position: absolute;
-  width: 90%;
+  width: 96%;
+  margin: 0 5%;
   background-color: rgba(0, 0, 0, 0.507);
   color: white;
   padding: 8px 20px;
-  padding-bottom: 0;
-  bottom: 30px;
-  left: 50%;
+  bottom: 3.5%;
+  left: 45%;
   -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   display: block;
@@ -280,11 +291,15 @@ header {
 }
 
 @media screen and (max-width: 500px) {
+  .text-block {
+    width: 100%;
+    bottom: 1.5%;
+  }
   .text-block h4 {
-    font-size: 1.2em;
+    font-size: 1.8em;
   }
   .text-block p {
-    font-size: 0.7em;
+    font-size: 1em;
   }
 }
 
@@ -297,44 +312,13 @@ header {
   -webkit-text-stroke: 0.1px black;
 }
 
-.trendingRow::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.trendingColumn {
-  float: left;
-  width: 50%;
-  padding: 30px;
-}
-
-@media screen and (max-width: 500px) {
-  .trendingColumn {
-    width: 100%;
-  }
-}
-
-.advertisedRow {
-  padding-bottom: 5%;
-}
-
-.advertisedRow::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.advertisedColumn {
-  float: left;
-  width: 50%;
-  padding: 30px;
-}
-
-@media screen and (max-width: 500px) {
-  .advertisedColumn {
-    width: 100%;
-  }
+.upVoteArrow {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(0px 0px 0 white) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
+  filter: drop-shadow(0px 0px 0 #f8f8f8) drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
 }
 
 .dashboardTitle {
