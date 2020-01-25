@@ -29,7 +29,9 @@
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: a1;
-  border-style: solid;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: #ff88002f;
 }
 
 .eventDetailsHeader {
@@ -39,7 +41,6 @@
       grid-template-columns: 3, 1fr;
       grid-template-areas: "a2 b2 c2";
   text-align: center;
-  border-bottom: solid;
 }
 
 .suggest {
@@ -53,15 +54,10 @@
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: b2;
-  border-right: solid;
-  border-left: solid;
-}
-
-.leaveEvent {
-  -ms-grid-row: 1;
-  -ms-grid-column: 3;
-  grid-area: c2;
-  margin: 5px;
+  margin: auto;
+  font-size: 1.2em;
+  color: #ff8900;
+  font-weight: bold;
 }
 
 .eventSuggestions {
@@ -85,13 +81,6 @@
   background: rgba(97, 97, 97, 0.39);
 }
 
-.chatPage {
-  -ms-grid-row: 1;
-  -ms-grid-column: 2;
-  grid-area: b1;
-  border-style: solid;
-}
-
 .suggestionRow::after {
   content: "";
   clear: both;
@@ -108,5 +97,27 @@
   .suggestionColumn {
     width: 100%;
   }
+}
+
+.leaveEvent {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: c2;
+  margin: 5px;
+}
+
+.chatPage {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: b1;
+  -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  background-color: #0015ff23;
+}
+
+.chatTitle {
+  font-size: 2em;
+  color: #0015ff;
+  text-align: center;
 }
 /*# sourceMappingURL=styleGroup.css.map */
