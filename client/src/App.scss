@@ -140,12 +140,6 @@ header {
     drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
 }
 
-.upVoteableImage {
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-}
-
 .activityTypeContainer {
   font-size: 2em;
   position: relative;
@@ -209,7 +203,7 @@ header {
   filter: saturate(1.2) contrast(100%) brightness(120%);
 }
 
-.GroupImage {
+.image {
   height: 350px;
   object-fit: cover;
   @media screen and (max-width: 940px) {
@@ -220,7 +214,10 @@ header {
   }
 }
 
-.groupImageColumn {
+.imageColumn {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
   float: left;
   width: 50%;
   padding: 1%;
@@ -279,17 +276,17 @@ header {
   }
 }
 
-.advertisedRow {
+.imageRow {
   padding-bottom: 5%;
 }
 
-.advertisedRow::after {
+.imageRow::after {
   content: "";
   clear: both;
   display: table;
 }
 
-.advertisedColumn {
+.imageColumn {
   float: left;
   width: 50%;
   // padding: 30px;
