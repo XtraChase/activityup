@@ -6,10 +6,10 @@ import TrendingActivities from "./TrendingActivities";
 import AdvertisedActivities from "./AdvertisedActivities";
 import Footer from "../Footer";
 
-function Body() {
+function Body(props) {
   return (
     <div>
-      <Header />
+      <Header authenticated={props.authenticated}/>
       <div className="headerBuffer"></div>
       <Title />
       <ActivityTypes />

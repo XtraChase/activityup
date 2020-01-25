@@ -35,17 +35,10 @@ export default class Header extends Component {
     this.setState({ addModalShow: false });
   }
 
-  render() {
-    return (
-      <>
-        <header>
-          <Link to="/" className="logoContainer">
-            <img
-              className="logo"
-              src="images/ActivityUP-Logo.png"
-              alt="ActivityUP Logo"
-            />
-          </Link>
+  checkAuth() {
+    if (this.props.authenticated) {
+      return (
+        <>
           <div
             className="newGroupBtn"
             onClick={() => this.setState({ addModalShow: true })}
@@ -62,6 +55,34 @@ export default class Header extends Component {
             onHide={() => this.addModalClose()}
             style={{ background: "none" }}
           />
+        </>
+      );
+    } else {
+      return (
+        <>
+          <Link to="/dashboard" className="newGroupBtn">
+            Create A New Group
+          </Link>
+          <Link to="/login" className="loginBtn">
+            Login
+          </Link>
+        </>
+      );
+    }
+  }
+
+  render() {
+    return (
+      <>
+        <header>
+          <Link to="/" className="logoContainer">
+            <img
+              className="logo"
+              src="images/ActivityUP-Logo.png"
+              alt="ActivityUP Logo"
+            />
+          </Link>
+          {this.checkAuth()}
         </header>
       </>
     );

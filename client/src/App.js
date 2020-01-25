@@ -14,43 +14,59 @@ class App extends Component {
     username: null
   };
 
-  // componentDidMount() {
-  //   this.getUser();
-  // }
+  componentDidMount() {
+    this.getUser();
+  }
 
-  // getUser() {
-  //   API.getUser().then(response => {
-  //     if (response.data.user) {
-  //       console.log("(App.js)Logged in as: " + response.data.user);
-  //       this.setState({
-  //         authenticated: true,
-  //         username: response.data.user.username
-  //       });
-  //     } else {
-  //       console.log("App.js: no user");
-  //       this.setState({ authenticated: false, username: null });
-  //     }
-  //   });
-  // }
+  getUser() {
+    API.getUser().then(response => {
+      if (response.data.user) {
+        console.log("(App.js)Logged in as: " + response.data.user);
+        this.setState({
+          authenticated: true,
+          username: response.data.user.username
+        });
+      } else {
+        console.log("App.js: no user");
+        this.setState({ authenticated: false, username: null });
+      }
+    });
+  }
 
   render() {
     return (
       <Router>
         <div className="App">
-          <Route exact path="/" component={Home} key={"root" + Date.now()} />
-          <Route path="/login" component={Login} key={"login" + Date.now()} />
+          <Route
+            exact
+            path="/"
+            component={() => <Home authenticated={this.state.authenticated} />}
+            key={"root" + Date.now()}
+          />
+          <Route
+            path="/login"
+            component={() => <Login authenticated={this.state.authenticated} />}
+            authenticated={this.state.authenticated}
+            key={"login" + Date.now()}
+          />
           <Route
             path="/register"
-            component={Register}
+            component={() => <Register authenticated={this.state.authenticated} />}
+            authenticated={this.state.authenticated}
             key={"register" + Date.now()}
           />
           <Route
             path="/dashboard"
-            component={Dashboard}
+            component={() => <Dashboard authenticated={this.state.authenticated} />}
             key={"dashboard" + Date.now()}
             user={this.state.username}
           />
-          <Route path="/group" component={Group} key={"group" + Date.now()} />
+          <Route
+            path="/group"
+            component={() => <Group authenticated={this.state.authenticated} />}
+            authenticated={this.state.authenticated}
+            key={"group" + Date.now()}
+          />
         </div>
       </Router>
     );

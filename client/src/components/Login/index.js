@@ -41,13 +41,7 @@ export default class Login extends Component {
   render() {
     return (
       <>
-        <Link to="/">
-          <img
-            className="logo"
-            src="images/ActivityUP-Logo.png"
-            alt="ActivityUP Logo"
-          />
-        </Link>
+        <Header authenticated={this.props.authenticated}/>
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
             <h2>Login</h2>
