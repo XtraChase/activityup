@@ -54,11 +54,7 @@ export default class Header extends Component {
     } else {
       return (
         <>
-          <Link
-            to="/dashboard"
-            className="newGroupBtn"
-            style={{ marginRight: "90px" }}
-          >
+          <Link to="/login" className="newGroupBtn">
             Create A New Group
           </Link>
           <Link to="/login" className="loginBtn">
