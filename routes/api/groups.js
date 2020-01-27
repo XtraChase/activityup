@@ -8,4 +8,7 @@ router.route("/")
     .get(groupController.findAll)
     .post(groupController.create);
 
+//route to /api/groups
+router.route("/groups").post(groupController.create);
+
 module.exports = router;

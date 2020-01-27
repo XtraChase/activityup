@@ -10,6 +10,10 @@ const groupSchema = new Schema({
         type: Schema.Types.String,
         default: "open"
     },
+    image: {
+        type: Schema.Types.String,
+        required: false
+    },
     users: [{
         type: Schema.Types.ObjectId,
         ref: "User",

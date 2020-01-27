@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
-import axios from "axios";
+// import axios from "axios";
 
 export default class CreateGroup extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = { 
+      name: "",
+      image: "",
+      type: "",
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,11 +20,13 @@ export default class CreateGroup extends Component {
   };
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({ name: event.target.value });
   }
 
+  //submit new group to DB
   handleSubmit(event) {
-    alert("Group Name: " + this.state.value);
+    alert("Group Name: " + this.state.name);
+    console.log(this.state);
     event.preventDefault();
   }
 
@@ -30,28 +36,28 @@ export default class CreateGroup extends Component {
     });
   };
 
-  fileUploadHandler = () => {
-    const fd = new FormData();
-    fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
-    // Firebase Storage
-    axios
-      .post(
-        "https://us-central1-activityup-vote.cloudfunctions.net/uploadFile",
-        fd,
-        {
-          onUploadProgress: progressEvent => {
-            console.log(
-              "Upload Progress: " +
-                Math.round((progressEvent.loaded / progressEvent.total) * 100) +
-                "%"
-            );
-          }
-        }
-      )
-      .then(res => {
-        console.log(res);
-      });
-  };
+  // fileUploadHandler = () => {
+  //   const fd = new FormData();
+  //   fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
+  //   // Firebase Storage
+  //   axios
+  //     .post(
+  //       "https://us-central1-activityup-vote.cloudfunctions.net/uploadFile",
+  //       fd,
+  //       {
+  //         onUploadProgress: progressEvent => {
+  //           console.log(
+  //             "Upload Progress: " +
+  //               Math.round((progressEvent.loaded / progressEvent.total) * 100) +
+  //               "%"
+  //           );
+  //         }
+  //       }
+  //     )
+  //     .then(res => {
+  //       console.log(res);
+  //     });
+  // };
 
   render() {
     return (
@@ -66,28 +72,36 @@ export default class CreateGroup extends Component {
             Add A New Group
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Group Name:
+        <form onSubmit={this.handleSubmit}>
+          <Modal.Body>
+              <label>
+                Group Name:
+                <input
+                  type="text"
+                  value={this.state.name}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <input 
+              type="file" 
+              // value={this.state.image}
+              onChange={this.fileSelectedHandler} />
+              {/* <button 
+              className="blue"
+              type="submit"
+              value="Add Group"
+              onClick={this.props.onHide}
+              >Create Group</button> */}
+            <Modal.Footer>
               <input
-                type="text"
-                value={this.state.value}
-                onChange={this.handleChange}
+                className="blue"
+                type="submit"
+                value="Add Group"
+                onClick={this.props.onHide}
               />
-            </label>
-            <input type="file" onChange={this.fileSelectedHandler} />
-            <button onClick={this.fileUploadHandler}>Upload</button>
-          </form>
-        </Modal.Body>
-        <Modal.Footer>
-          <input
-            className="blue"
-            type="submit"
-            value="Add Group"
-            onClick={this.props.onHide}
-          />
-        </Modal.Footer>
+            </Modal.Footer>
+          </Modal.Body>
+        </form>
       </Modal>
     );
   }
