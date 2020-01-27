@@ -11,4 +11,7 @@ router.route("/")
 router.route("/byUser")
     .get(groupController.byUser)
 
+//route to /api/groups
+router.route("/groups").post(groupController.create);
+
 module.exports = router;
