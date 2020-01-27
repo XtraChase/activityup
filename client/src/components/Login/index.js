@@ -29,17 +29,21 @@ export default class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(user => console.log("(login.index.js)" + user.data))
+      .then(user => console.log(user.data))
       .catch(err => console.log(err));
     this.setState({
-      username: "",
+      username: this.state.username,
       password: ""
     });
-    this.redirect();
+    console.log("Username: " + this.state.username);
     console.log("Authenticated: " + this.props.authenticated);
   }
 
-  redirect() {
+  //Redirect to dashboard when login button is clicked
+  redirect = () => {
+    return;
+    // console.log("Authenticated: " + this.props.authenticated);
+
     // API.getUser().then(response => {
     //   if (response.data.user) {
     //     console.log("(App.js)Logged in as: " + response.data.user.username);
@@ -53,12 +57,12 @@ export default class Login extends Component {
     //   }
     // });
 
-    // if (this.state.authenticated) {
-    return <Redirect to="/dashboard" />;
+    // if (this.props.authenticated) {
+
     // } else {
     //   alert("Please enter a valid username and password");
     // }
-  }
+  };
 
   render() {
     return (

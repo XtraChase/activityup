@@ -46,7 +46,6 @@ class Register extends Component {
   render() {
     return (
       <>
-        {/* <Header authenticated={this.props.authenticated}/> */}
         <Link to="/" className="logoContainer">
           <img
             className="logo"
