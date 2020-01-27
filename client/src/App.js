@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Home from "./components/Home";
+import ActivityType from "./components/ActivityType";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Dashboard from "./components/Dashboard";
@@ -42,6 +43,14 @@ class App extends Component {
             path="/"
             component={() => <Home authenticated={this.state.authenticated} />}
             key={"root" + Date.now()}
+          />
+          <Route
+            path="/activitytype"
+            component={() => (
+              <ActivityType authenticated={this.state.authenticated} />
+            )}
+            authenticated={this.state.authenticated}
+            key={"login" + Date.now()}
           />
           <Route
             path="/login"
