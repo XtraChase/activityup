@@ -86,12 +86,7 @@ export default class CreateGroup extends Component {
               type="file" 
               // value={this.state.image}
               onChange={this.fileSelectedHandler} />
-              {/* <button 
-              className="blue"
-              type="submit"
-              value="Add Group"
-              onClick={this.props.onHide}
-              >Create Group</button> */}
+              {/* <button onClick={this.fileUploadHandler}>Upload</button> */}
             <Modal.Footer>
               <input
                 className="blue"
