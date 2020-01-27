@@ -3,8 +3,10 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import ForgotPassword from "./components/ForgotPassword";
 import Dashboard from "./components/Dashboard";
 import Group from "./components/Group";
+import ActivityType from "./components/ActivityType";
 import API from "./utils/API";
 import "./App.css";
 
@@ -56,6 +58,12 @@ class App extends Component {
             key={"register" + Date.now()}
           />
           <Route
+            path="/forgotpassword"
+            component={() => <ForgotPassword authenticated={this.state.authenticated} />}
+            authenticated={this.state.authenticated}
+            key={"forgotpassword" + Date.now()}
+          />
+          <Route
             path="/dashboard"
             component={() => <Dashboard authenticated={this.state.authenticated} />}
             key={"dashboard" + Date.now()}
@@ -67,6 +75,12 @@ class App extends Component {
             authenticated={this.state.authenticated}
             key={"group" + Date.now()}
           />
+          <Route
+            path="/activitytype"
+            component={() => <ActivityType authenticated={this.state.authenticated} />}
+            authenticated={this.state.authenticated}
+            key={"activitytype" + Date.now()}
+            />
         </div>
       </Router>
     );
