@@ -65,7 +65,7 @@ class YourGroups extends Component {
       <>
         <h1>Your Groups</h1>
         <div className="imageRow">
-          {this.renderGroups()}
+          {this.state.groups ? this.renderGroups() : "You have no groups"}
         </div>
       </>
     );
