@@ -204,7 +204,7 @@ header {
 }
 
 .imageRow {
-  padding-bottom: 5%;
+  padding: 20px 0 60px 0;
 }
 
 .imageRow::after {
@@ -253,8 +253,8 @@ header {
 
 .upVoteCount {
   position: absolute;
-  top: 36px;
-  right: 55px;
+  top: 16px;
+  right: 35px;
   cursor: default;
   color: rgba(255, 255, 255, 0.534);
   -webkit-text-stroke: 0.1px black;
@@ -262,8 +262,8 @@ header {
 
 .upVoteArrow {
   position: absolute;
-  top: 35px;
-  right: 35px;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
   -webkit-filter: drop-shadow(0px 0px 0 white)
     drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
@@ -291,6 +291,7 @@ footer {
   align-items: center;
 }
 
+// empty content / replace me
 .footer-a {
   grid-area: a2;
 }

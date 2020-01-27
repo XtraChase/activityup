@@ -9,7 +9,7 @@ export const UpVote = props => (
       width="15px"
       onClick={() => props.handleArrowClick(props.activity)}
     />
-    <p className="upVoteCount">{props.count}</p>
+    <p className="upVoteCount">{props.upvotes}</p>
   </>
 );
 

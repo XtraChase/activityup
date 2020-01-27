@@ -1,42 +1,40 @@
 import React, { Component } from "react";
+import Activities from "../../utils/activities.json";
 import UpVote from "./UpVote";
 
 class AdvertisedActivities extends Component {
   state = {
+    Activities,
     activity: "",
-    count: 0
+    upvotes: 0
   };
 
-  handleArrowClick = activity => {};
+  handleUpVote = activity => {
+    console.log("Activity Upvoted!");
+    // let update = {
+    //   upvotes: this.state.upvotes
+    // };
+  };
 
   render() {
     return (
       <>
         <div className="imageRow">
-          <div className="imageColumn">
-            <img
-              className="image"
-              src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
-              alt="activity type"
-              width="100%"
-            />
-            <UpVote
-              activity="3"
-              handleArrowClick={() => console.log("upvote!")}
-            />
-          </div>
-          <div className="imageColumn">
-            <img
-              className="image"
-              src="https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg"
-              alt="activity type"
-              width="100%"
-            />
-            <UpVote
-              activity="4"
-              handleArrowClick={() => console.log("upvote!")}
-            />
-          </div>
+          {this.state.Activities.map(activity => (
+            <div className="imageColumn">
+              <img
+                className="image"
+                width="100%"
+                key={activity.id}
+                src={activity.image}
+                alt={activity.activity}
+              />
+              <UpVote
+                activity={activity.id}
+                handleArrowClick={() => this.handleUpVote(activity.id)}
+              />
+            </div>
+          ))}
         </div>
       </>
     );

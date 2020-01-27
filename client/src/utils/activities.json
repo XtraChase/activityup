@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "activity": "NFL Game",
+    "image": "https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg",
+    "upvoted": false,
+    "subtitle": "Let's bring it on game day!",
+    "about": "NFL stuff",
+    "date": "01/02/2020",
+    "ended": false,
+    "members": []
+  },
+  {
+    "id": 2,
+    "activity": "Bar Crawl",
+    "image": "https://socialbostonsports.com/wp-content/uploads/2019/03/GOT_PubCrawl_FacebookAd.png",
+    "upvoted": false,
+    "subtitle": "Beers are comming!",
+    "about": "A bar crawl through Atlanta, dress as your favorite game of thrones character",
+    "date": "04/13/19",
+    "ended": true,
+    "members": []
+  }
+]
