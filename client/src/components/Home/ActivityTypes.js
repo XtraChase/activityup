@@ -12,7 +12,6 @@ function ActivityTypes() {
             alt={key}
             width="100%"
             className="activityTypesImage"
-            rel="preload"
           />
           <p className="activityTypesText">{key.toUpperCase()}</p>
         </div>

@@ -33,6 +33,11 @@ class AdvertisedActivities extends Component {
                 activity={activity.id}
                 handleArrowClick={() => this.handleUpVote(activity.id)}
               />
+              <div className="text-block">
+                <h4>{activity.activity}</h4>
+                <p>{activity.subtitle}</p>
+                <p>{activity.date}</p>
+              </div>
             </div>
           ))}
         </div>

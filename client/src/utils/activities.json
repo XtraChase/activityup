@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "activity": "NFL Game",
+    "activity": "SUPER BOWL",
     "image": "https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg",
     "upvoted": false,
     "subtitle": "Let's bring it on game day!",
@@ -15,7 +15,7 @@
     "activity": "Bar Crawl",
     "image": "https://socialbostonsports.com/wp-content/uploads/2019/03/GOT_PubCrawl_FacebookAd.png",
     "upvoted": false,
-    "subtitle": "Beers are comming!",
+    "subtitle": "Beer is comming!",
     "about": "A bar crawl through Atlanta, dress as your favorite game of thrones character",
     "date": "04/13/19",
     "ended": true,

@@ -39,31 +39,6 @@ export default class Login extends Component {
     console.log("Authenticated: " + this.props.authenticated);
   }
 
-  //Redirect to dashboard when login button is clicked
-  redirect = () => {
-    return;
-    // console.log("Authenticated: " + this.props.authenticated);
-
-    // API.getUser().then(response => {
-    //   if (response.data.user) {
-    //     console.log("(App.js)Logged in as: " + response.data.user.username);
-    //     this.setState({
-    //       authenticated: true,
-    //       username: response.data.user.username
-    //     });
-    //   } else {
-    //     console.log("App.js: no user");
-    //     this.setState({ authenticated: false, username: null });
-    //   }
-    // });
-
-    // if (this.props.authenticated) {
-
-    // } else {
-    //   alert("Please enter a valid username and password");
-    // }
-  };
-
   render() {
     return (
       <>
