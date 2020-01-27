@@ -1,35 +1,35 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CreateGroup from "./CreateGroup.js";
-import API from "../../utils/API";
+// import API from "../../utils/API";
 
 export default class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      addModalShow: false,
-      username: null
+      addModalShow: false
+      // username: null
     };
   }
 
-  componentDidMount() {
-    this.getUser();
-  }
+  // componentWillMount() {
+  //   this.getUser();
+  // }
 
-  getUser() {
-    API.getUser().then(response => {
-      if (response.data.user) {
-        console.log("(App.js)Logged in as: " + response.data.user.username);
-        this.setState({
-          authenticated: true,
-          username: response.data.user.username
-        });
-      } else {
-        console.log("App.js: no user");
-        this.setState({ authenticated: false, username: null });
-      }
-    });
-  }
+  // getUser() {
+  //   API.getUser().then(response => {
+  //     if (response.data.user) {
+  //       console.log("(Header/index.js)Logged in as: " + response.data.user.username);
+  //       this.setState({
+  //         authenticated: true,
+  //         username: response.data.user.username
+  //       });
+  //     } else {
+  //       console.log("Header/index.js: no user");
+  //       this.setState({ authenticated: false, username: null });
+  //     }
+  //   });
+  // }
 
   addModalClose() {
     this.setState({ addModalShow: false });
@@ -47,7 +47,7 @@ export default class Header extends Component {
             Create A New Group
           </div>
 
-          <Link to="/dashboard" className="welcomeUser">Welcome {this.state.username}</Link>
+          <Link to="/dashboard" className="welcomeUser">Welcome {this.props.username}</Link>
           <Link to="/" className="loginBtn">
             Logout
           </Link>
