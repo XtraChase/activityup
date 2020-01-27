@@ -46,9 +46,17 @@ class Register extends Component {
   render() {
     return (
       <>
+        <Link to="/" className="logoContainer">
+          <img
+            className="logo"
+            src="images/ActivityUP-Logo.png"
+            alt="ActivityUP Logo"
+          />
+        </Link>
+        <br />
         <div className="register">
           <form onSubmit={this.register}>
-            <h2>Register</h2>
+            <h2>Create an account</h2>
             <div className="name">
               <input
                 type="text"
@@ -95,7 +103,7 @@ class Register extends Component {
               />
             </div>
 
-            <input type="submit" value="Login" />
+            <input type="submit" value="Sign Up" />
           </form>
           <div className="accountQuestionContainer">
             <p>Already have an account?</p>

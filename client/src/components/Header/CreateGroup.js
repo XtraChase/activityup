@@ -5,22 +5,41 @@ import axios from "axios";
 export default class CreateGroup extends Component {
   constructor(props) {
     super(props);
-    this.state = { value: "" };
+    this.state = {
+      groupName: "",
+      modo: "",
+      category: "",
+      about: "",
+      imageUrl: "",
+      selectedFile: null
+    };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  state = {
-    selectedFile: null
-  };
+  // state = {
+  //   selectedFile: null
+  // };
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.setState({
+      groupName: event.target.groupName,
+      modo: event.target.modo,
+      category: event.target.category,
+      about: event.target.about,
+      imageUrl: event.target.imageUrl
+    });
   }
 
   handleSubmit(event) {
-    alert("Group Name: " + this.state.value);
+    alert(
+      "New Group: " +
+        this.state.groupName +
+        this.state.modo +
+        this.state.category +
+        this.state.about
+    );
     event.preventDefault();
   }
 
@@ -72,10 +91,43 @@ export default class CreateGroup extends Component {
               Group Name:
               <input
                 type="text"
-                value={this.state.value}
+                value={this.state.groupName}
                 onChange={this.handleChange}
               />
             </label>
+            <label>
+              Modo:
+              <input
+                type="text"
+                value={this.state.modo}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Category:
+              <input
+                type="text"
+                value={this.state.category}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              About:
+              <input
+                type="text"
+                value={this.state.about}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Image Url:
+              <input
+                type="text"
+                value={this.state.imageUrl}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>Or upload and image from your device</label>
             <input type="file" onChange={this.fileSelectedHandler} />
             <button onClick={this.fileUploadHandler}>Upload</button>
           </form>

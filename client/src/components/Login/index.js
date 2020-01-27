@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Header from "../Header";
+import { Link, Redirect } from "react-router-dom";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
 import API from "../../utils/API";
@@ -30,18 +29,52 @@ export default class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(user => console.log("(login.index.js)" + user.data))
+      .then(user => console.log(user.data))
       .catch(err => console.log(err));
     this.setState({
-      username: "",
+      username: this.state.username,
       password: ""
     });
+    console.log("Username: " + this.state.username);
+    console.log("Authenticated: " + this.props.authenticated);
   }
+
+  //Redirect to dashboard when login button is clicked
+  redirect = () => {
+    return;
+    // console.log("Authenticated: " + this.props.authenticated);
+
+    // API.getUser().then(response => {
+    //   if (response.data.user) {
+    //     console.log("(App.js)Logged in as: " + response.data.user.username);
+    //     this.setState({
+    //       authenticated: true,
+    //       username: response.data.user.username
+    //     });
+    //   } else {
+    //     console.log("App.js: no user");
+    //     this.setState({ authenticated: false, username: null });
+    //   }
+    // });
+
+    // if (this.props.authenticated) {
+
+    // } else {
+    //   alert("Please enter a valid username and password");
+    // }
+  };
 
   render() {
     return (
       <>
-        <Header authenticated={this.props.authenticated}/>
+        {/* <Header authenticated={this.props.authenticated}/> */}
+        <Link to="/" className="logoContainer">
+          <img
+            className="logo"
+            src="images/ActivityUP-Logo.png"
+            alt="ActivityUP Logo"
+          />
+        </Link>
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
             <h2>Login</h2>
@@ -63,6 +96,7 @@ export default class Login extends Component {
                 name="password"
               />
             </div>
+
             <input type="submit" value="Login" />
           </form>
         </div>
