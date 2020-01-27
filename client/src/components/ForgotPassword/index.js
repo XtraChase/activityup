@@ -1,6 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import Map from './Map';
+import API from "../../utils/API";
 import { Auth } from "aws-amplify";
-import { Link } from 'react-router-dom';
+
 class ForgotPassword extends Component {
     constructor(props) {
       super(props);
@@ -69,7 +72,8 @@ class ForgotPassword extends Component {
   
     renderRequestCodeForm() {
       return (
-        <form onSubmit={this.handleSendCodeClick}>
+        <>
+        <form onSubmit={this.handleSendCodeClick} >
           <div>
             <p>Email</p>
             <input
@@ -87,6 +91,7 @@ class ForgotPassword extends Component {
             </div>
           </div>
         </form>
+        </>
       );
     }
   
