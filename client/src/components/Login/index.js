@@ -29,7 +29,8 @@ export default class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(user => console.log(user.data))
+      .then(user => console.log("(login/index.js)" + user.data))
+      .then(this.props.updateUser)
       .catch(err => console.log(err));
     this.setState({
       username: this.state.username,
@@ -50,6 +51,7 @@ export default class Login extends Component {
             alt="ActivityUP Logo"
           />
         </Link>
+        <Header authenticated={this.props.authenticated} username={this.props.username} />
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
             <h2>Login</h2>
