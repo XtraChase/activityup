@@ -5,7 +5,7 @@ import UpVote from "../Home/UpVote";
 class GroupSuggestions extends Component {
   state = {
     eventExample,
-    event: "",
+    event: 0,
     upvotes: 0
   };
 
@@ -20,25 +20,27 @@ class GroupSuggestions extends Component {
     return (
       <>
         <div className="imageRow">
-          {this.state.eventExample[0].event[0].activities.map(activity => (
-            <div className="imageColumn">
-              <img
-                className="image"
-                width="100%"
-                key={activity.id}
-                src={activity.image}
-                alt={activity.date}
-              />
-              <UpVote
-                activity={activity.id}
-                handleArrowClick={() => this.handleUpVote(activity.id)}
-              />
-              <div className="text-block">
-                <h4>{activity.activity}</h4>
-                <p>{activity.subtitle}</p>
+          {this.state.eventExample[this.state.event].event[0].activities.map(
+            activity => (
+              <div className="imageColumn">
+                <img
+                  className="image"
+                  width="100%"
+                  key={activity.id}
+                  src={activity.image}
+                  alt={activity.date}
+                />
+                <UpVote
+                  activity={activity.id}
+                  handleArrowClick={() => this.handleUpVote(activity.id)}
+                />
+                <div className="text-block">
+                  <h4>{activity.activity}</h4>
+                  <p>{activity.subtitle}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            )
+          )}
         </div>
       </>
     );
