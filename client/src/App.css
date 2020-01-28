@@ -56,7 +56,6 @@ header {
   grid-area: header;
   -ms-grid-column-align: end;
       justify-self: end;
-  margin-right: 280px;
   margin-top: 5px;
   border: none;
   background: none;
@@ -79,10 +78,6 @@ header {
 .newGroupBtn:hover {
   color: #ff8900;
   text-decoration: none;
-}
-
-#newGroupBtnHome {
-  margin-right: 95px;
 }
 
 .welcomeUser {
@@ -149,7 +144,7 @@ header {
 }
 
 .activityTypeContainer {
-  font-size: 2em;
+  font-size: 1.8em;
   position: relative;
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
@@ -158,19 +153,25 @@ header {
 
 @media screen and (max-width: 940px) {
   .activityTypeContainer {
-    font-size: 1.5em;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .activityTypeContainer {
+    font-size: 0.9em;
   }
 }
 
 @media screen and (max-width: 640px) {
   .activityTypeContainer {
-    font-size: 1.1em;
+    font-size: 0.8em;
   }
 }
 
 @media screen and (max-width: 500px) {
   .activityTypeContainer {
-    font-size: 4em;
+    font-size: 3em;
   }
 }
 
