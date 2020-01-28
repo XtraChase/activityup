@@ -2,15 +2,27 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const groupSchema = new Schema({
-    name: {
+    groupName: {
         type: Schema.Types.String,
         required: true
     },
-    type: {
-        type: Schema.Types.String,
-        default: "open"
-    },
-    image: {
+    // category: {
+    //     type: Schema.Types.String,
+    //     required: true
+    // },
+    // type: {
+    //     type: Schema.Types.String,
+    //     default: "open"
+    // },
+    // about: {
+    //     type: Schema.Types.String,
+    //     required: true
+    // },
+    // imageUrl: {
+    //     type: Schema.Types.String,
+    //     required: false
+    // },
+    selectedFile: {
         type: Schema.Types.String,
         required: false
     },

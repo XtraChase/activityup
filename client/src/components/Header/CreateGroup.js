@@ -1,33 +1,37 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
+import API from "../../utils/API";
 // import axios from "axios";
 
 export default class CreateGroup extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      name: "",
-      image: "",
-      type: "",
+      groupName: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.createGroup = this.createGroup.bind(this);
   }
 
-  // state = {
-  //   selectedFile: null
-  // };
+  state = {
+    selectedFile: null
+  };
 
   handleChange(event) {
-    this.setState({ name: event.target.value });
+    this.setState({ groupName: event.target.value });
   }
 
   //submit new group to DB
-  handleSubmit(event) {
-    alert("Group Name: " + this.state.name);
+  createGroup(event) {
     console.log(this.state);
     event.preventDefault();
+    API.createGroup(this.state)
+      .then(group => console.log(group))
+      .catch(err => console.log(err.response));
+    this.setState({
+      groupName: "",
+    });
   }
 
   fileSelectedHandler = event => {
@@ -72,7 +76,7 @@ export default class CreateGroup extends Component {
             Add A New Group
           </Modal.Title>
         </Modal.Header>
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.createGroup}>
           <Modal.Body>
               <label>
                 Group Name:
@@ -86,7 +90,12 @@ export default class CreateGroup extends Component {
               type="file" 
               // value={this.state.image}
               onChange={this.fileSelectedHandler} />
-              {/* <button onClick={this.fileUploadHandler}>Upload</button> */}
+              {/* <button 
+              className="blue"
+              type="submit"
+              value="Add Group"
+              onClick={this.props.onHide}
+              >Create Group</button> */}
             <Modal.Footer>
               <input
                 className="blue"
