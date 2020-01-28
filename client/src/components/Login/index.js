@@ -96,8 +96,13 @@ export default class Login extends Component {
                 name="password"
               />
             </div>
+<<<<<<< HEAD
 
+=======
+            <Link to="/">
+>>>>>>> 95e840c7443f99021b07238d364ddd88f8a26486
             <input type="submit" value="Login" />
+            </Link>
           </form>
         </div>
         <div className="col rightColumn oAuthlogin">

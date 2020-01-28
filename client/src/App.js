@@ -68,6 +68,12 @@ class App extends Component {
             key={"forgotpassword" + Date.now()}
           />
           <Route
+            path="/forgotpassword"
+            component={() => <ForgotPassword authenticated={this.state.authenticated} />}
+            authenticated={this.state.authenticated}
+            key={"forgotpassword" + Date.now()}
+          />
+          <Route
             path="/dashboard"
             component={() => (
               <Dashboard authenticated={this.state.authenticated} />
