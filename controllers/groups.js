@@ -10,8 +10,11 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: (req, res) => {
+    const newGroup = new Group({
+      groupName: req.body.groupName
+    })
     newGroup
-      .save(req.body)
+      .save()
       .then(data => res.json(data))
       .catch(err => res.status(422).json(err));
   },
@@ -31,5 +34,4 @@ module.exports = {
       res.json(savedGroup);
     });
   }
-
 };

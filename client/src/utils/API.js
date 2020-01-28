@@ -17,6 +17,6 @@ export default {
     return axios.get(`api/groups/byUser?id=${id}`);
   },
   createGroup(groupObj) {
-    return axios.post("api/users/sessionUser/groups", groupObj);
+    return axios.post("api/groups/sessionUser/groups", groupObj)
   }
 };
