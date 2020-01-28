@@ -60,6 +60,7 @@ class App extends Component {
             authenticated={this.state.authenticated}
             key={"login" + Date.now()}
           />
+
           <Route
             path="/login"
             component={() => (
@@ -92,13 +93,6 @@ class App extends Component {
             key={"forgotpassword" + Date.now()}
           />
 
-          {/* Will be redacted after authenticated user dashboard is setup */}
-          <Route
-            path="/login"
-            component={() => <Login authenticated={this.state.authenticated} />}
-            authenticated={this.state.authenticated}
-            key={"forgotpassword" + Date.now()}
-          />
           <Route
             path="/dashboard"
             component={() => (
@@ -126,15 +120,6 @@ class App extends Component {
             }
             key={"dashboard" + Date.now()}
           /> */}
-
-          <Route
-            path="/dashboard"
-            component={() => (
-              <Dashboard authenticated={this.state.authenticated} />
-            )}
-            key={"dashboard" + Date.now()}
-            user={this.state.username}
-          />
 
           <Route
             path="/group"

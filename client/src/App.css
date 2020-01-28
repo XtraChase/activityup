@@ -97,6 +97,11 @@ header {
   transition: 0.5s;
 }
 
+.welcomeUser:hover {
+  color: #0015ff;
+  text-decoration: none;
+}
+
 .loginBtn {
   -ms-grid-row: 1;
   -ms-grid-column: 1;

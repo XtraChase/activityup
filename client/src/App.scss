@@ -84,6 +84,11 @@ header {
   transition: 0.5s;
 }
 
+.welcomeUser:hover {
+  color: #0015ff;
+  text-decoration: none;
+}
+
 .loginBtn {
   grid-area: header;
   -ms-grid-column-align: end;

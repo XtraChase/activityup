@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
+import Header from "../Header";
 import API from "../../utils/API";
 import "./styles.css";
 
@@ -41,6 +42,13 @@ export default class Login extends Component {
   }
 
   render() {
+    let loginButton;
+    if (this.props.authenticated) {
+      loginButton = <Redirect to="/dashboard"></Redirect>;
+    } else {
+      loginButton = <input type="submit" value="Login" />;
+    }
+
     return (
       <>
         <Header
@@ -69,9 +77,7 @@ export default class Login extends Component {
                 name="password"
               />
             </div>
-            {/* <Link to="/dashboard"> */}
-            <input type="submit" value="Login" />
-            {/* </Link> */}
+            <div>{loginButton}</div>
           </form>
         </div>
         <div className="col rightColumn oAuthlogin">
