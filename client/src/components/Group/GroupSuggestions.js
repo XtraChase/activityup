@@ -20,22 +20,22 @@ class GroupSuggestions extends Component {
     return (
       <>
         <div className="imageRow">
-          {this.state.eventExample.map((e, i) => (
+          {this.state.eventExample[0].event[0].activities.map(activity => (
             <div className="imageColumn">
               <img
                 className="image"
                 width="100%"
-                key={e.event[i].id}
-                src={e.event[i].activities[i].image}
-                alt={e.event[i].date}
+                key={activity.id}
+                src={activity.image}
+                alt={activity.date}
               />
               <UpVote
-                activity={e.event[i].id}
-                handleArrowClick={() => this.handleUpVote(e.event[i].id)}
+                activity={activity.id}
+                handleArrowClick={() => this.handleUpVote(activity.id)}
               />
               <div className="text-block">
-                <h4>{e.event[i].activities[i].activity}</h4>
-                <p>{e.event[i].activities[i].subtitle}</p>
+                <h4>{activity.activity}</h4>
+                <p>{activity.subtitle}</p>
               </div>
             </div>
           ))}
