@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
+import Header from "../Header";
 import API from "../../utils/API";
 import "./styles.css";
 
@@ -29,18 +30,23 @@ export default class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(response => console.log("(login/index.js)", response.data))
+      .then(response => console.log("Login Response: ", response.data))
       .then(this.props.updateUser)
       .catch(err => console.log(err));
     this.setState({
       username: this.state.username,
       password: ""
     });
-    console.log("Username: " + this.state.username);
-    console.log("Authenticated: " + this.props.authenticated);
   }
 
   render() {
+    let loginButton;
+    if (this.props.authenticated) {
+      loginButton = <Redirect to="/dashboard"></Redirect>;
+    } else {
+      loginButton = <input type="submit" value="Login" />;
+    }
+
     return (
       <>
         <Header
@@ -69,9 +75,7 @@ export default class Login extends Component {
                 name="password"
               />
             </div>
-            <Link to="/">
-              <input type="submit" value="Login" />
-            </Link>
+            <div>{loginButton}</div>
           </form>
         </div>
         <div className="col rightColumn oAuthlogin">

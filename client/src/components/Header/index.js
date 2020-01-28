@@ -14,25 +14,6 @@ export default class Header extends Component {
     this.logout = this.logout.bind(this);
   }
 
-  // componentWillMount() {
-  //   this.getUser();
-  // }
-
-  // getUser() {
-  //   API.getUser().then(response => {
-  //     if (response.data.user) {
-  //       console.log("(Header/index.js)Logged in as: " + response.data.user.username);
-  //       this.setState({
-  //         authenticated: true,
-  //         username: response.data.user.username
-  //       });
-  //     } else {
-  //       console.log("Header/index.js: no user");
-  //       this.setState({ authenticated: false, username: null });
-  //     }
-  //   });
-  // }
-
   logout(e) {
     e.preventDefault();
     API.logOut()

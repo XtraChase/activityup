@@ -1,24 +1,30 @@
 [
   {
-    "id": 1,
+    "id": 12245,
     "activity": "SUPER BOWL",
     "image": "https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg",
-    "upvoted": false,
     "subtitle": "Let's bring it on game day!",
     "about": "NFL stuff",
-    "date": "01/02/2020",
+    "date": "02/02/2020",
+    "groupResponsible": "Sports Atlanta",
+    "category": "sports",
     "ended": false,
-    "members": []
+    "upvoted": false,
+    "members": [],
+    "upvotes": 0
   },
   {
-    "id": 2,
+    "id": 223452,
     "activity": "GOT Bar Crawl",
     "image": "https://socialbostonsports.com/wp-content/uploads/2019/03/GOT_PubCrawl_FacebookAd.png",
-    "upvoted": false,
     "subtitle": "Beer is comming!",
     "about": "A bar crawl through Atlanta, dress as your favorite game of thrones character",
     "date": "04/13/19",
+    "groupResponsible": "Fun and Drinks",
+    "category": "drinks",
+    "upvoted": false,
     "ended": true,
-    "members": []
+    "members": [],
+    "upvotes": 0
   }
 ]

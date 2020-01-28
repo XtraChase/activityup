@@ -7,7 +7,7 @@ export const UpVote = props => (
       src="images/Arrow.png"
       alt="Up Vote Arrow"
       width="15px"
-      onClick={() => props.handleArrowClick(props.activity)}
+      onClick={props.handleArrowClick}
     />
     <p className="upVoteCount">{props.upvotes}</p>
   </>
