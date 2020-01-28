@@ -10,5 +10,4 @@
 //   .post(activityController.create);
 
 // router.route("/byUser").get(activityController.byUser);
-
 // module.exports = router;
