@@ -45,20 +45,16 @@ class App extends Component {
             component={() => <Home authenticated={this.state.authenticated} />}
             key={"root" + Date.now()}
           />
+
           <Route
             path="/activitytype"
             component={() => (
               <ActivityType authenticated={this.state.authenticated} />
             )}
             authenticated={this.state.authenticated}
-            key={"login" + Date.now()}
+            key={"activitytype" + Date.now()}
           />
-          <Route
-            path="/login"
-            component={() => <Login authenticated={this.state.authenticated} />}
-            authenticated={this.state.authenticated}
-            key={"login" + Date.now()}
-          />
+
           <Route
             path="/register"
             component={() => (
@@ -68,34 +64,25 @@ class App extends Component {
             key={"register" + Date.now()}
           />
 
+          <Route
+            path="/forgotpassword"
+            component={() => (
+              <ForgotPassword authenticated={this.state.authenticated} />
+            )}
+            authenticated={this.state.authenticated}
+            key={"forgotpassword" + Date.now()}
+          />
+
           {/* Will be redacted after authenticated user dashboard is setup */}
           <Route
-            path="/forgotpassword"
-            component={() => (
-              <ForgotPassword authenticated={this.state.authenticated} />
-            )}
+            path="/login"
+            component={() => <Login authenticated={this.state.authenticated} />}
             authenticated={this.state.authenticated}
-            key={"forgotpassword" + Date.now()}
-          />
-          <Route
-            path="/forgotpassword"
-            component={() => (
-              <ForgotPassword authenticated={this.state.authenticated} />
-            )}
-            authenticated={this.state.authenticated}
-            key={"forgotpassword" + Date.now()}
-          />
-          <Route
-            path="/dashboard"
-            component={() => (
-              <Dashboard authenticated={this.state.authenticated} />
-            )}
-            key={"dashboard" + Date.now()}
-            user={this.state.username}
+            key={"login" + Date.now()}
           />
 
           {/* If authenticated route to activityup.vote/dashboard/user else reroute to login */}
-          <Route
+          {/* <Route
             user={this.state.username}
             path="/dashboard/:user"
             exact
@@ -108,20 +95,22 @@ class App extends Component {
               )
             }
             key={"dashboard" + Date.now()}
+          /> */}
+
+          <Route
+            path="/dashboard"
+            component={() => (
+              <Dashboard authenticated={this.state.authenticated} />
+            )}
+            key={"dashboard" + Date.now()}
+            user={this.state.username}
           />
+
           <Route
             path="/group"
             component={() => <Group authenticated={this.state.authenticated} />}
             authenticated={this.state.authenticated}
             key={"group" + Date.now()}
-          />
-          <Route
-            path="/activitytype"
-            component={() => (
-              <ActivityType authenticated={this.state.authenticated} />
-            )}
-            authenticated={this.state.authenticated}
-            key={"activitytype" + Date.now()}
           />
         </div>
       </Router>

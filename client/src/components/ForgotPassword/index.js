@@ -1,6 +1,6 @@
 // import React, { Component } from "react";
 // import { Link } from "react-router-dom";
-// import Map from './Map';
+// import Map from "./Map";
 // import API from "../../utils/API";
 // import { Auth } from "aws-amplify";
 
