@@ -1,13 +1,48 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import API from "../../utils/API";
 
-function YourGroups() {
-  return (
-    <div>
-      <div>
-        <h1>Your Groups</h1>
-        <div className="imageRow">
-          <Link to="/Group" className="imageColumn">
+class YourGroups extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null,
+      groups: null
+    };
+  }
+
+  componentDidMount() {
+    this.getUser();
+  }
+
+  getUser() {
+    API.getUser()
+      .then(response => {
+        if (response.data.user) {
+          this.setState({
+            user: response.data.user._id
+          });
+        }
+      })
+      .then(() => this.populateGroups());
+  }
+
+  populateGroups() {
+    if (this.state.user) {
+      API.getGroupByUser(this.state.user).then(groups => {
+        this.setState({
+          groups: groups.data
+        });
+      });
+    }
+  }
+
+  renderGroups() {
+    if (this.state.groups) {
+      let groupdivs = this.state.groups.map(g => {
+        // console.log(g);
+        return (
+          <Link to="/group" key={g.name + Date.now()} className="imageColumn">
             <img
               className="image"
               src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/09/National-Video-Game-Day-796x416.jpg"
@@ -15,26 +50,26 @@ function YourGroups() {
               width="100%"
             />
             <div className="text-block">
-              <h4>Gaming Group</h4>
-              <p>Tuesday night is game night!</p>
+              <h4>{g.name}</h4>
             </div>
           </Link>
+        );
+      });
+      return groupdivs;
+    }
+    return null;
+  }
 
-          <Link to="/Group" className="imageColumn">
-            <img
-              className="image"
-              src="https://www.iloveblackandwhitephotography.com/wp-content/uploads/MattMitschke.jpg"
-              alt="activity type"
-              width="100%"
-            />
-            <div className="text-block">
-              <h4>Photography Group</h4>
-            </div>
-          </Link>
+  render() {
+    return (
+      <>
+        <h1>Your Groups</h1>
+        <div className="imageRow">
+          {this.state.groups ? this.renderGroups() : "You have no groups"}
         </div>
-      </div>
-    </div>
-  );
+      </>
+    );
+  }
 }
 
 export default YourGroups;

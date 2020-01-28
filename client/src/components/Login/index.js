@@ -29,7 +29,8 @@ export default class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(user => console.log(user.data))
+      .then(response => console.log("(login/index.js)", response.data))
+      .then(this.props.updateUser)
       .catch(err => console.log(err));
     this.setState({
       username: this.state.username,
@@ -42,14 +43,11 @@ export default class Login extends Component {
   render() {
     return (
       <>
-        {/* <Header authenticated={this.props.authenticated}/> */}
-        <Link to="/" className="logoContainer">
-          <img
-            className="logo"
-            src="images/ActivityUP-Logo.png"
-            alt="ActivityUP Logo"
-          />
-        </Link>
+        <Header
+          authenticated={this.props.authenticated}
+          username={this.props.username}
+          updateUser={this.props.updateUser}
+        />
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
             <h2>Login</h2>
