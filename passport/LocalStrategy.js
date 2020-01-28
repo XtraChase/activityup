@@ -8,10 +8,12 @@ const strategy = new LocalStrategy(
     },
     // authentication function, this is what gets called on passport.authenticate('local')
     function (username, password, done) {
+        console.log("authenticating...");
+        
         User.findOne({ username }, (err, user) => {
             if (err) return done(err);
-            if (!user) return done(null, false, { message: "incorrect Username" });
-            if (!user.checkPassword(password)) return done(null, false, { message: "Incorrect Password" });
+            if (!user) return done(null, false, { message: "No user with that name" });
+            if (!user.checkPassword(password)) return done(null, false, { message: "Incorrect Username or Password" });
             return done(null, user)
         })
     }

@@ -23,6 +23,7 @@ class App extends Component {
   getUser() {
     API.getUser().then(response => {
       if (response.data.user) {
+        console.log("(App.js)Logged in as: " + response.data.user.username);
         this.setState({
           authenticated: true,
           username: response.data.user.username
@@ -42,7 +43,12 @@ class App extends Component {
           <Route
             exact
             path="/"
-            component={() => <Home authenticated={this.state.authenticated} />}
+            component={() => (
+              <Home
+                authenticated={this.state.authenticated}
+                username={this.state.username}
+              />
+            )}
             key={"root" + Date.now()}
           />
 
@@ -52,15 +58,28 @@ class App extends Component {
               <ActivityType authenticated={this.state.authenticated} />
             )}
             authenticated={this.state.authenticated}
-            key={"activitytype" + Date.now()}
+            key={"login" + Date.now()}
+          />
+          <Route
+            path="/login"
+            component={() => (
+              <Login
+                authenticated={this.state.authenticated}
+                username={this.state.username}
+                updateUser={() => this.getUser()}
+              />
+            )}
+            key={"login" + Date.now()}
           />
 
           <Route
             path="/register"
             component={() => (
-              <Register authenticated={this.state.authenticated} />
+              <Register
+                authenticated={this.state.authenticated}
+                username={this.state.username}
+              />
             )}
-            authenticated={this.state.authenticated}
             key={"register" + Date.now()}
           />
 
@@ -78,7 +97,18 @@ class App extends Component {
             path="/login"
             component={() => <Login authenticated={this.state.authenticated} />}
             authenticated={this.state.authenticated}
-            key={"login" + Date.now()}
+            key={"forgotpassword" + Date.now()}
+          />
+          <Route
+            path="/dashboard"
+            component={() => (
+              <Dashboard
+                authenticated={this.state.authenticated}
+                username={this.state.username}
+              />
+            )}
+            key={"dashboard" + Date.now()}
+            user={this.state.username}
           />
 
           {/* If authenticated route to activityup.vote/dashboard/user else reroute to login */}
@@ -108,8 +138,12 @@ class App extends Component {
 
           <Route
             path="/group"
-            component={() => <Group authenticated={this.state.authenticated} />}
-            authenticated={this.state.authenticated}
+            component={() => (
+              <Group
+                authenticated={this.state.authenticated}
+                username={this.state.username}
+              />
+            )}
             key={"group" + Date.now()}
           />
         </div>
