@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "id": 12245,
     "activity": "SUPER BOWL",
     "image": "https://www.insidesport.co/wp-content/uploads/2020/01/nfl.jpg",
     "subtitle": "Let's bring it on game day!",
@@ -10,10 +10,11 @@
     "category": "sports",
     "ended": false,
     "upvoted": false,
-    "members": []
+    "members": [],
+    "upvotes": 0
   },
   {
-    "id": 2,
+    "id": 223452,
     "activity": "GOT Bar Crawl",
     "image": "https://socialbostonsports.com/wp-content/uploads/2019/03/GOT_PubCrawl_FacebookAd.png",
     "subtitle": "Beer is comming!",
@@ -23,6 +24,7 @@
     "category": "drinks",
     "upvoted": false,
     "ended": true,
-    "members": []
+    "members": [],
+    "upvotes": 0
   }
 ]

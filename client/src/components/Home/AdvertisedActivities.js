@@ -3,18 +3,20 @@ import Activities from "../../utils/activities.json";
 import UpVote from "./UpVote";
 
 class AdvertisedActivities extends Component {
-  state = {
-    Activities,
-    activity: "",
-    upvotes: 0
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      Activities,
+      activity: "",
+      upvotes: 0
+    };
+    this.handleUpVote = this.handleUpVote.bind(this);
+  }
 
-  handleUpVote = activity => {
-    console.log("Activity Upvoted!");
-    // let update = {
-    //   upvotes: this.state.upvotes
-    // };
-  };
+  handleUpVote() {
+    this.setState({ upvotes: this.state.upvotes + 1 });
+    console.log("Activity Upvoted!", this.state);
+  }
 
   render() {
     return (
@@ -30,8 +32,11 @@ class AdvertisedActivities extends Component {
                 alt={activity.activity}
               />
               <UpVote
-                activity={activity.id}
-                handleArrowClick={() => this.handleUpVote(activity.id)}
+                // id={activity.id}
+                // key={activity.id}
+                activity={activity}
+                upvotes={activity.upvotes}
+                handleArrowClick={this.handleUpVote}
               />
               <div className="text-block">
                 <h4>{activity.activity}</h4>
