@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
 import ActivityType from "./components/ActivityType";
 import Login from "./components/Login";
@@ -23,14 +23,11 @@ class App extends Component {
   getUser() {
     API.getUser().then(response => {
       if (response.data.user) {
-        console.log("(App.js)Logged in as: " + response.data.user.username);
         this.setState({
           authenticated: true,
           username: response.data.user.username
         });
-        console.log("Logged in as: " + this.state.username);
       } else {
-        console.log("No User");
         this.setState({ authenticated: false, username: null });
       }
     });
@@ -53,12 +50,12 @@ class App extends Component {
           />
 
           <Route
-            path="/activitytype"
+            path="/activity"
             component={() => (
               <ActivityType authenticated={this.state.authenticated} />
             )}
             authenticated={this.state.authenticated}
-            key={"login" + Date.now()}
+            key={"activity" + Date.now()}
           />
 
           <Route
@@ -104,22 +101,6 @@ class App extends Component {
             key={"dashboard" + Date.now()}
             user={this.state.username}
           />
-
-          {/* If authenticated route to activityup.vote/dashboard/user else reroute to login */}
-          {/* <Route
-            user={this.state.username}
-            path="/dashboard/:user"
-            exact
-            strict
-            render={() =>
-              this.state.authenticated ? (
-                <Dashboard />
-              ) : (
-                <Redirect to="/login" />
-              )
-            }
-            key={"dashboard" + Date.now()}
-          /> */}
 
           <Route
             path="/group"

@@ -30,15 +30,13 @@ export default class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(response => console.log("(login/index.js)", response.data))
+      .then(response => console.log("Login Response: ", response.data))
       .then(this.props.updateUser)
       .catch(err => console.log(err));
     this.setState({
       username: this.state.username,
       password: ""
     });
-    console.log("Username: " + this.state.username);
-    console.log("Authenticated: " + this.props.authenticated);
   }
 
   render() {
