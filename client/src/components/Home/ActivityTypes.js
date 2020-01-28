@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import images from "../../utils/activityTypes.json";
 
 function ActivityTypes() {
@@ -6,16 +7,15 @@ function ActivityTypes() {
   for (const key in images) {
     activityImgs.push(
       <div className="activityTypesColumn" key={key + Date.now()}>
-        <div className="activityTypeContainer">
+        <Link to="/activitytype" className="activityTypeContainer">
           <img
             src={images[key]}
             alt={key}
             width="100%"
             className="activityTypesImage"
-            rel="preload"
           />
           <p className="activityTypesText">{key.toUpperCase()}</p>
-        </div>
+        </Link>
       </div>
     );
   }

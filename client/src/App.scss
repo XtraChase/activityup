@@ -47,7 +47,7 @@ header {
   grid-area: header;
   -ms-grid-column-align: end;
   justify-self: end;
-  margin-right: 280px;
+  // margin-right: 280px;
   margin-top: 5px;
   border: none;
   background: none;
@@ -67,10 +67,6 @@ header {
 .newGroupBtn:hover {
   color: #ff8900;
   text-decoration: none;
-}
-
-#newGroupBtnHome {
-  margin-right: 95px;
 }
 
 .welcomeUser {
@@ -130,20 +126,28 @@ header {
 }
 
 .activityTypeContainer {
-  font-size: 2em;
+  font-size: 1.8em;
   position: relative;
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
   text-shadow: 1.8px 1.8px 2.75px black;
   @media screen and (max-width: 940px) {
-    font-size: 1.5em;
+    font-size: 1em;
+  }
+  @media screen and (max-width: 700px) {
+    font-size: 0.9em;
   }
   @media screen and (max-width: 640px) {
-    font-size: 1.1em;
+    font-size: 0.8em;
   }
   @media screen and (max-width: 500px) {
-    font-size: 4em;
+    font-size: 3em;
   }
+}
+
+.activityTypeContainer:hover {
+  color: rgba(255, 255, 255, 0.75);
+  text-shadow: 1px 1px 2px black;
 }
 
 .activityTypesImage {
@@ -204,7 +208,7 @@ header {
 }
 
 .imageRow {
-  padding-bottom: 5%;
+  padding: 20px 0 60px 0;
 }
 
 .imageRow::after {
@@ -253,8 +257,8 @@ header {
 
 .upVoteCount {
   position: absolute;
-  top: 36px;
-  right: 55px;
+  top: 16px;
+  right: 35px;
   cursor: default;
   color: rgba(255, 255, 255, 0.534);
   -webkit-text-stroke: 0.1px black;
@@ -262,8 +266,8 @@ header {
 
 .upVoteArrow {
   position: absolute;
-  top: 35px;
-  right: 35px;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
   -webkit-filter: drop-shadow(0px 0px 0 white)
     drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
@@ -291,6 +295,7 @@ footer {
   align-items: center;
 }
 
+// empty content / replace me
 .footer-a {
   grid-area: a2;
 }

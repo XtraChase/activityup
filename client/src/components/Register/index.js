@@ -46,7 +46,6 @@ class Register extends Component {
   render() {
     return (
       <>
-<<<<<<< HEAD
         <Link to="/" className="logoContainer">
           <img
             className="logo"
@@ -55,9 +54,6 @@ class Register extends Component {
           />
         </Link>
         <br />
-=======
-        {/* <Header authenticated={this.props.authenticated}/> */}
->>>>>>> 95e840c7443f99021b07238d364ddd88f8a26486
         <div className="register">
           <form onSubmit={this.register}>
             <h2>Create an account</h2>
