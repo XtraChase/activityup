@@ -1,0 +1,52 @@
+[
+  {
+    "event": [
+      {
+        "id": "event1",
+        "date": "02/11/2020",
+        "ended": false,
+        "groupResponsible": "gaming group",
+        "category": "gaming",
+        "members": [],
+        "activities": [
+          {
+            "id": 1,
+            "activity": "Call of Duty",
+            "image": "https://www.playstationlifestyle.net/assets/uploads/2020/01/Modern-Warfare-error.jpg",
+            "subtitle": "Modern Warfare",
+            "about": "Shooter",
+            "category": "video game",
+            "upvoted": false
+          },
+          {
+            "id": 1,
+            "activity": "Rocket League",
+            "image": "https://hb.imgix.net/ae475dd426714e9e7857b28f92009011d16ac98e.jpg?auto=compress,format&fit=crop&h=353&w=616&s=ff11c567c3750076b8624c1f22a83547",
+            "subtitle": "",
+            "about": "vehicle and sports game",
+            "category": "video game",
+            "upvoted": false
+          },
+          {
+            "id": 1,
+            "activity": "Overwatch",
+            "image": "https://assets1.ignimgs.com/2018/02/23/overwatch-button-v2-1519416414955.jpg",
+            "subtitle": "",
+            "about": "",
+            "category": "video game",
+            "upvoted": false
+          },
+          {
+            "id": 1,
+            "activity": "Super Smash Bros",
+            "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F85037341%2F26975821121%2F1%2Foriginal.20190305-175625?w=1000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C50%2C1600%2C800&s=6ac1b61dd8f60ab58337213bb8794a09",
+            "subtitle": "",
+            "about": "",
+            "category": "video game",
+            "upvoted": false
+          }
+        ]
+      }
+    ]
+  }
+]
