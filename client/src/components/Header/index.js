@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import CreateGroup from "./CreateGroup.js";
-// import API from "../../utils/API";
+import API from "../../utils/API";
 
 export default class Header extends Component {
   constructor(props) {
@@ -10,6 +10,8 @@ export default class Header extends Component {
       addModalShow: false
       // username: null
     };
+
+    this.logout = this.logout.bind(this);
   }
 
   // componentWillMount() {
@@ -31,6 +33,14 @@ export default class Header extends Component {
   //   });
   // }
 
+  logout(e) {
+    e.preventDefault();
+    API.logOut()
+      .then(response => console.log("Header/index.js Logout: ", response.data))
+      .then(this.props.updateUser)
+      .catch(err => console.log(err));
+  }
+
   addModalClose() {
     this.setState({ addModalShow: false });
   }
@@ -47,8 +57,10 @@ export default class Header extends Component {
             Create A New Group
           </div>
 
-          <Link to="/dashboard" className="welcomeUser">Welcome {this.props.username}</Link>
-          <Link to="/" className="loginBtn">
+          <Link to="/dashboard" className="welcomeUser">
+            Welcome {this.props.username}
+          </Link>
+          <Link to="/" onClick={this.logout} className="loginBtn">
             Logout
           </Link>
           <CreateGroup
