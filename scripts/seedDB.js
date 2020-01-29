@@ -1,11 +1,29 @@
 const mongoose = require("mongoose");
-const { User, Group } = require("../models");
+const { User, Group, Activity } = require("../models");
+
+const activityUtil = require("./activities.json");
 
 mongoose.connect("mongodb://localhost/activityUp", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   useFindAndModify: false
 });
+
+Activity.deleteMany({})
+  .then(() => {
+    return activityUtil.map(a =>
+      new Activity({
+        name: a.name,
+        image: a.image,
+        subtitle: a.subtitle,
+        datetime: a.datetime,
+        category: a.category
+      })
+    );
+  })
+  .then(data => Activity.create(data))
+  .then(data => console.log(data))
+  .catch(err => console.log(err));
 
 // Delete existing user collection
 User.deleteMany({})
@@ -22,11 +40,12 @@ User.deleteMany({})
     const newUser = [];
     for (let i = 0; i < 5; i++) {
       const _u = "user" + pad(Math.floor(Math.random() * 100).toString(), 3);
-      const _p = "password" + pad(Math.floor(Math.random() * 100).toString(), 3);
+      const _p =
+        "password" + pad(Math.floor(Math.random() * 100).toString(), 3);
       console.log({
         _u,
         _p
-      })
+      });
       newUser.push(
         new User({
           username: _u,
