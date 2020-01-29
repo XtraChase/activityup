@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
-import Header from "../Header";
+// import Header from "../Header";
 
 class Register extends Component {
   constructor(props) {
@@ -55,7 +55,11 @@ class Register extends Component {
           />
         </Link>
         <br />
-        {/* <Header authenticated={this.props.authenticated}/> */}
+        {/* <Header
+          authenticated={this.props.authenticated}
+          username={this.props.username}
+          updateUser={this.props.updateUser}
+        /> */}
         <div className="register">
           <form onSubmit={this.register}>
             <h2>Create an account</h2>

@@ -10,7 +10,11 @@ import "./styleGroup.css";
 function Group(props) {
   return (
     <div>
-      <Header authenticated={props.authenticated} username={props.username} />
+      <Header
+          authenticated={this.props.authenticated}
+          username={this.props.username}
+          updateUser={this.props.updateUser}
+        />
       <div className="headerBuffer"></div>
       <div className="upperGroupArea">
         <EventDetails />

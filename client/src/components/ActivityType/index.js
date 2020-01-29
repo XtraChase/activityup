@@ -5,7 +5,11 @@ import Footer from "../Footer";
 function ActivityType(props) {
   return (
     <div>
-      <Header authenticated={props.authenticated} />
+      <Header
+        authenticated={this.props.authenticated}
+        username={this.props.username}
+        updateUser={this.props.updateUser}
+      />
       <div className="headerBuffer"></div>
       <div>
         <div>
