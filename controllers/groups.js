@@ -11,21 +11,30 @@ module.exports = {
   },
   create: (req, res) => {
     const newGroup = new Group({
-      groupName: req.body.groupName
-    })
+      groupName: req.body.groupName,
+      users: [req.user]
+    });
     newGroup
       .save()
-      .then(data => res.json(data))
+      .then(data => {
+        console.log(data);
+        return User.findByIdAndUpdate(req.user._id, { $push: { groups: data } });
+      })
+      .then(data => {
+        console.log(data);
+        res.json(data.groups)
+      })
       .catch(err => res.status(422).json(err));
   },
   byUser: (req, res) => {
     User.findById(req.query.id)
       .populate("groups")
-      .then(user => res.json(user.groups));
+      .then(user => res.json(user.groups))
+      .catch(err => res.status(422).json(err));
   },
   createGroup: (req, res) => {
     const { name } = req.body;
-    
+
     const newGroup = new Group({
       groupName: name
     });
