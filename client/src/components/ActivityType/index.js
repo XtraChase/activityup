@@ -6,9 +6,9 @@ function ActivityType(props) {
   return (
     <div>
       <Header
-        authenticated={this.props.authenticated}
-        username={this.props.username}
-        updateUser={this.props.updateUser}
+        authenticated={props.authenticated}
+        username={props.username}
+        updateUser={props.updateUser}
       />
       <div className="headerBuffer"></div>
       <div>

@@ -7,7 +7,11 @@ import Footer from "../Footer";
 function Dashboard(props) {
   return (
     <div>
-      <Header authenticated={props.authenticated} username={props.username} />
+      <Header
+        authenticated={props.authenticated}
+        username={props.username}
+        updateUser={props.updateUser}
+      />
       <div className="headerBuffer"></div>
       <YourGroups />
       <GroupRecommendations />

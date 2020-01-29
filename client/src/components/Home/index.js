@@ -11,7 +11,7 @@ function Body(props) {
       <Header
         authenticated={props.authenticated}
         username={props.username}
-        updateUser={this.props.updateUser}
+        updateUser={props.updateUser}
       />
       <div className="headerBuffer"></div>
       <Title />
