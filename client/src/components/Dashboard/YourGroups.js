@@ -30,6 +30,7 @@ class YourGroups extends Component {
   populateGroups() {
     if (this.state.user) {
       API.getGroupByUser(this.state.user).then(groups => {
+        console.log(groups);
         this.setState({
           groups: groups.data
         });
@@ -42,7 +43,11 @@ class YourGroups extends Component {
       let groupdivs = this.state.groups.map(g => {
         // console.log(g);
         return (
-          <Link to="/group" key={g.groupName + Date.now()} className="imageColumn">
+          <Link
+            to="/group"
+            key={g.groupName + Date.now()}
+            className="imageColumn"
+          >
             <img
               className="image"
               src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/09/National-Video-Game-Day-796x416.jpg"
