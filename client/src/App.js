@@ -44,6 +44,7 @@ class App extends Component {
               <Home
                 authenticated={this.state.authenticated}
                 username={this.state.username}
+                updateUser={() => this.getUser()}
               />
             )}
             key={"root" + Date.now()}
@@ -52,7 +53,11 @@ class App extends Component {
           <Route
             path="/activity"
             component={() => (
-              <ActivityType authenticated={this.state.authenticated} />
+              <ActivityType
+                authenticated={this.state.authenticated}
+                username={this.state.username}
+                updateUser={() => this.getUser()}
+              />
             )}
             authenticated={this.state.authenticated}
             key={"activity" + Date.now()}
@@ -76,6 +81,7 @@ class App extends Component {
               <Register
                 authenticated={this.state.authenticated}
                 username={this.state.username}
+                updateUser={() => this.getUser()}
               />
             )}
             key={"register" + Date.now()}
@@ -84,7 +90,11 @@ class App extends Component {
           <Route
             path="/forgotpassword"
             component={() => (
-              <ForgotPassword authenticated={this.state.authenticated} />
+              <ForgotPassword
+                authenticated={this.state.authenticated}
+                username={this.state.username}
+                updateUser={() => this.getUser()}
+              />
             )}
             authenticated={this.state.authenticated}
             key={"forgotpassword" + Date.now()}
@@ -96,6 +106,7 @@ class App extends Component {
               <Dashboard
                 authenticated={this.state.authenticated}
                 username={this.state.username}
+                updateUser={() => this.getUser()}
               />
             )}
             key={"dashboard" + Date.now()}
@@ -108,6 +119,7 @@ class App extends Component {
               <Group
                 authenticated={this.state.authenticated}
                 username={this.state.username}
+                updateUser={() => this.getUser()}
               />
             )}
             key={"group" + Date.now()}

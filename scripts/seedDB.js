@@ -14,7 +14,7 @@ User.deleteMany({})
   .then(() => {
     // Make a group
     return new Group({
-      name: "GroupA"
+      groupName: "GroupA"
     }).save();
   })
   .then(data => {
@@ -40,7 +40,7 @@ User.deleteMany({})
   .then(data => {
     // update group with ids of users
     let ids = data.map(d => d._id);
-    return Group.findOneAndUpdate({ name: "GroupA" }, { users: ids });
+    return Group.findOneAndUpdate({ groupName: "GroupA" }, { users: ids });
   })
   .then(data => {
     console.log(data);

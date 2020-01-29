@@ -8,7 +8,11 @@ import Footer from "../Footer";
 function Body(props) {
   return (
     <div>
-      <Header authenticated={props.authenticated} username={props.username} />
+      <Header
+        authenticated={props.authenticated}
+        username={props.username}
+        updateUser={props.updateUser}
+      />
       <div className="headerBuffer"></div>
       <Title />
       <ActivityTypes />
