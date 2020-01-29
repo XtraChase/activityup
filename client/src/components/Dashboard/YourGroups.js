@@ -42,7 +42,7 @@ class YourGroups extends Component {
       let groupdivs = this.state.groups.map(g => {
         // console.log(g);
         return (
-          <Link to="/group" key={g.name + Date.now()} className="imageColumn">
+          <Link to="/group" key={g.groupName + Date.now()} className="imageColumn">
             <img
               className="image"
               src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/09/National-Video-Game-Day-796x416.jpg"
@@ -50,7 +50,7 @@ class YourGroups extends Component {
               width="100%"
             />
             <div className="text-block">
-              <h4>{g.name}</h4>
+              <h4>{g.groupName}</h4>
             </div>
           </Link>
         );
