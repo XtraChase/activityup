@@ -1,161 +1,98 @@
-// import React, { Component } from "react";
-// import { Link } from "react-router-dom";
-// import Map from "./Map";
-// import API from "../../utils/API";
-// import { Auth } from "aws-amplify";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import API from "../../utils/API";
+import Header from "../Header";
 
-// class ForgotPassword extends Component {
-//   constructor(props) {
-//     super(props);
+class ForgotPassword extends Component {
+  constructor(props) {
+    super(props);
 
-//     this.state = {
-//       code: "",
-//       email: "",
-//       password: "",
-//       codeSent: false,
-//       confirmed: false,
-//       confirmPassword: "",
-//       isConfirming: false,
-//       isSendingCode: false
-//     };
-//   }
+    this.state = {
+      username: "",
+      password: "",
+      confirmPassword: ""
+    };
+    this.update = this.update.bind(this);
+  }
 
-//   validateCodeForm() {
-//     return this.state.email.length > 0;
-//   }
+  update(e) {
+    let username = e.target.username;
+    let value = e.target.value;
+    this.setState({
+      [username]: value
+    });
+  }
 
-//   validateResetForm() {
-//     return (
-//       this.state.code.length > 0 &&
-//       this.state.password.length > 0 &&
-//       this.state.password === this.state.confirmPassword
-//     );
-//   }
+  register(e) {
+    e.preventDefault();
+    if (this.state.password !== this.state.confirmPassword) {
+      alert("passwords do not match");
+    } else {
+      API.register(this.state)
+        .then(user => console.log(user))
+        .catch(err => console.log(err));
+      this.setState({
+        username: "",
+        password: "",
+        confirmPassword: ""
+      });
+    }
+  }
 
-//   handleChange = event => {
-//     this.setState({
-//       [event.target.id]: event.target.value
-//     });
-//   };
+  render() {
+    return (
+      <>
+        <Link to="/" className="logoContainer">
+          <img
+            className="logo"
+            src="images/ActivityUP-Logo.png"
+            alt="ActivityUP Logo"
+          />
+        </Link>
+        <br />
+        {/* <Header authenticated={this.props.authenticated}/> */}
+        <div className="register">
+          <form onSubmit={this.register}>
+            <h2>Resetting Password</h2>
+            <div className="username">
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                value={this.state.username}
+                onChange={this.update}
+              />
+            </div>
+            <div className="password">
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                value={this.state.password}
+                onChange={this.update}
+              />
+            </div>
+            <div className="confirmPassword">
+              <input
+                type="password"
+                placeholder="Confirm Password"
+                name="confirmPassword"
+                value={this.state.confirmPassword}
+                onChange={this.update}
+              />
+            </div>
 
-//   handleSendCodeClick = async event => {
-//     event.preventDefault();
+            <input type="submit" value="Submit" />
+          </form>
+          <div className="accountQuestionContainer">
+            <Link to="/login">Login</Link>
+            </div>
+        </div>
+      </>
+    );
+  }
+}
 
-//     this.setState({ isSendingCode: true });
+//PLEASE CONFIRM THE ROUTING IS GOOD - SENDING DATA TO THE DB ---- THANKS
 
-//     try {
-//       await Auth.forgotPassword(this.state.email);
-//       this.setState({ codeSent: true });
-//     } catch (e) {
-//       alert(e.message);
-//       this.setState({ isSendingCode: false });
-//     }
-//   };
-
-//   handleConfirmClick = async event => {
-//     event.preventDefault();
-
-//     this.setState({ isConfirming: true });
-
-//     try {
-//       await Auth.forgotPasswordSubmit(
-//         this.state.email,
-//         this.state.code,
-//         this.state.password
-//       );
-//       this.setState({ confirmed: true });
-//     } catch (e) {
-//       alert(e.message);
-//       this.setState({ isConfirming: false });
-//     }
-//   };
-
-//   renderRequestCodeForm() {
-//     return (
-//       <>
-//         <form onSubmit={this.handleSendCodeClick}>
-//           <div>
-//             <p>Email</p>
-//             <input
-//               type="email"
-//               placeholder="email"
-//               name="email"
-//               value={this.state.email}
-//               onChange={this.update}
-//               disabled={!this.validateCodeForm()}
-//             />
-//             <div className="bottom-container">
-//               <Link to="/ForgotPassword" className="col signUp">
-//                 <button className="btn signUpBtn">
-//                   Please send confirmation code
-//                 </button>
-//               </Link>
-//             </div>
-//           </div>
-//         </form>
-//       </>
-//     );
-//   }
-
-//   renderConfirmationForm() {
-//     return (
-//       <form onSubmit={this.handleConfirmClick}>
-//         <div>
-//           <p>Confirmation Code</p>
-//           <input
-//             type="tel"
-//             value={this.state.code}
-//             onChange={this.handleChange}
-//             // name= "Please check your email" ({this.state.email}) "for the confirmation"
-//           />
-//           <div>
-//             <p>New Password</p>
-//             <input
-//               type="new-password"
-//               placeholder="new-password"
-//               name="new-password"
-//               value={this.state.newPassword}
-//               onChange={this.update}
-//             />
-//           </div>
-//           <div>
-//             <p>Confirm Password</p>
-//             <input
-//               type="confirmPassword"
-//               placeholder="confirmPassword"
-//               name="confirmPassword"
-//               value={this.state.confirmPassword}
-//               onChange={this.update}
-//             />
-//           </div>
-//         </div>
-//       </form>
-//     );
-//   }
-
-//   renderSuccessMessage() {
-//     return (
-//       <div className="success">
-//         <div glyph="ok" />
-//         <p>Your password has been reset!</p>
-//         <p>
-//           <Link to="/Login">The password has been reset!</Link>
-//         </p>
-//       </div>
-//     );
-//   }
-
-//   render() {
-//     return (
-//       <div className="ResetPassword">
-//         {!this.state.codeSent
-//           ? this.renderRequestCodeForm()
-//           : !this.state.confirmed
-//           ? this.renderConfirmationForm()
-//           : this.renderSuccessMessage()}
-//       </div>
-//     );
-//   }
-// }
-
-// export default ForgotPassword;
+export default ForgotPassword;
