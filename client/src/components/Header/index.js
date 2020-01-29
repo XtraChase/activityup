@@ -55,7 +55,7 @@ export default class Header extends Component {
       return (
         <>
           <Link
-            to="/dashboard"
+            to="/login"
             className="newGroupBtn"
             style={{ marginRight: "90px" }}
           >
