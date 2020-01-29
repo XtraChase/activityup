@@ -8,14 +8,16 @@ class AdvertisedActivities extends Component {
     this.state = {
       Activities,
       activity: "",
-      upvotes: 0
+      upvotes: 4
     };
     this.handleUpVote = this.handleUpVote.bind(this);
   }
 
-  handleUpVote() {
-    this.setState({ upvotes: this.state.upvotes + 1 });
-    console.log("Activity Upvoted!", this.state);
+  handleUpVote(e) {
+    console.log(e.target);
+
+    this.setState({ upvotes: this.state.Activities[0].upvotes + 1 });
+    // console.log("Activity Upvoted!", this.state.Activities[0].upvotes);
   }
 
   render() {

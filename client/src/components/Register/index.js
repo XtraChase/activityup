@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
-import Header from "../Header";
+// import Header from "../Header";
 
 class Register extends Component {
   constructor(props) {
