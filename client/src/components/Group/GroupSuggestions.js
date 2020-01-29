@@ -24,7 +24,7 @@ class GroupSuggestions extends Component {
             activity => (
               <div className="imageColumn">
                 <img
-                  className="image"
+                  className="groupSuggestion"
                   width="100%"
                   key={activity.id}
                   src={activity.image}
@@ -34,7 +34,7 @@ class GroupSuggestions extends Component {
                   activity={activity.id}
                   handleArrowClick={() => this.handleUpVote(activity.id)}
                 />
-                <div className="text-block">
+                <div className="groupSuggestionTextBlock">
                   <h4>{activity.activity}</h4>
                   <p>{activity.subtitle}</p>
                 </div>

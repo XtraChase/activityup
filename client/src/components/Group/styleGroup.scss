@@ -12,14 +12,13 @@
     grid-template-areas: "b1" "a1";
     grid-column-gap: 0;
     grid-row-gap: 10px;
-    grid-template-rows: 200px 400px;
-    height: 610px;
+    grid-template-rows: 300px 400px;
+    height: 710px;
   }
 }
 
 .eventDetailsPage {
   grid-area: a1;
-  // border-style: solid;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
   background-color: #ff88002f;
 }
@@ -33,7 +32,48 @@
 
 .suggest {
   grid-area: a2;
-  margin: 5px;
+}
+
+.leaveEvent {
+  grid-area: c2;
+}
+
+.suggest,
+.leaveEvent {
+  margin: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+  background-color: #ff8900;
+  color: white;
+  padding: 6px 0px 6px 0px;
+  border-radius: 3px;
+  border-style: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.suggest:hover,
+.leaveEvent:hover {
+  background-color: #e27a02;
+  transform: translateY(-0.5px);
+  -webkit-filter: drop-shadow(0 5px 3px rgba(0, 0, 0, 0.6));
+  filter: drop-shadow(0 5px 3x rgba(0, 0, 0, 0.6));
+}
+
+.suggest:active,
+.leaveEvent:active {
+  transform: translateY(-0.01px);
+  -webkit-filter: drop-shadow(0 3px 3px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+}
+
+.suggest:active,
+.suggest:focus,
+.suggest:visited,
+.leaveEvent:active,
+.leaveEvent:focus,
+.leaveEvent:visited {
+  background-color: #ff8900;
 }
 
 .eventDate {
@@ -45,7 +85,7 @@
 }
 
 .eventSuggestions {
-  height: 90%;
+  height: 87%;
   overflow-y: scroll;
 }
 
@@ -77,9 +117,40 @@
   }
 }
 
-.leaveEvent {
-  grid-area: c2;
-  margin: 5px;
+.groupSuggestionTextBlock {
+  position: absolute;
+  width: 96%;
+  margin: 0 5%;
+  background-color: rgba(0, 0, 0, 0.507);
+  color: white;
+  padding: 2px 20px;
+  bottom: 3.2%;
+  left: 45%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: block;
+  line-height: 0.25em;
+  @media screen and (max-width: 500px) {
+    width: 100%;
+    bottom: 1.5%;
+    h4 {
+      font-size: 1.8em;
+    }
+    p {
+      font-size: 1em;
+    }
+  }
+}
+
+.groupSuggestion {
+  height: 200px;
+  object-fit: cover;
+  @media screen and (max-width: 940px) {
+    height: 150px;
+  }
+  @media screen and (max-width: 500px) {
+    height: 250px;
+  }
 }
 
 //Group Chat
@@ -92,6 +163,30 @@
 
 .chatTitle {
   font-size: 2em;
-  color: #0015ff;
+  color: #ffffff;
+  font-weight: bold;
   text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.chatBody {
+  height: 70%;
+  width: 90%;
+  margin: auto;
+  background-color: #f0f0ff;
+}
+
+.chatInputContainer {
+  height: 10%;
+  width: 90%;
+  margin: 15px auto 0 auto;
+  background-color: #f0f0ff;
+  @media screen and (max-width: 640px) {
+    margin-top: 10px;
+  }
+}
+
+.chatInput {
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
