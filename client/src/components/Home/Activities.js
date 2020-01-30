@@ -9,8 +9,7 @@ class AdvertisedActivities extends Component {
     super(props);
     this.state = {
       Activities,
-      activity: "",
-      upvotes: null
+      activity: ""
     };
     this.handleUpVote = this.handleUpVote.bind(this);
   }
@@ -18,7 +17,7 @@ class AdvertisedActivities extends Component {
   handleUpVote(e) {
     console.log(e.target);
     this.setState({ upvotes: this.state.Activities[0].upvotes + 1 });
-    // console.log("Activity Upvoted!", this.state.Activities[0].upvotes);
+    console.log("Activity Upvoted!", this.state.Activities[0].upvotes);
   }
 
   getActivitiesByGroup() {
