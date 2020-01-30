@@ -8,7 +8,7 @@ class AdvertisedActivities extends Component {
     this.state = {
       Activities,
       activity: "",
-      upvotes: 4
+      upvotes: 7
     };
     this.handleUpVote = this.handleUpVote.bind(this);
   }

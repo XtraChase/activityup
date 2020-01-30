@@ -75,6 +75,18 @@ input[type="submit"]:hover {
   clear: both;
 }
 
+@media screen and (max-width: 800px) {
+  .rightColumn form div {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .rightColumn form div {
+    font-size: 1em;
+  }
+}
+
 /* vertical line */
 .vl {
   position: absolute;
@@ -99,6 +111,34 @@ input[type="submit"]:hover {
 .forgotPasswordBtn,
 .signUpBtn {
   padding: 10px;
+}
+
+@media screen and (max-width: 1120px) {
+  .forgotPasswordBtn,
+  .signUpBtn {
+    font-size: 0.9em;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .forgotPasswordBtn,
+  .signUpBtn {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 810px) {
+  .forgotPasswordBtn,
+  .signUpBtn {
+    font-size: 0.6em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .forgotPasswordBtn,
+  .signUpBtn {
+    font-size: 1em;
+  }
 }
 
 /* Responsive layout - when the screen is less than 650px wide, make the two columns stack on top of each other instead of next to each other */
