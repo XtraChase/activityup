@@ -6,23 +6,19 @@ const groupSchema = new Schema({
         type: Schema.Types.String,
         required: true
     },
-    // category: {
-    //     type: Schema.Types.String,
-    //     required: true
-    // },
-    // type: {
-    //     type: Schema.Types.String,
-    //     default: "open"
-    // },
-    // about: {
-    //     type: Schema.Types.String,
-    //     required: true
-    // },
-    // imageUrl: {
-    //     type: Schema.Types.String,
-    //     required: false
-    // },
-    selectedFile: {
+    category: {
+        type: Schema.Types.String,
+        required: true
+    },
+    type: {
+        type: Schema.Types.String,
+        default: "open"
+    },
+    about: {
+        type: Schema.Types.String,
+        required: true
+    },
+    imageUrl: {
         type: Schema.Types.String,
         required: false
     },

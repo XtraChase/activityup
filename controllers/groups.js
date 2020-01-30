@@ -12,8 +12,12 @@ module.exports = {
   create: (req, res) => {
     const newGroup = new Group({
       groupName: req.body.groupName,
-      users: [req.user]
-    });
+      users: [req.user],
+      category: req.body.category,
+      type: req.body.type,
+      about: req.body.about,
+      imageUrl: req.body.imageUrl
+    })
     newGroup
       .save()
       .then(data => {
