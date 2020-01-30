@@ -22,6 +22,10 @@ const activitySchema = new Schema({
     type: Schema.Types.String,
     required: true
   },
+  groupResponsible: {
+    type: Schema.Types.String,
+    required: true
+  },
   upvotes: {
     type: Schema.Types.Number,
     default: 0

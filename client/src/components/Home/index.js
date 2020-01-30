@@ -3,6 +3,7 @@ import Header from "../Header";
 import Title from "./Title";
 import ActivityTypes from "./ActivityTypes";
 import AdvertisedActivities from "./AdvertisedActivities";
+import Activities from "./Activities";
 import Footer from "../Footer";
 
 function Body(props) {
@@ -17,6 +18,7 @@ function Body(props) {
       <Title />
       <ActivityTypes />
       <AdvertisedActivities />
+      <Activities />
       <Footer />
     </div>
   );

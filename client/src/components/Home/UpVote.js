@@ -1,17 +1,20 @@
 import React from "react";
+import { ReactSVG } from "react-svg";
 
-export const UpVote = props => (
-  <>
-    <img
-      className="upVoteArrow"
-      src="images/Arrow.png"
-      alt="Up Vote Arrow"
-      width="15px"
-      onClick={props.handleArrowClick}
-      upvotes={props.upvotes}
-    />
-    <p className="upVoteCount">{props.upvotes}</p>
-  </>
-);
+function UpVote(props) {
+  return (
+    <>
+      <ReactSVG
+        className="arrow"
+        src="images/Arrow.svg"
+        alt="Up Vote Arrow"
+        onClick={props.handleArrowClick}
+        upvotes={props.upvotes}
+      />
+
+      <p className="upVoteCount">{props.upvotes}</p>
+    </>
+  );
+}
 
 export default UpVote;

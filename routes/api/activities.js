@@ -9,4 +9,9 @@ router
   .get(activityController.findAll)
   .post(activityController.create);
 
+router.route("/byGroupActivities").get(activityController.byGroupActivities);
+
+//route to /api/activities
+router.route("/activities").post(activitiesController.create);
+
 module.exports = router;

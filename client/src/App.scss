@@ -273,11 +273,15 @@ header {
   text-shadow: 0px 0px 0px black;
 }
 
-.upVoteArrow {
+.arrow {
+  fill: rgba(255, 255, 255, 0.7);
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 5px;
+  fill-rule: evenodd;
+  cursor: pointer;
   position: absolute;
   top: 15px;
   right: 15px;
-  cursor: pointer;
   -webkit-filter: drop-shadow(0px 0px 0 white)
     drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
   filter: drop-shadow(0px 0px 0 #f8f8f8)

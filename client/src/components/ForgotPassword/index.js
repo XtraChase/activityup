@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
-import Header from "../Header";
+// import Header from "../Header";
 
 class ForgotPassword extends Component {
   constructor(props) {
@@ -86,7 +86,7 @@ class ForgotPassword extends Component {
           </form>
           <div className="accountQuestionContainer">
             <Link to="/login">Login</Link>
-            </div>
+          </div>
         </div>
       </>
     );
