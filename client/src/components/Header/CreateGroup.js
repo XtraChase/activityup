@@ -7,20 +7,24 @@ export default class CreateGroup extends Component {
   constructor(props) {
     super(props);
     this.state = { 
-      groupName: ""
+      groupName: "",
+      category: "",
+      type: "",
+      about: "",
+      imageUrl: ""
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.createGroup = this.createGroup.bind(this);
-  }
-
-  state = {
-    selectedFile: null
   };
 
-  handleChange(event) {
-    this.setState({ groupName: event.target.value });
-  }
+  handleChange = event => {
+    const { name, value } = event.target;
+
+    this.setState({
+      [name]: value
+    });
+  };
 
   //submit new group to DB
   createGroup(event) {
@@ -31,37 +35,12 @@ export default class CreateGroup extends Component {
       .catch(err => console.log(err.response));
     this.setState({
       groupName: "",
-    });
-  }
-
-  fileSelectedHandler = event => {
-    this.setState({
-      selectedFile: event.target.files[0]
+      category: "",
+      type: "",
+      about: "",
+      imageUrl: ""
     });
   };
-
-  // fileUploadHandler = () => {
-  //   const fd = new FormData();
-  //   fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
-  //   // Firebase Storage
-  //   axios
-  //     .post(
-  //       "https://us-central1-activityup-vote.cloudfunctions.net/uploadFile",
-  //       fd,
-  //       {
-  //         onUploadProgress: progressEvent => {
-  //           console.log(
-  //             "Upload Progress: " +
-  //               Math.round((progressEvent.loaded / progressEvent.total) * 100) +
-  //               "%"
-  //           );
-  //         }
-  //       }
-  //     )
-  //     .then(res => {
-  //       console.log(res);
-  //     });
-  // };
 
   render() {
     return (
@@ -82,20 +61,47 @@ export default class CreateGroup extends Component {
                 Group Name:
                 <input
                   type="text"
+                  name="groupName"
                   value={this.state.name}
                   onChange={this.handleChange}
                 />
               </label>
-              <input 
-              type="file" 
-              // value={this.state.image}
-              onChange={this.fileSelectedHandler} />
-              {/* <button 
-              className="blue"
-              type="submit"
-              value="Add Group"
-              onClick={this.props.onHide}
-              >Create Group</button> */}
+              <label>
+                Category:
+                <input
+                  type="text"
+                  name="category"
+                  value={this.state.category}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <label>
+                Type:
+                <input
+                  type="text"
+                  name="type"
+                  value={this.state.type}
+                  onChange={this.handleChange}
+                />
+              </label>
+              <label>
+                About:
+                <input
+                  type="text"
+                  name="about"
+                  value={this.state.about}
+                  onChange={this.handleChange}
+                />
+                <label>
+                Image Url:
+                <input
+                  type="text"
+                  name="imageUrl"
+                  value={this.state.imageUrl}
+                  onChange={this.handleChange}
+                />
+              </label>
+              </label>
             <Modal.Footer>
               <input
                 className="blue"
