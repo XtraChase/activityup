@@ -126,7 +126,8 @@ header {
   height: auto;
   margin: 5% 20% 5% 20%;
   @media screen and (max-width: 640px) {
-    margin: 9% 15% 9% 15%;
+    margin: 9% 10% 9% 10%;
+    width: 80%;
   }
 }
 
@@ -268,15 +269,19 @@ header {
   top: 16px;
   right: 35px;
   cursor: default;
-  color: rgba(255, 255, 255, 0.534);
-  -webkit-text-stroke: 0.1px black;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0px 0px 0px black;
 }
 
-.upVoteArrow {
+.arrow {
+  fill: rgba(255, 255, 255, 0.7);
+  stroke: rgba(255, 255, 255, 0.7);
+  stroke-width: 5px;
+  fill-rule: evenodd;
+  cursor: pointer;
   position: absolute;
   top: 15px;
   right: 15px;
-  cursor: pointer;
   -webkit-filter: drop-shadow(0px 0px 0 white)
     drop-shadow(0px 0px 0 rgba(255, 255, 255, 0));
   filter: drop-shadow(0px 0px 0 #f8f8f8)

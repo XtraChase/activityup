@@ -17,6 +17,12 @@ export default {
     return axios.get(`api/groups/byUser?id=${id}`);
   },
   createGroup(groupObj) {
-    return axios.post("api/groups/sessionUser/groups", groupObj)
+    return axios.post("api/groups/sessionUser/groups", groupObj);
+  },
+  getActivitiesByGroup(id) {
+    return axios.get(`api/activities/byGroup?id=${id}`);
+  },
+  createActivity(activityObj) {
+    return axios.post("api/activities/sessionUser/Activitys", activityObj);
   }
 };

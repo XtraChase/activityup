@@ -16,7 +16,8 @@
             "subtitle": "Modern Warfare",
             "about": "Shooter",
             "category": "video game",
-            "upvoted": false
+            "upvoted": false,
+            "upvotes": 5
           },
           {
             "id": 1,
@@ -25,7 +26,8 @@
             "subtitle": "",
             "about": "vehicle and sports game",
             "category": "video game",
-            "upvoted": false
+            "upvoted": false,
+            "upvotes": 3
           },
           {
             "id": 1,
@@ -34,7 +36,8 @@
             "subtitle": "",
             "about": "",
             "category": "video game",
-            "upvoted": false
+            "upvoted": false,
+            "upvotes": 2
           },
           {
             "id": 1,
@@ -43,7 +46,8 @@
             "subtitle": "",
             "about": "",
             "category": "video game",
-            "upvoted": false
+            "upvoted": false,
+            "upvotes": 1
           }
         ]
       }
