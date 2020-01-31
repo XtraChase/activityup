@@ -7,18 +7,18 @@ import UpVote from "./UpVote";
 class GroupSuggestions extends Component {
   state = {
     eventExample,
-    event: 0
+    event: 0,
+    upvote: 10
   };
 
   // TODO Clicking the upvote arrow needs to increment by 1 and change arrow.svg color
   // TODO The upvote needs to be associated with the event or activity
   // TODO Incremented vote needs to post to database
   // TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
-  handleUpVote = activity => {
+  handleUpVote = () => {
     console.log("Activity Upvoted!");
-    // let update = {
-    //   upvotes: this.state.upvotes
-    // };
+    this.setState({ upvotes: this.state.upvotes + 1 });
+    console.log(this.state.upvotes);
   };
 
   // FIXME API Get for Activities associated with a particular event
