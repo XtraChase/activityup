@@ -7,7 +7,7 @@ function ActivityTypes() {
   for (const key in images) {
     activityImgs.push(
       <div className="activityTypesColumn" key={key + Date.now()}>
-        <Link to="/activitytype" className="activityTypeContainer">
+        <Link to="/activity" className="activityTypeContainer">
           <img
             src={images[key]}
             alt={key}
