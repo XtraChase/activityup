@@ -1,41 +1,15 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
-import axios from "axios";
 
+// EVENT CREATION FOR GROUPS
 export class CreateEvent extends Component {
   state = {
     selectedFile: null
   };
 
-  fileSelectedHandler = event => {
-    this.setState({
-      selectedFile: event.target.files[0]
-    });
-  };
-
-  fileUploadHandler = () => {
-    const fd = new FormData();
-    fd.append("image", this.state.selectedFile, this.state.selectedFile.name);
-    // Firebase Storage
-    axios
-      .post(
-        "https://us-central1-activityup-vote.cloudfunctions.net/uploadFile",
-        fd,
-        {
-          onUploadProgress: progressEvent => {
-            console.log(
-              "Upload Progress: " +
-                Math.round((progressEvent.loaded / progressEvent.total) * 100) +
-                "%"
-            );
-          }
-        }
-      )
-      .then(res => {
-        console.log(res);
-      });
-  };
-
+  // TODO When a day is clicked on the groups calender a modal pops up | SEE ./Calender.js for handleclick()
+  // TODO on submit event name is displayed on calender
+  // TODO on submit event is added to database for the group's events
   render() {
     return (
       <Modal

@@ -1,14 +1,19 @@
-import React, { Component, Link } from "react";
+import React, { Component } from "react";
 import eventExample from "../../utils/eventExample.json";
 import API from "../../utils/API";
 import UpVote from "./UpVote";
 
+// ACTIVITIES THAT ARE DISPLAYED IN THE GROUPS PAGE IN THE EVENTS SECTION
 class GroupSuggestions extends Component {
   state = {
     eventExample,
     event: 0
   };
 
+  // TODO Clicking the upvote arrow needs to increment by 1 and change arrow.svg color
+  // TODO The upvote needs to be associated with the event or activity
+  // TODO Incremented vote needs to post to database
+  // TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
   handleUpVote = activity => {
     console.log("Activity Upvoted!");
     // let update = {
@@ -16,8 +21,9 @@ class GroupSuggestions extends Component {
     // };
   };
 
-  getActivitiesByGroup() {
-    API.getActivitiesByGroup()
+  // FIXME API Get for Activities associated with a particular event
+  getActivitiesByEvent() {
+    API.getActivitiesByEvent()
       .then(response => {
         if (response.data.group) {
           this.setState({
@@ -28,9 +34,10 @@ class GroupSuggestions extends Component {
       .then(() => this.populateActivities());
   }
 
+  // FIXME API Get for populating the activities
   populateActivities() {
     if (this.state.activity) {
-      API.getActivitiesByGroup(this.state.group.activites).then(activities => {
+      API.getActivitiesByEvent(this.state.event.activites).then(activities => {
         console.log(activities);
         this.setState({
           // activities: activities.data
@@ -39,6 +46,8 @@ class GroupSuggestions extends Component {
     }
   }
 
+  // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
+  //TODO displayed activities needs to be mapped through the group's database for the specified event date.
   renderActivites() {
     if (this.state.groups.activities) {
       let activitydivs = this.state.activities.map(g => {

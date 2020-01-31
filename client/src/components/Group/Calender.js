@@ -56,6 +56,7 @@ export default class DemoApp extends React.Component {
   //   calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
   // };
 
+  // TODO When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
   handleDateClick = arg => {
     this.setState({
       // add new event data
