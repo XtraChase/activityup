@@ -18,11 +18,21 @@ export default {
   },
   createGroup(groupObj) {
     return axios.post("api/groups/sessionUser/groups", groupObj);
-  },
-  getActivitiesByGroup(id) {
-    return axios.get(`api/activities/byGroup?id=${id}`);
-  },
-  createActivity(activityObj) {
-    return axios.post("api/activities/sessionUser/Activitys", activityObj);
   }
+  // NEED VALIDATION
+  // getEvents() {
+  //   return axios.get("api/events");
+  // },
+  // getEventsByGroup(id) {
+  //   return axios.get(`api/events/byGroup?id=${id}`);
+  // },
+  // createEvent(eventObj) {
+  //   return axios.post("api/sessionUser/groups/events", eventObj);
+  // },
+  // getActivitiesByGroup(id) {
+  //   return axios.get(`api/activities/byGroup?id=${id}`);
+  // },
+  // createActivity(activityObj) {
+  //   return axios.post("api/event/activities", activityObj);
+  // }
 };

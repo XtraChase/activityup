@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const activitySchema = new Schema({
-  name: {
+  activityname: {
     type: Schema.Types.String,
     required: true
   },
@@ -10,7 +10,7 @@ const activitySchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
-  image: {
+  imageUrl: {
     type: Schema.Types.String,
     required: false
   },
@@ -19,6 +19,10 @@ const activitySchema = new Schema({
     required: false
   },
   groupResponsible: {
+    type: Schema.Types.String,
+    required: false
+  },
+  hostingEvent: {
     type: Schema.Types.String,
     required: false
   },
