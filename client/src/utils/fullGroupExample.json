@@ -1,0 +1,77 @@
+{
+  "_id": "5e336c361fa21e16209f9ac1",
+  "groupName": "Gaming Group",
+  "category": "Gaming",
+  "about": "All about the game",
+  "imageUrl": "https://images.tech.co/wp-content/uploads/2019/12/19112253/future-gaming-708x400.jpg",
+  "__v": 0,
+  "events": [
+    {
+      "eventName": "Gaming Tuesday",
+      "id": "5e336c361fa21e16209f9ac1sreg",
+      "date": "02/11/2020",
+      "ended": false,
+      "groupResponsible": "gaming group",
+      "image": "",
+      "category": "gaming",
+      "upvotes": 2,
+      "attendees": [],
+      "activities": [
+        {
+          "id": 1,
+          "activity": "Call of Duty",
+          "image": "https://www.playstationlifestyle.net/assets/uploads/2020/01/Modern-Warfare-error.jpg",
+          "subtitle": "Modern Warfare",
+          "about": "Shooter",
+          "category": "video game",
+          "upvoted": false,
+          "upvotes": 5
+        },
+        {
+          "id": 1,
+          "activity": "Rocket League",
+          "image": "https://hb.imgix.net/ae475dd426714e9e7857b28f92009011d16ac98e.jpg?auto=compress,format&fit=crop&h=353&w=616&s=ff11c567c3750076b8624c1f22a83547",
+          "subtitle": "",
+          "about": "vehicle and sports game",
+          "category": "video game",
+          "upvoted": false,
+          "upvotes": 3
+        },
+        {
+          "id": 1,
+          "activity": "Overwatch",
+          "image": "https://assets1.ignimgs.com/2018/02/23/overwatch-button-v2-1519416414955.jpg",
+          "subtitle": "",
+          "about": "",
+          "category": "video game",
+          "upvoted": false,
+          "upvotes": 2
+        },
+        {
+          "id": 1,
+          "activity": "Super Smash Bros",
+          "image": "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F85037341%2F26975821121%2F1%2Foriginal.20190305-175625?w=1000&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C50%2C1600%2C800&s=6ac1b61dd8f60ab58337213bb8794a09",
+          "subtitle": "",
+          "about": "",
+          "category": "video game",
+          "upvoted": false,
+          "upvotes": 1
+        }
+      ]
+    }
+  ],
+  "users": [
+    {
+      "groups": [
+        "5e336c361fa21e16209f9ac1",
+        "5e33725e5e9b0a0ec48912cf",
+        "5e3372e35e9b0a0ec48912d0"
+      ],
+      "_id": "5e3313129940bb0fa458b78b25434",
+      "username": "test",
+      "email": "test",
+      "password": "$2a$10$E2YQsYCef58PNIOoXWLo8.wFQ9XRy.Pd6i0xvrdlNVyB2xBo8j2RW",
+      "__v": 0
+    }
+  ]
+}

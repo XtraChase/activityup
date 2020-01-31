@@ -10,21 +10,17 @@ const activitySchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
-  datetime: {
-    type: Schema.Types.Date,
-    required: true
-  },
   image: {
     type: Schema.Types.String,
     required: false
   },
   category: {
     type: Schema.Types.String,
-    required: true
+    required: false
   },
   groupResponsible: {
     type: Schema.Types.String,
-    required: true
+    required: false
   },
   upvotes: {
     type: Schema.Types.Number,
