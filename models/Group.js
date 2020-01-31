@@ -10,10 +10,6 @@ const groupSchema = new Schema({
     type: Schema.Types.String,
     required: true
   },
-  type: {
-    type: Schema.Types.String,
-    default: "open"
-  },
   about: {
     type: Schema.Types.String,
     required: true
@@ -26,12 +22,6 @@ const groupSchema = new Schema({
     {
       type: Schema.Types.ObjectId,
       ref: "User"
-    }
-  ],
-  date: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Date"
     }
   ],
   events: [

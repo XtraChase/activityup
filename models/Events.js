@@ -12,19 +12,19 @@ const eventsSchema = new Schema({
   },
   date: {
     type: Schema.Types.Date,
-    required: true
+    required: false
   },
   about: {
     type: Schema.Types.String,
     required: false
   },
-  image: {
+  imageUrl: {
     type: Schema.Types.String,
     required: false
   },
   category: {
     type: Schema.Types.String,
-    required: true
+    required: false
   },
   groupResponsible: {
     type: Schema.Types.String,
@@ -57,6 +57,6 @@ eventsSchema.pre("save", function(next) {
   next();
 });
 
-const Event = mongoose.model("Event", eventsSchema);
+const Event = mongoose.model("Events", eventsSchema);
 
 module.exports = Event;

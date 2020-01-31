@@ -5,13 +5,13 @@ const { activityController } = require("../../controllers");
 // GET convenience function to find all activitys
 // POST convenience function to create new activitys
 router
-  .route("/")
+  .route("/sessionUser/groups/events/activities")
   .get(activityController.findAll)
   .post(activityController.create);
 
 // router.route("/byGroupActivities").get(activityController.byGroupActivities);
 
-//route to /api/activities
+// // route to /api/activities
 // router.route("/activities").post(activitiesController.create);
 
 module.exports = router;
