@@ -3,7 +3,7 @@ import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
-
+import CreateEvent from "./CreateEvent";
 import "./calender.scss";
 
 // Resource: https://fullcalendar.io/
@@ -16,6 +16,17 @@ export default class DemoApp extends React.Component {
       { title: "Event Now", start: new Date() }
     ]
   };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      addModalShow: false
+    };
+  }
+
+  addModalClose() {
+    this.setState({ addModalShow: false });
+  }
 
   render() {
     return (
@@ -39,6 +50,11 @@ export default class DemoApp extends React.Component {
             events={this.state.calendarEvents}
             dateClick={this.handleDateClick}
           />
+          <CreateEvent
+            show={this.state.addModalShow}
+            onHide={() => this.addModalClose()}
+            style={{ background: "none" }}
+          />
         </div>
       </div>
     );
@@ -59,13 +75,9 @@ export default class DemoApp extends React.Component {
   // TODO When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
   handleDateClick = arg => {
     this.setState({
-      // add new event data
-      calendarEvents: this.state.calendarEvents.concat({
-        // creates a new array
-        title: "New Event",
-        start: arg.date,
-        allDay: arg.allDay
-      })
+
+      addModalShow: true,
+
     });
   };
 }
