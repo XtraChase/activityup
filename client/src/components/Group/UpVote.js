@@ -1,6 +1,7 @@
 import React from "react";
 import { ReactSVG } from "react-svg";
 
+// FIXME should take in the upvotes and render the updated count
 function UpVote(props) {
   return (
     <>

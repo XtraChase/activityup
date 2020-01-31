@@ -4,7 +4,9 @@ import Activities from "../../utils/activities.json";
 import API from "../../utils/API";
 import UpVote from "./UpVote";
 
-class AdvertisedActivities extends Component {
+// EVENTS THAT ARE DISPLAYED ON ANY PAGE PAGE
+// TODO Refer to Groups>GroupSuggestions for example of how this shall work
+class AdvertisedEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -111,4 +113,4 @@ class AdvertisedActivities extends Component {
   }
 }
 
-export default AdvertisedActivities;
+export default AdvertisedEvents;
