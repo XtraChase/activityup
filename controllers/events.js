@@ -12,17 +12,16 @@ module.exports = {
   create: (req, res) => {
     const newEvent = new Event({
       eventName: req.body.eventName,
-      subtitle: req.body.subtitle,
-      about: req.body.about,
-      upvotes: req.body.upvotes,
-      category: req.body.category,
-      date: req.body.date,
-      ended: req.body.ended,
-      imageUrl: req.body.imageUrl,
-      closedEvent: req.body.closedEvent,
-      groupResponsible: [req.group],
-      attendees: [req.attendees],
-      activities: [req.activities]
+      // subtitle: req.body.subtitle,
+      // about: req.body.about,
+      // upvotes: req.body.upvotes,
+      // category: req.body.category,
+      // date: req.body.date,
+      // ended: req.body.ended,
+      // imageUrl: req.body.imageUrl,
+      // groupResponsible: [req.group],
+      // attendees: [req.attendees],
+      // activities: [req.activities]
     });
     newEvent
       .save()

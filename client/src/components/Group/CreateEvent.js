@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Modal, Button } from "react-bootstrap";
+import API from "../../utils/API";
 
 // EVENT CREATION FOR GROUPS
 
@@ -12,6 +13,9 @@ export default class CreateEvent extends Component {
     this.state = {
       eventName: "",
     }
+
+    this.handleChange = this.handleChange.bind(this);
+    this.createEvent = this.createEvent.bind(this);
   };
 
   handleChange = event => {
@@ -22,8 +26,15 @@ export default class CreateEvent extends Component {
     });
   };
 
-  createEvent(event) {
+  createEvent(e) {
     console.log(this.state);
+    e.preventDefault();
+    API.createEvent(this.state)
+      .then(newEvent => console.log(newEvent))
+      .catch(err => console.log(err.response));
+    this.setState({
+      eventName: ""
+    });
   };
 
   render() {
@@ -45,14 +56,17 @@ export default class CreateEvent extends Component {
               Event Name:
               <input
                 type="text"
-                name="groupName"
+                name="eventName"
                 value={this.state.name}
                 onChange={this.handleChange}
               />
             </label>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.props.onHide}>Create Event</Button>
+            <Button 
+            type="submit" 
+            onClick={this.props.onHide}
+            >Create Event</Button>
           </Modal.Footer>
         </form>
       </Modal>

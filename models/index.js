@@ -2,6 +2,6 @@ module.exports = {
   Date: require("./Date"),
   User: require("./User"),
   Group: require("./Group"),
-  Events: require("./Events"),
+  Event: require("./Event"),
   Activity: require("./Activity")
 };

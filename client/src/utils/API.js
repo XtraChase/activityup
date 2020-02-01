@@ -34,6 +34,9 @@ export default {
   },
   getGeekEvents() {
     return axios.get("api/thirdparty/geekevents");
+  },
+  createEvent(eventObj) {
+    return axios.post("api/groups/sessionUser/groups/events", eventObj);
   }
   // FIXME needs validation check of working route
   // getEvents() {
