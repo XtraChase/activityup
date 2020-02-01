@@ -19,6 +19,7 @@ module.exports = {
       date: req.body.date,
       ended: req.body.ended,
       imageUrl: req.body.imageUrl,
+      closedEvent: req.body.closedEvent,
       groupResponsible: [req.group],
       attendees: [req.attendees],
       activities: [req.activities]

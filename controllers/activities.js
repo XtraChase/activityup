@@ -33,6 +33,15 @@ module.exports = {
       })
       .catch(err => res.status(422).json(err));
   },
+
+  // TODO check to see if the user has upvoted the activity in their user's upvoted activities schema
+  upvote: (req, res) => {
+    console.log(req.body);
+    Activity.findByIdAndUpdate(req.body.id, { $inc: { upvotes: 1 } }).then(
+      console.log("******UPVOTED******")
+    );
+  },
+
   byGroup: (req, res) => {
     Group.findById(req.query.id)
       .populate("activities")
@@ -51,6 +60,7 @@ module.exports = {
     const newActivity = new Activity({
       activityName: name
     });
+
     newActivity.save((err, savedActivity) => {
       if (err) return res.json(err);
       res.json(savedActivity);

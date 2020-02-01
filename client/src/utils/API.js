@@ -18,8 +18,13 @@ export default {
   },
   createGroup(groupObj) {
     return axios.post("api/groups/sessionUser/groups", groupObj);
+  },
+  getActivities() {
+    return axios.get(`api/activities/activities`);
+  },
+  putActivity(id) {
+    return axios.put(`api/activities/activities`, { id });
   }
-
   // FIXME needs validation check of working route
   // getEvents() {
   //   return axios.get("api/events");
@@ -32,7 +37,7 @@ export default {
   // },
   // getActivitiesByEvent(id) {
   //   return axios.get(`api/activities/byEvent?id=${id}`);
-  // },
+  // }
   // createActivity(activityObj) {
   //   return axios.post("api/event/activities", activityObj);
   // }

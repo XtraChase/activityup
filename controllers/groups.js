@@ -15,6 +15,7 @@ module.exports = {
       category: req.body.category,
       about: req.body.about,
       imageUrl: req.body.imageUrl,
+      closedGroup: req.body.closedGroup,
       users: [req.user],
       events: [req.events]
     });

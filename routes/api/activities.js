@@ -5,9 +5,10 @@ const { activityController } = require("../../controllers");
 // GET convenience function to find all activitys
 // POST convenience function to create new activitys
 router
-  .route("/sessionUser/groups/events/activities")
+  .route("/activities")
   .get(activityController.findAll)
-  .post(activityController.create);
+  .post(activityController.create)
+  .put(activityController.upvote);
 
 // router.route("/byGroupActivities").get(activityController.byGroupActivities);
 

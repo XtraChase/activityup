@@ -35,7 +35,11 @@ const eventsSchema = new Schema({
     default: 0
   },
   ended: {
-    type: Schema.Types.Number,
+    type: Schema.Types.Boolean,
+    default: false
+  },
+  closedEvent: {
+    type: Schema.Types.Boolean,
     default: false
   },
   attendees: [
