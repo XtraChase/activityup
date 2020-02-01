@@ -30,6 +30,9 @@ export default {
   },
   getAdvertisedEvents() {
     return axios.get("api/thirdparty/adevents")
+  },
+  getGeekEvents() {
+    return axios.get("api/thirdparty/geekevents")
   }
   // FIXME needs validation check of working route
   // getEvents() {
