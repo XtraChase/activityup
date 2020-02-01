@@ -32,7 +32,9 @@ User.deleteMany({})
   .then(() => {
     // Make a group
     return new Group({
-      groupName: "GroupA"
+      groupName: "GroupA",
+      category: "drinks",
+      about: "just some anonymous friends"
     }).save();
   })
   .then(data => {

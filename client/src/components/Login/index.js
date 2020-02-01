@@ -12,7 +12,8 @@ export default class Login extends Component {
 
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      errors: null
     };
 
     this.update = this.update.bind(this);
@@ -30,13 +31,31 @@ export default class Login extends Component {
   login(e) {
     e.preventDefault();
     API.logIn(this.state)
-      .then(response => console.log("Login Response: ", response.data))
-      .then(this.props.updateUser)
+      .then(response => {
+        console.log("Login Response: ", response.data);
+        return response.data;
+      })
+      .then(data => {
+        if (data.message) {
+          this.setState({ errors: data.message });
+        }
+      })
+      .then(() => {
+        if (!this.state.errors) {
+          this.props.updateUser();
+        }
+      })
       .catch(err => console.log(err));
     this.setState({
       username: this.state.username,
       password: ""
     });
+  }
+
+  errorMsg() {
+    if (this.state.errors) {
+      return <h3>{this.state.errors}</h3>;
+    }
   }
 
   render() {
@@ -54,6 +73,8 @@ export default class Login extends Component {
           username={this.props.username}
           updateUser={this.props.updateUser}
         />
+        <div className="headerBuffer"></div>
+        <div className="errorMsg">{this.errorMsg()}</div>
         <div className="col border-right leftColumn login">
           <form onSubmit={this.login}>
             <h2>Login</h2>
