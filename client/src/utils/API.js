@@ -18,7 +18,7 @@ export default {
   },
   createGroup(groupObj) {
     return axios.post("api/groups/sessionUser/groups", groupObj);
-  }
+  },
 
   // FIXME needs validation check of working route
   // getEvents() {
@@ -30,9 +30,17 @@ export default {
   // createEvent(eventObj) {
   //   return axios.post("api/sessionUser/groups/events", eventObj);
   // },
+  getActivities() {
+    return axios.get(`api/activities/activities`);
+  },
+
+  putActivity(id) {
+    console.log(`In putActivity: ${id}`);
+    return axios.put(`api/activities/activities`, { id });
+  }
   // getActivitiesByEvent(id) {
   //   return axios.get(`api/activities/byEvent?id=${id}`);
-  // },
+  // }
   // createActivity(activityObj) {
   //   return axios.post("api/event/activities", activityObj);
   // }

@@ -18,6 +18,10 @@ const groupSchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
+  closedGroup: {
+    type: Schema.Types.Boolean,
+    default: false
+  },
   users: [
     {
       type: Schema.Types.ObjectId,

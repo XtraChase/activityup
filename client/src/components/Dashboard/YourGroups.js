@@ -50,7 +50,7 @@ class YourGroups extends Component {
           >
             <img
               className="image"
-              src="https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2018/09/National-Video-Game-Day-796x416.jpg"
+              src={g.imageUrl}
               alt="activity type"
               width="100%"
             />
