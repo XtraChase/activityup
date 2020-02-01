@@ -9,17 +9,22 @@ import "./calender.scss";
 // Resource: https://fullcalendar.io/
 export default class DemoApp extends React.Component {
   calendarComponentRef = React.createRef();
-  state = {
-    calendarWeekends: true,
-    calendarEvents: [
-      // initial event data
-      { title: "Event Now", start: new Date() }
-    ]
-  };
+  // state = {
+  //   calendarWeekends: true,
+  //   calendarEvents: [
+  //     // initial event data
+  //     { title: "Event Now", start: new Date() }
+  //   ]
+  // };
 
   constructor(props) {
     super(props);
     this.state = {
+      calendarWeekends: true,
+      calendarEvents: [
+        // initial event data
+        { title: "Event Now", start: new Date() }
+      ],
       addModalShow: false
     };
   }
@@ -76,8 +81,16 @@ export default class DemoApp extends React.Component {
   handleDateClick = arg => {
     this.setState({
 
+      //triggers modal on date click
       addModalShow: true,
 
+      // add new event data
+      calendarEvents: this.state.calendarEvents.concat({
+        // creates a new array
+        title: "New Event",
+        start: arg.date,
+        allDay: arg.allDay
+      })
     });
   };
 }
