@@ -11,11 +11,11 @@ export default class SuggestActivity extends Component {
     this.state = {
       activityName: "",
       subtitle: "",
-      imageUrl: "",
-      category: null,
-      groupResponsible: null,
-      hostingEvent: null,
-      upvotes: 0
+      image: ""
+      // category: "",
+      // groupResponsible: "",
+      // hostingEvent: "",
+      // upvotes: 0
     };
     this.handleChange = this.handleChange.bind(this);
     this.createActivity = this.createActivity.bind(this);
@@ -37,18 +37,17 @@ export default class SuggestActivity extends Component {
   // TODO render to page without page refresh
   createActivity(event) {
     event.preventDefault();
-    console.log(this.state);
     API.createActivity(this.state)
-      .then(activity => console.log(activity))
-      .catch(err => console.log(err.response));
+      .then(activity => console.log("GOT IT!", activity))
+      .catch(err => console.log("error", err.response));
     this.setState({
       activityName: "",
       subtitle: "",
-      imageUrl: "",
-      category: null,
-      groupResponsible: null,
-      hostingEvent: null,
-      upvotes: 0
+      image: ""
+      // category: "",
+      // groupResponsible: "",
+      // hostingEvent: "",
+      // upvotes: 0
     });
   }
 
@@ -89,8 +88,8 @@ export default class SuggestActivity extends Component {
               Image URL:
               <input
                 type="text"
-                name="imageUrl"
-                value={this.state.imageUrl}
+                name="image"
+                value={this.state.image}
                 onChange={this.handleChange}
               />
             </label>

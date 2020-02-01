@@ -13,11 +13,11 @@ module.exports = {
     const newActivity = new Activity({
       activityName: req.body.activityName,
       subtitle: req.body.subtitle,
-      imageUrl: req.body.imageUrl,
-      category: req.body.category,
-      groupResponsible: [req.group],
-      hostingEvent: [req.events],
-      upvotes: req.body.upvotes
+      image: req.body.image
+      // category: req.body.category,
+      // groupResponsible: [req.group],
+      // hostingEvent: [req.events],
+      // upvotes: req.body.upvotes
     });
     newActivity
       .save()

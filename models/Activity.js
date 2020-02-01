@@ -2,34 +2,34 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const activitySchema = new Schema({
-  activityname: {
+  activityName: {
     type: Schema.Types.String,
-    required: true
+    required: false
   },
   subtitle: {
     type: Schema.Types.String,
     required: false
   },
-  imageUrl: {
+  image: {
     type: Schema.Types.String,
     required: false
-  },
-  category: {
-    type: Schema.Types.String,
-    required: false
-  },
-  groupResponsible: {
-    type: Schema.Types.String,
-    required: false
-  },
-  hostingEvent: {
-    type: Schema.Types.String,
-    required: false
-  },
-  upvotes: {
-    type: Schema.Types.Number,
-    default: 0
   }
+  // category: {
+  //   type: Schema.Types.String,
+  //   required: false
+  // },
+  // groupResponsible: {
+  //   type: Schema.Types.String,
+  //   required: false
+  // },
+  // hostingEvent: {
+  //   type: Schema.Types.String,
+  //   required: false
+  // },
+  // upvotes: {
+  //   type: Schema.Types.Number,
+  //   default: 0
+  // }
 });
 
 activitySchema.pre("save", function(next) {
