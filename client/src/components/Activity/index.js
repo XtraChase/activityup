@@ -34,7 +34,7 @@ function Activity(props) {
           }}
           onChange={update}
         />
-        <p className="upVoteCount">{upvotes}</p>;
+        <p className="upVoteCount">{upvotes}</p>
         <div className="groupSuggestionTextBlock">
           <h4>{activity}</h4>
           <p>{subtitle}</p>

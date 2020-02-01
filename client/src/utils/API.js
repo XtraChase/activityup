@@ -20,6 +20,7 @@ export default {
     return axios.post("api/groups/sessionUser/groups", groupObj);
   },
   createActivity(activityObj) {
+    console.log(activityObj);
     return axios.post("api/activities/activities", activityObj);
   },
   getActivities() {
@@ -29,10 +30,10 @@ export default {
     return axios.put(`api/activities/activities`, { id });
   },
   getAdvertisedEvents() {
-    return axios.get("api/thirdparty/adevents")
+    return axios.get("api/thirdparty/adevents");
   },
   getGeekEvents() {
-    return axios.get("api/thirdparty/geekevents")
+    return axios.get("api/thirdparty/geekevents");
   }
   // FIXME needs validation check of working route
   // getEvents() {

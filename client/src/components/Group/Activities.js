@@ -28,7 +28,6 @@ class Activities extends Component {
   // TODO Clicking the upvote arrow changes color to orange
   // TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
   handleUpVote = id => {
-    console.log(`we're in handleUpVote: ${id}`);
     API.putActivity(id);
   };
 
