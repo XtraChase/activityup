@@ -3,7 +3,7 @@ import API from "../../utils/API";
 import Activity from "./Activity";
 
 // ACTIVITIES THAT ARE DISPLAYED IN THE GROUPS PAGE IN THE EVENTS SECTION
-class GroupSuggestions extends Component {
+class Activities extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,7 +11,7 @@ class GroupSuggestions extends Component {
       event: 0
     };
   }
-  
+
   componentDidMount() {
     this.getActivities();
   }
@@ -25,8 +25,8 @@ class GroupSuggestions extends Component {
     });
   }
 
-// TODO Clicking the upvote arrow changes color to orange
-// TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
+  // TODO Clicking the upvote arrow changes color to orange
+  // TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
   handleUpVote = id => {
     console.log(`we're in handleUpVote: ${id}`);
     API.putActivity(id);
@@ -46,7 +46,6 @@ class GroupSuggestions extends Component {
                 activity={activity.activity}
                 getActivities={this.handleUpVote.bind(this)}
                 update={this.update}
-                activity={activity.activity}
                 subtitle={activity.subtitle}
                 upvotes={activity.upvotes}
               />
@@ -57,4 +56,4 @@ class GroupSuggestions extends Component {
   }
 }
 
-export default GroupSuggestions;
+export default Activities;
