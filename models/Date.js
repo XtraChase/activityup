@@ -10,7 +10,7 @@ const dateSchema = new Schema({
         type: Schema.Types.Boolean,
         default: false,
     },
-    acitivites: [{
+    activites: [{
         type: Schema.Types.ObjectId,
         ref: "Activity",
     }]
