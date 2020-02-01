@@ -24,7 +24,7 @@ export default {
   },
   putActivity(id) {
     return axios.put(`api/activities/activities`, { id });
-  }
+  },
   // FIXME needs validation check of working route
   // getEvents() {
   //   return axios.get("api/events");
@@ -38,7 +38,7 @@ export default {
   // getActivitiesByEvent(id) {
   //   return axios.get(`api/activities/byEvent?id=${id}`);
   // }
-  // createActivity(activityObj) {
-  //   return axios.post("api/event/activities", activityObj);
-  // }
+  createActivity(activityObj) {
+    return axios.post("api/activities/activities", activityObj);
+  }
 };

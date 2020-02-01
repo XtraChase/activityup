@@ -1,21 +1,24 @@
 import React, { Component } from "react";
 import { Modal } from "react-bootstrap";
 import API from "../../utils/API";
-// import axios from "axios";
 
-export default class CreateGroup extends Component {
+// SUGGEST ACTIVITIES FOR EVENTS
+
+// TODO on submit activity is pushed to database
+export default class SuggestActivity extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      groupName: "",
+      activityName: "",
       subtitle: "",
-      category: "",
-      about: "",
-      imageUrl: ""
+      imageUrl: "",
+      category: null,
+      groupResponsible: null,
+      hostingEvent: null,
+      upvotes: 0
     };
-
     this.handleChange = this.handleChange.bind(this);
-    this.createGroup = this.createGroup.bind(this);
+    this.createActivity = this.createActivity.bind(this);
   }
 
   handleChange = event => {
@@ -26,19 +29,26 @@ export default class CreateGroup extends Component {
     });
   };
 
-  //submit new group to DB
-  createGroup(event) {
+  suggestActivity(event) {
     console.log(this.state);
+  }
+
+  // FIXME preventDefault not working
+  // TODO render to page without page refresh
+  createActivity(event) {
     event.preventDefault();
-    API.createGroup(this.state)
-      .then(group => console.log(group))
+    console.log(this.state);
+    API.createActivity(this.state)
+      .then(activity => console.log(activity))
       .catch(err => console.log(err.response));
     this.setState({
-      groupName: "",
+      activityName: "",
       subtitle: "",
-      category: "",
-      about: "",
-      imageUrl: ""
+      imageUrl: "",
+      category: null,
+      groupResponsible: null,
+      hostingEvent: null,
+      upvotes: 0
     });
   }
 
@@ -52,17 +62,17 @@ export default class CreateGroup extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Add A New Group
+            Suggest an activity
           </Modal.Title>
         </Modal.Header>
-        <form onSubmit={this.createGroup}>
+        <form onSubmit={this.createActivity}>
           <Modal.Body>
             <label>
-              Group Name:
+              Activity Name:
               <input
                 type="text"
-                name="groupName"
-                value={this.state.groupName}
+                name="activityName"
+                value={this.state.activityName}
                 onChange={this.handleChange}
               />
             </label>
@@ -76,41 +86,23 @@ export default class CreateGroup extends Component {
               />
             </label>
             <label>
-              Category:
+              Image URL:
               <input
                 type="text"
-                name="category"
-                value={this.state.category}
+                name="imageUrl"
+                value={this.state.imageUrl}
                 onChange={this.handleChange}
               />
             </label>
-            <label>
-              About:
-              <input
-                type="text"
-                name="about"
-                value={this.state.about}
-                onChange={this.handleChange}
-              />
-              <label>
-                Image Url:
-                <input
-                  type="text"
-                  name="imageUrl"
-                  value={this.state.imageUrl}
-                  onChange={this.handleChange}
-                />
-              </label>
-            </label>
-            <Modal.Footer>
-              <input
-                className="blue"
-                type="submit"
-                value="Add Group"
-                onClick={this.props.onHide}
-              />
-            </Modal.Footer>
           </Modal.Body>
+          <Modal.Footer>
+            <input
+              className="blue"
+              type="submit"
+              value="Add Activity"
+              onClick={this.props.onHide}
+            />
+          </Modal.Footer>
         </form>
       </Modal>
     );

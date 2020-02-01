@@ -1,7 +1,5 @@
-import React, { Component, Link } from "react";
+import React, { Component } from "react";
 import Activities from "../../utils/activities.json";
-// import { ReactSVG } from "react-svg";
-import API from "../../utils/API";
 import UpVote from "./UpVote";
 
 // EVENTS THAT ARE DISPLAYED ON ANY PAGE PAGE
@@ -40,15 +38,6 @@ class AdvertisedEvents extends Component {
                 upvotes={activity.upvotes}
                 handleArrowClick={this.handleUpVote}
               />
-
-              {/* <ReactSVG
-                className="arrow"
-                src="images/Arrow.svg"
-                onClick={() => {
-                  return activity.upvotes + 1;
-                }}
-              />
-              <p className="upVoteCount">{activity.upvotes}</p>; */}
 
               <div className="text-block">
                 <h4>{activity.activity}</h4>
