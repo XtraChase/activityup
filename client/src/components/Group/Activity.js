@@ -12,7 +12,7 @@ function Activity(props) {
     getActivities,
     id
   } = props;
-  //   let displayUpVotes = <p className="upVoteCount">{this.state.upvotes}</p>;
+
   return (
     <>
       <div className="imageColumn">

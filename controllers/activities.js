@@ -38,7 +38,7 @@ module.exports = {
   upvote: (req, res) => {
     console.log(req.body);
     Activity.findByIdAndUpdate(req.body.id, { $inc: { upvotes: 1 } }).then(
-      console.log(res)
+      console.log("******UPVOTED******")
     );
   },
 
