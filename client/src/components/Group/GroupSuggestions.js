@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import Activity from "./Activity";
+import Activity from "../Activity";
 
 // ACTIVITIES THAT ARE DISPLAYED IN THE GROUPS PAGE IN THE EVENTS SECTION
 class GroupSuggestions extends Component {

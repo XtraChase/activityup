@@ -24,6 +24,9 @@ export default {
   },
   putActivity(id) {
     return axios.put(`api/activities/activities`, { id });
+  },
+  getAdvertisedEvents() {
+    return axios.get("api/thirdparty/adevents")
   }
   // FIXME needs validation check of working route
   // getEvents() {
