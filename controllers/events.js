@@ -55,15 +55,15 @@ module.exports = {
   //     .then(attendees => res.json(attendees.events))
   //     .catch(err => res.status(422).json(err));
   // },
-  createEvent: (req, res) => {
-    const { name } = req.body;
+  // createEvent: (req, res) => {
+  //   const { name } = req.body;
 
-    const newEvent = new Event({
-      eventName: name
-    });
-    newEvent.save((err, savedEvent) => {
-      if (err) return res.json(err);
-      res.json(savedEvent);
-    });
-  }
+  //   const newEvent = new Event({
+  //     eventName: name
+  //   });
+  //   newEvent.save((err, savedEvent) => {
+  //     if (err) return res.json(err);
+  //     res.json(savedEvent);
+  //   });
+  // }
 };
