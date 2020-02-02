@@ -45,15 +45,15 @@ module.exports = {
       .then(events => res.json(events.groups))
       .catch(err => res.status(422).json(err));
   },
-  createGroup: (req, res) => {
-    const { name } = req.body;
+  // createGroup: (req, res) => {
+  //   const { name } = req.body;
 
-    const newGroup = new Group({
-      groupName: name
-    });
-    newGroup.save((err, savedGroup) => {
-      if (err) return res.json(err);
-      res.json(savedGroup);
-    });
-  }
+  //   const newGroup = new Group({
+  //     groupName: name
+  //   });
+  //   newGroup.save((err, savedGroup) => {
+  //     if (err) return res.json(err);
+  //     res.json(savedGroup);
+  //   });
+  // }
 };
