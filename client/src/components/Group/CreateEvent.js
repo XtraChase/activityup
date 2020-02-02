@@ -29,7 +29,9 @@ export default class CreateEvent extends Component {
   createEvent(e) {
     console.log(this.state);
     e.preventDefault();
-    API.createEvent(this.state)
+    API.createEvent({
+      eventName: this.state.eventName
+    })
       .then(newEvent => console.log(newEvent))
       .catch(err => console.log(err.response));
     this.setState({
