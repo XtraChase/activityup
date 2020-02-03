@@ -9,13 +9,6 @@ import "./calender.scss";
 // Resource: https://fullcalendar.io/
 export default class DemoApp extends React.Component {
   calendarComponentRef = React.createRef();
-  // state = {
-  //   calendarWeekends: true,
-  //   calendarEvents: [
-  //     // initial event data
-  //     { title: "Event Now", start: new Date() }
-  //   ]
-  // };
 
   constructor(props) {
     super(props);
@@ -77,7 +70,7 @@ export default class DemoApp extends React.Component {
   //   calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
   // };
 
-  // TODO When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
+  // DONE When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
   handleDateClick = arg => {
     this.setState({
 

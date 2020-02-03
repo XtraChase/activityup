@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const eventsSchema = new Schema({
+const eventSchema = new Schema({
   eventName: {
     type: Schema.Types.String,
     required: true
@@ -56,11 +56,11 @@ const eventsSchema = new Schema({
   ]
 });
 
-eventsSchema.pre("save", function(next) {
+eventSchema.pre("save", function(next) {
   console.log("event saved");
   next();
 });
 
-const Event = mongoose.model("Events", eventsSchema);
+const Event = mongoose.model("Event", eventSchema);
 
 module.exports = Event;

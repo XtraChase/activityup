@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { User, Group, Activity } = require("../models");
+const { User, Group, Activity, Event } = require("../models");
 
 const activityUtil = require("./activities.json");
 
@@ -24,6 +24,14 @@ Activity.deleteMany({})
   .then(data => Activity.create(data))
   .then(data => console.log(data))
   .catch(err => console.log(err));
+
+// Delete existing event collection
+Event.deleteMany({})
+  .then(() => {
+    return new Event({
+      eventName: "Movie Night",
+    }).save();
+  });
 
 // Delete existing user collection
 User.deleteMany({})
