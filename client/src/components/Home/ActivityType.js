@@ -1,11 +1,11 @@
 import React from "react";
 
 function Activity(props) {
-  const { image, title } = props;
+  const { id, image, title, getActivity } = props;
 
   return (
     <>
-      <div className="activityTypesColumn" key={title + Date.now()}>
+      <div className="activityTypesColumn" key={id + Date.now()}>
         <div className="activityTypeContainer">
           <img
             src={image}
@@ -13,7 +13,14 @@ function Activity(props) {
             width="100%"
             className="activityTypesImage"
           />
-          <p className="activityTypesText">{title.toUpperCase()}</p>
+          <p
+            className="activityTypesText"
+            onClick={() => {
+              getActivity(title);
+            }}
+          >
+            {title.toUpperCase()}
+          </p>
         </div>
       </div>
     </>

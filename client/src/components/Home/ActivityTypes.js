@@ -8,9 +8,15 @@ class ActivityTypes extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activities
+      activities,
+      activity: ""
     };
   }
+
+  selectActivity = title => {
+    this.setState({ activity: title });
+    console.log(this.state.activity);
+  };
 
   // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
   render() {
@@ -19,7 +25,12 @@ class ActivityTypes extends Component {
         <div className="activityTypesRow">
           {this.state.activities &&
             this.state.activities.map(activity => (
-              <ActivityType title={activity.title} image={activity.image} />
+              <ActivityType
+                id={activity.id}
+                title={activity.title}
+                image={activity.image}
+                getActivity={this.selectActivity.bind(this)}
+              />
             ))}
         </div>
       </>
