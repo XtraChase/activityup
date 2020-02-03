@@ -43,11 +43,11 @@ export default class SuggestActivity extends Component {
     this.setState({
       activityName: "",
       subtitle: "",
-      image: ""
+      image: "",
       // category: "",
       // groupResponsible: "",
       // hostingEvent: "",
-      // upvotes: 0
+      upvotes: 0
     });
   }
 

@@ -13,7 +13,7 @@ const activitySchema = new Schema({
   image: {
     type: Schema.Types.String,
     required: false
-  }
+  },
   // category: {
   //   type: Schema.Types.String,
   //   required: false
@@ -26,10 +26,10 @@ const activitySchema = new Schema({
   //   type: Schema.Types.String,
   //   required: false
   // },
-  // upvotes: {
-  //   type: Schema.Types.Number,
-  //   default: 0
-  // }
+  upvotes: {
+    type: Schema.Types.Number,
+    default: 0
+  }
 });
 
 activitySchema.pre("save", function(next) {
