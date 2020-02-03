@@ -51,7 +51,7 @@ class AdvertisedEvents extends Component {
   render() {
     return (
       <>
-        <div className="imageRow">
+        <div className="imageRow events">
           {this.renderEvents()}
           {this.state.Activities.map(activity => (
             <Activity

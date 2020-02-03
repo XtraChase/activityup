@@ -190,6 +190,22 @@
   }
 }
 
+.events div img {
+  height: 350px;
+}
+
+@media screen and (max-width: 940px) {
+  .events div img {
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .events div img {
+    height: 300px;
+  }
+}
+
 .chatPage {
   -ms-grid-row: 1;
   -ms-grid-column: 2;

@@ -153,6 +153,16 @@
   }
 }
 
+.events div img {
+  height: 350px;
+  @media screen and (max-width: 940px) {
+    height: 200px;
+  }
+  @media screen and (max-width: 500px) {
+    height: 300px;
+  }
+}
+
 //Group Chat
 
 .chatPage {
