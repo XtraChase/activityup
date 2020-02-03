@@ -17,7 +17,6 @@ class Activities extends Component {
   }
 
   getActivities() {
-    // console.log(this);
     API.getActivities().then(response => {
       this.setState({
         activities: response.data
@@ -29,10 +28,20 @@ class Activities extends Component {
   // TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
   handleUpVote = id => {
     API.putActivity(id);
+    this.setState({ upvoted: (this.upvoted = true) });
   };
 
   // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
   render() {
+    let inputStyle = this.upvoted
+      ? {
+          fill: "#ff8900",
+          stroke: "#ff8900"
+        }
+      : {
+          fill: "rgba(255, 255, 255, 0.7)",
+          stroke: "rgba(255, 255, 255, 0.5)"
+        };
     return (
       <>
         <div className="imageRow">
@@ -42,9 +51,10 @@ class Activities extends Component {
                 key={activity._id}
                 id={activity._id}
                 image={activity.image}
+                style={inputStyle}
                 activity={activity.activity}
                 getActivities={this.handleUpVote.bind(this)}
-                update={this.update}
+                // update={this.update}
                 subtitle={activity.subtitle}
                 upvotes={activity.upvotes}
               />

@@ -20,7 +20,6 @@ export default {
     return axios.post("api/groups/sessionUser/groups", groupObj);
   },
   createActivity(activityObj) {
-    console.log(activityObj);
     return axios.post("api/activities/activities", activityObj);
   },
   getActivities() {

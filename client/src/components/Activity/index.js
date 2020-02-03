@@ -7,9 +7,10 @@ function Activity(props) {
     activity,
     upvotes,
     key,
-    update,
+    // update,
     subtitle,
     getActivities,
+    style,
     id
   } = props;
 
@@ -29,10 +30,10 @@ function Activity(props) {
           alt="Up Vote Arrow"
           activity={activity}
           onClick={() => {
-            console.log(id);
             getActivities(id);
           }}
-          onChange={update}
+          style={style}
+          // onChange={update}
         />
         <p className="upVoteCount">{upvotes}</p>
         <div className="groupSuggestionTextBlock">

@@ -1,38 +1,45 @@
 import React, { Component } from "react";
-import Activities from "../../utils/activities.json";
 import API from "../../utils/API";
 import Activity from "../Activity";
 
-// EVENTS THAT ARE DISPLAYED ON ANY PAGE PAGE
-// TODO Refer to Groups>GroupSuggestions for example of how this shall work
+// EVENTS THAT ARE DISPLAYED ON ANY PAGE
 class AdvertisedEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Activities,
+      activities: [],
       activity: "",
       advertisedEvents: null
     };
-    this.handleUpVote = this.handleUpVote.bind(this);
   }
 
   componentDidMount() {
     this.getEvents();
   }
 
-  handleUpVote(e) {
-    console.log(e.target);
-    this.setState({ upvotes: this.state.Activities[0].upvotes + 1 });
-    console.log("Activity Upvoted!", this.state.Activities[0].upvotes);
-  }
+  handleUpVote = id => {
+    // API.putActivity(id);
+    this.setState({ upvoted: (this.upvoted = true) });
+  };
 
+  // Gets events from Ticketmaster
   getEvents() {
     API.getAdvertisedEvents()
       .then(response => this.setState({ advertisedEvents: response.data }))
       .catch(err => console.log(err));
   }
 
+  // Renders events from Ticketmaster
   renderEvents() {
+    let inputStyle = this.upvoted
+      ? {
+          fill: "#ff8900",
+          stroke: "#ff8900"
+        }
+      : {
+          fill: "rgba(255, 255, 255, 0.7)",
+          stroke: "rgba(255, 255, 255, 0.5)"
+        };
     if (this.state.advertisedEvents) {
       return this.state.advertisedEvents.map(e => {
         return (
@@ -42,6 +49,7 @@ class AdvertisedEvents extends Component {
             image={e.images[0].url}
             activity={e.name}
             getActivities={this.handleUpVote.bind(this)}
+            style={inputStyle}
           />
         );
       });
@@ -51,16 +59,16 @@ class AdvertisedEvents extends Component {
   render() {
     return (
       <>
-        <div className="imageRow">
+        <div className="imageRow events">
           {this.renderEvents()}
-          {this.state.Activities.map(activity => (
+          {this.state.activities.map(activity => (
             <Activity
               key={activity._id}
               id={activity._id}
               image={activity.image}
               activity={activity.activity}
               getActivities={this.handleUpVote.bind(this)}
-              update={this.update}
+              // update={this.update}
               activity={activity.activity}
               subtitle={activity.subtitle}
               upvotes={activity.upvotes}
