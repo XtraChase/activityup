@@ -10,10 +10,10 @@ const eventSchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
-  // date: {
-  //   type: Schema.Types.Date,
-  //   required: false
-  // },
+  date: {
+    type: Schema.Types.Date,
+    required: false
+  },
   about: {
     type: Schema.Types.String,
     required: false

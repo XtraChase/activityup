@@ -9,13 +9,14 @@ import API from "../../utils/API";
   // TODO on submit event is added to database for the group's events
 export default class CreateEvent extends Component {
   constructor(props) {
+    console.log(props);
     super(props);
     this.state = {
       eventName: "",
       subtitle: "",
       about: "",
       category: "",
-      // date: "",
+      date: this.props.date,
       imageUrl: ""
     }
 
@@ -39,7 +40,8 @@ export default class CreateEvent extends Component {
       subtitle: this.state.subtitle,
       about: this.state.about,
       category: this.state.category,
-      imageUrl: this.state.imageUrl
+      imageUrl: this.state.imageUrl,
+      date: this.state.date
     })
       .then(newEvent => console.log(newEvent))
       .catch(err => console.log(err.response));
@@ -48,12 +50,14 @@ export default class CreateEvent extends Component {
       subtitle: "",
       about: "",
       category: "",
-      // date: "",
+      date: this.props.date,
       imageUrl: ""
     });
   };
 
   render() {
+    const date = this.props.date;
+    console.log(date);
     return (
       <Modal
         {...this.props}
@@ -63,7 +67,7 @@ export default class CreateEvent extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Add A New Event
+            Add A New Event {date}
           </Modal.Title>
         </Modal.Header>
         <form onSubmit={this.createEvent}>

@@ -18,15 +18,38 @@ export default class DemoApp extends React.Component {
         // initial event data
         { title: "Event Now", start: new Date() }
       ],
-      addModalShow: false
+      addModalShow: false,
+      date: ""
     };
-  }
+  };
 
   addModalClose() {
     this.setState({ addModalShow: false });
-  }
+  };
+
+  // DONE When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
+  handleDateClick = arg => {
+    this.setState({
+
+      //sets state of date to that of date clicked
+      date: arg.dateStr,
+
+      //triggers modal on date click
+      addModalShow: true,
+
+      // add new event data
+      // calendarEvents: this.state.calendarEvents.concat({
+      //   // creates a new array
+      //   title: "New Event",
+      //   start: arg.date,
+      //   allDay: arg.allDay
+      // })
+    });
+    console.log(this.state.date);
+  };
 
   render() {
+    let date = this.state.date;
     return (
       <div className="demo-app">
         {/* <div className="demo-app-top">
@@ -49,6 +72,7 @@ export default class DemoApp extends React.Component {
             dateClick={this.handleDateClick}
           />
           <CreateEvent
+            date={date}
             show={this.state.addModalShow}
             onHide={() => this.addModalClose()}
             style={{ background: "none" }}
@@ -69,21 +93,4 @@ export default class DemoApp extends React.Component {
   //   let calendarApi = this.calendarComponentRef.current.getApi();
   //   calendarApi.gotoDate("2000-01-01"); // call a method on the Calendar object
   // };
-
-  // DONE When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
-  handleDateClick = arg => {
-    this.setState({
-
-      //triggers modal on date click
-      addModalShow: true,
-
-      // add new event data
-      calendarEvents: this.state.calendarEvents.concat({
-        // creates a new array
-        title: "New Event",
-        start: arg.date,
-        allDay: arg.allDay
-      })
-    });
-  };
 }
