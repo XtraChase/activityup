@@ -18,12 +18,12 @@ module.exports = {
       about: req.body.about,
       category: req.body.category,
       imageUrl: req.body.imageUrl,
-      // date: req.body.date,
+      date: req.body.date,
       // ended: req.body.ended,
       // upvotes: req.body.upvotes,
+      // attendees: [req.attendees],
       group: [req.group],
       users: [req.user],
-      // attendees: [req.attendees],
       activities: [req.activities]
     });
     newEvent

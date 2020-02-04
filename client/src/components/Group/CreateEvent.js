@@ -67,11 +67,19 @@ export default class CreateEvent extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Add A New Event {date}
+            Add A New Event
           </Modal.Title>
         </Modal.Header>
         <form onSubmit={this.createEvent}>
           <Modal.Body>
+            <label>
+              Date: 
+              <input 
+              type="text"
+              name="date"
+              value={date}
+              />
+            </label>
             <label>
               Event Name:
               <input

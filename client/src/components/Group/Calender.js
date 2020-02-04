@@ -49,7 +49,9 @@ export default class DemoApp extends React.Component {
   };
 
   render() {
+    //stores date from calendar click to be passed as prop to modal - modal now has access to date
     let date = this.state.date;
+    console.log(date);
     return (
       <div className="demo-app">
         {/* <div className="demo-app-top">
