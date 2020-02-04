@@ -9,7 +9,6 @@ import API from "../../utils/API";
   // TODO on submit event is added to database for the group's events
 export default class CreateEvent extends Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       eventName: "",
@@ -19,7 +18,7 @@ export default class CreateEvent extends Component {
       date: this.props.date,
       imageUrl: ""
     }
-
+    console.log(props)
     this.handleChange = this.handleChange.bind(this);
     this.createEvent = this.createEvent.bind(this);
   };
@@ -41,7 +40,7 @@ export default class CreateEvent extends Component {
       about: this.state.about,
       category: this.state.category,
       imageUrl: this.state.imageUrl,
-      date: this.state.date
+      date: this.props.date
     })
       .then(newEvent => console.log(newEvent))
       .catch(err => console.log(err.response));
@@ -50,7 +49,7 @@ export default class CreateEvent extends Component {
       subtitle: "",
       about: "",
       category: "",
-      date: this.props.date,
+      // date: this.props.date,
       imageUrl: ""
     });
   };
