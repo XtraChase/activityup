@@ -2,6 +2,8 @@ const { Group, Event } = require("../models");
 
 // CONTROLLER: functions that are called at /api/events/
 
+//FIX ME: groups and events connection in DB not working
+
 module.exports = {
   findAll: (req, res) => {
     Event.find(req.query)
