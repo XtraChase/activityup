@@ -14,12 +14,13 @@ module.exports = {
       eventName: req.body.eventName,
       subtitle: req.body.subtitle,
       about: req.body.about,
-      // upvotes: req.body.upvotes,
       category: req.body.category,
+      imageUrl: req.body.imageUrl,
       // date: req.body.date,
       // ended: req.body.ended,
-      imageUrl: req.body.imageUrl,
-      groupResponsible: [req.group],
+      // upvotes: req.body.upvotes,
+      group: [req.group],
+      users: [req.user],
       // attendees: [req.attendees],
       activities: [req.activities]
     });
@@ -46,7 +47,7 @@ module.exports = {
   activities: (req, res) => {
     Activities.findById(req.query.id)
       .populate("events")
-      .then(activties => res.json(activties.events))
+      .then(activities => res.json(activities.events))
       .catch(err => res.status(422).json(err));
   },
   // attendees: (req, res) => {

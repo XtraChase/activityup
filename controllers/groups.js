@@ -17,7 +17,7 @@ module.exports = {
       imageUrl: req.body.imageUrl,
       closedGroup: req.body.closedGroup,
       users: [req.user],
-      events: [req.events]
+      events: [req.event]
     });
     newGroup
       .save()

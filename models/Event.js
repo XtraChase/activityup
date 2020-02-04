@@ -26,10 +26,18 @@ const eventSchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
-  // groupResponsible: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "Group"
-  // },
+  users: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    }
+  ],
+  group: [
+    {
+    type: Schema.Types.ObjectId,
+    ref: "Group"
+    }
+  ],
   // upvotes: {
   //   type: Schema.Types.Number,
   //   default: 0
@@ -48,12 +56,12 @@ const eventSchema = new Schema({
   //     ref: "Attendees"
   //   }
   // ],
-  // activities: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Activity"
-  //   }
-  // ]
+  activities: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Activity"
+    }
+  ]
 });
 
 eventSchema.pre("save", function(next) {
