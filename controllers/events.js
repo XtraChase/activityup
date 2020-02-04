@@ -12,16 +12,16 @@ module.exports = {
   create: (req, res) => {
     const newEvent = new Event({
       eventName: req.body.eventName,
-      // subtitle: req.body.subtitle,
-      // about: req.body.about,
+      subtitle: req.body.subtitle,
+      about: req.body.about,
       // upvotes: req.body.upvotes,
-      // category: req.body.category,
+      category: req.body.category,
       // date: req.body.date,
       // ended: req.body.ended,
-      // imageUrl: req.body.imageUrl,
-      // groupResponsible: [req.group],
+      imageUrl: req.body.imageUrl,
+      groupResponsible: [req.group],
       // attendees: [req.attendees],
-      // activities: [req.activities]
+      activities: [req.activities]
     });
     newEvent
       .save()
@@ -55,15 +55,4 @@ module.exports = {
   //     .then(attendees => res.json(attendees.events))
   //     .catch(err => res.status(422).json(err));
   // },
-  // createEvent: (req, res) => {
-  //   const { name } = req.body;
-
-  //   const newEvent = new Event({
-  //     eventName: name
-  //   });
-  //   newEvent.save((err, savedEvent) => {
-  //     if (err) return res.json(err);
-  //     res.json(savedEvent);
-  //   });
-  // }
 };

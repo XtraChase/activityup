@@ -6,30 +6,30 @@ const eventSchema = new Schema({
     type: Schema.Types.String,
     required: true
   },
-  // subtitle: {
-  //   type: Schema.Types.String,
-  //   required: false
-  // },
+  subtitle: {
+    type: Schema.Types.String,
+    required: false
+  },
   // date: {
   //   type: Schema.Types.Date,
   //   required: false
   // },
-  // about: {
-  //   type: Schema.Types.String,
-  //   required: false
+  about: {
+    type: Schema.Types.String,
+    required: false
+  },
+  imageUrl: {
+    type: Schema.Types.String,
+    required: false
+  },
+  category: {
+    type: Schema.Types.String,
+    required: false
+  },
+  // groupResponsible: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "Group"
   // },
-  // imageUrl: {
-  //   type: Schema.Types.String,
-  //   required: false
-  // },
-  // category: {
-  //   type: Schema.Types.String,
-  //   required: false
-  // },
-  // // groupResponsible: {
-  // //   type: Schema.Types.ObjectId,
-  // //   ref: "Group"
-  // // },
   // upvotes: {
   //   type: Schema.Types.Number,
   //   default: 0

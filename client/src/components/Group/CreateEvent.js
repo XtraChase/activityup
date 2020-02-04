@@ -12,6 +12,11 @@ export default class CreateEvent extends Component {
     super(props);
     this.state = {
       eventName: "",
+      subtitle: "",
+      about: "",
+      category: "",
+      // date: "",
+      imageUrl: ""
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -30,12 +35,21 @@ export default class CreateEvent extends Component {
     console.log(this.state);
     e.preventDefault();
     API.createEvent({
-      eventName: this.state.eventName
+      eventName: this.state.eventName,
+      subtitle: this.state.subtitle,
+      about: this.state.about,
+      category: this.state.category,
+      imageUrl: this.state.imageUrl
     })
       .then(newEvent => console.log(newEvent))
       .catch(err => console.log(err.response));
     this.setState({
-      eventName: ""
+      eventName: "",
+      subtitle: "",
+      about: "",
+      category: "",
+      // date: "",
+      imageUrl: ""
     });
   };
 
@@ -59,7 +73,43 @@ export default class CreateEvent extends Component {
               <input
                 type="text"
                 name="eventName"
-                value={this.state.name}
+                value={this.state.eventName}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Subtitle:
+              <input
+                type="text"
+                name="subtitle"
+                value={this.state.subtitle}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Category:
+              <input
+                type="text"
+                name="category"
+                value={this.state.category}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              About:
+              <input
+                type="text"
+                name="about"
+                value={this.state.about}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Image Url:
+              <input
+                type="text"
+                name="imageUrl"
+                value={this.state.imageUrl}
                 onChange={this.handleChange}
               />
             </label>
