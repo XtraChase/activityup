@@ -1,26 +1,41 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import images from "../../utils/activityTypes.json";
+import React, { Component } from "react";
+// import { Link } from "react-router-dom";
+import activities from "../../utils/activityTypes.json";
+import ActivityType from "./ActivityType";
 
-function ActivityTypes() {
-  let activityImgs = [];
-  for (const key in images) {
-    activityImgs.push(
-      <div className="activityTypesColumn" key={key + Date.now()}>
-        <Link to="/activity" className="activityTypeContainer">
-          <img
-            src={images[key]}
-            alt={key}
-            width="100%"
-            className="activityTypesImage"
-          />
-          <p className="activityTypesText">{key.toUpperCase()}</p>
-        </Link>
-      </div>
-    );
+// ***** MAPPED VERSION *****
+class ActivityTypes extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activities,
+      activity: ""
+    };
   }
 
-  return <div className="activityTypesRow">{activityImgs}</div>;
+  selectActivity = title => {
+    this.setState({ activity: title });
+    console.log(this.state.activity);
+  };
+
+  // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
+  render() {
+    return (
+      <>
+        <div className="activityTypesRow">
+          {this.state.activities &&
+            this.state.activities.map(activity => (
+              <ActivityType
+                id={activity.id}
+                title={activity.title}
+                image={activity.image}
+                getActivity={this.selectActivity.bind(this)}
+              />
+            ))}
+        </div>
+      </>
+    );
+  }
 }
 
 export default ActivityTypes;

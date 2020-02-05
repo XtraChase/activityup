@@ -1,12 +1,52 @@
-{
-  "drinks": "images/Drinks.jpg",
-  "sports": "images/sports.jpg",
-  "food": "images/food.jpg",
-  "outdoors": "images/hiker.jpg",
-  "movies": "images/movies.jpg",
-  "professional": "images/Professional.png",
-  "shopping": "images/shopping.jpg",
-  "music": "images/music.jpg",
-  "gaming": "images/gaming.jpg",
-  "sites": "images/sites.jpg"
-}
+[
+  {
+    "id": 101,
+    "title": "drinks",
+    "image": "images/Drinks.jpg"
+  },
+  {
+    "id": 102,
+    "title": "sports",
+    "image": "images/sports.jpg"
+  },
+  {
+    "id": 103,
+    "title": "drinks",
+    "image": "images/Drinks.jpg"
+  },
+  {
+    "id": 104,
+    "title": "outdoors",
+    "image": "images/hiker.jpg"
+  },
+  {
+    "id": 105,
+    "title": "movies",
+    "image": "images/movies.jpg"
+  },
+  {
+    "id": 106,
+    "title": "professional",
+    "image": "images/Professional.png"
+  },
+  {
+    "id": 107,
+    "title": "shopping",
+    "image": "images/shopping.jpg"
+  },
+  {
+    "id": 108,
+    "title": "music",
+    "image": "images/music.jpg"
+  },
+  {
+    "id": 109,
+    "title": "gaming",
+    "image": "images/gaming.jpg"
+  },
+  {
+    "id": 110,
+    "title": "sites",
+    "image": "images/sites.jpg"
+  }
+]
