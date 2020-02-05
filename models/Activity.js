@@ -23,8 +23,8 @@ const activitySchema = new Schema({
   //   required: false
   // },
   // hostingEvent: {
-  //  type: Schema.Types.ObjectId,
-  //  ref: "Event"
+  //   type: Schema.Types.String,
+  //   required: false
   // },
   upvotes: {
     type: Schema.Types.Number,
