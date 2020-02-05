@@ -26,40 +26,32 @@ const eventSchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
-  users: [
+  groupResponsible: {
+    type: Schema.Types.String,
+    required: false
+  },
+  upvotes: {
+    type: Schema.Types.Number,
+    default: 0
+  },
+  ended: {
+    type: Schema.Types.Boolean,
+    default: false
+  },
+  closedEvent: {
+    type: Schema.Types.Boolean,
+    default: false
+  },
+  attendees: [
     {
       type: Schema.Types.ObjectId,
-      ref: "User"
+      ref: "Attendees"
     }
   ],
-  group: [
-    {
-    type: Schema.Types.ObjectId,
-    ref: "Group"
-    }
-  ],
-  // upvotes: {
-  //   type: Schema.Types.Number,
-  //   default: 0
-  // },
-  // ended: {
-  //   type: Schema.Types.Boolean,
-  //   default: false
-  // },
-  // closedEvent: {
-  //   type: Schema.Types.Boolean,
-  //   default: false
-  // },
-  // attendees: [
-  //   {
-  //     type: Schema.Types.ObjectId,
-  //     ref: "Attendees"
-  //   }
-  // ],
   activities: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Activity"
+      ref: "Activities"
     }
   ]
 });

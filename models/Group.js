@@ -35,7 +35,7 @@ const groupSchema = new Schema({
   events: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Event"
+      ref: "Events"
     }
   ]
 });
