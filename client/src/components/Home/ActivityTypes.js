@@ -15,7 +15,7 @@ class ActivityTypes extends Component {
 
   selectActivity = title => {
     this.setState({ activity: title });
-    console.log(this.state.activity);
+    // console.log(this.state.activity);
   };
 
   // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
