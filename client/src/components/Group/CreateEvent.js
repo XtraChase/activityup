@@ -4,9 +4,9 @@ import API from "../../utils/API";
 
 // EVENT CREATION FOR GROUPS
 
-  // DONE When a day is clicked on the groups calender a modal pops up | SEE ./Calender.js for handleclick()
-  // TODO on submit event name is displayed on calender
-  // TODO on submit event is added to database for the group's events
+// DONE When a day is clicked on the groups calender a modal pops up | SEE ./Calender.js for handleclick()
+// TODO on submit event name is displayed on calender
+// TODO on submit event is added to database for the group's events
 export default class CreateEvent extends Component {
   constructor(props) {
     super(props);
@@ -17,11 +17,11 @@ export default class CreateEvent extends Component {
       category: "",
       date: this.props.date,
       imageUrl: ""
-    }
-    console.log(props)
+    };
+    console.log(props);
     this.handleChange = this.handleChange.bind(this);
     this.createEvent = this.createEvent.bind(this);
-  };
+  }
 
   handleChange = event => {
     const { name, value } = event.target;
@@ -52,7 +52,7 @@ export default class CreateEvent extends Component {
       date: this.props.date,
       imageUrl: ""
     });
-  };
+  }
 
   render() {
     const date = this.props.date;
@@ -118,10 +118,13 @@ export default class CreateEvent extends Component {
             </label>
           </Modal.Body>
           <Modal.Footer>
-            <Button 
-            type="submit" 
-            onClick={this.props.onHide}
-            >Create Event</Button>
+            <Button
+              type="submit"
+              onClick={this.props.onHide}
+              style={{ paddingBottom: "32px" }}
+            >
+              Create Event
+            </Button>
           </Modal.Footer>
         </form>
       </Modal>

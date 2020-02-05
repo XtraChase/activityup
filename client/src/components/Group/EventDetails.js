@@ -30,7 +30,6 @@ export default class EventDetails extends Component {
           <SuggestActivity
             show={this.state.addModalShow}
             onHide={() => this.addModalClose()}
-            style={{ background: "none" }}
           />
           <div className="eventDate">Febuary 11, 2020</div>
           <button className="leaveEvent">Leave Event</button>

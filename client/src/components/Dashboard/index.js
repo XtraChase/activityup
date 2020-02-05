@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../Header";
 import YourGroups from "./YourGroups";
+import YourEvents from "./YourEvents";
 import GroupRecommendations from "./GroupRecommendations";
 import Footer from "../Footer";
 
@@ -15,6 +16,7 @@ function Dashboard(props) {
       <div className="headerBuffer"></div>
       <YourGroups />
       <GroupRecommendations />
+      <YourEvents />
       <Footer />
     </div>
   );

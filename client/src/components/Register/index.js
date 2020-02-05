@@ -108,8 +108,9 @@ class Register extends Component {
                 onChange={this.update}
               />
             </div>
-
-            <input type="submit" value="Sign Up" />
+            <Link to="/login">
+              <input type="submit" value="Sign Up" />
+            </Link>
           </form>
           <div className="accountQuestionContainer">
             <p>Already have an account?</p>
