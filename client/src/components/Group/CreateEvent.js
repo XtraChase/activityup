@@ -12,8 +12,13 @@ export default class CreateEvent extends Component {
     super(props);
     this.state = {
       eventName: "",
+      subtitle: "",
+      about: "",
+      category: "",
+      date: this.props.date,
+      imageUrl: ""
     }
-
+    console.log(props)
     this.handleChange = this.handleChange.bind(this);
     this.createEvent = this.createEvent.bind(this);
   };
@@ -30,16 +35,28 @@ export default class CreateEvent extends Component {
     console.log(this.state);
     e.preventDefault();
     API.createEvent({
-      eventName: this.state.eventName
+      eventName: this.state.eventName,
+      subtitle: this.state.subtitle,
+      about: this.state.about,
+      category: this.state.category,
+      imageUrl: this.state.imageUrl,
+      date: this.props.date
     })
       .then(newEvent => console.log(newEvent))
       .catch(err => console.log(err.response));
     this.setState({
-      eventName: ""
+      eventName: "",
+      subtitle: "",
+      about: "",
+      category: "",
+      date: this.props.date,
+      imageUrl: ""
     });
   };
 
   render() {
+    const date = this.props.date;
+    console.log(date);
     return (
       <Modal
         {...this.props}
@@ -49,7 +66,7 @@ export default class CreateEvent extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Add A New Event
+            Add A New Event for {date}
           </Modal.Title>
         </Modal.Header>
         <form onSubmit={this.createEvent}>
@@ -59,7 +76,43 @@ export default class CreateEvent extends Component {
               <input
                 type="text"
                 name="eventName"
-                value={this.state.name}
+                value={this.state.eventName}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Subtitle:
+              <input
+                type="text"
+                name="subtitle"
+                value={this.state.subtitle}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Category:
+              <input
+                type="text"
+                name="category"
+                value={this.state.category}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              About:
+              <input
+                type="text"
+                name="about"
+                value={this.state.about}
+                onChange={this.handleChange}
+              />
+            </label>
+            <label>
+              Image Url:
+              <input
+                type="text"
+                name="imageUrl"
+                value={this.state.imageUrl}
                 onChange={this.handleChange}
               />
             </label>
