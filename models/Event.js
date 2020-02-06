@@ -18,7 +18,7 @@ const eventSchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
-  imageUrl: {
+  image: {
     type: Schema.Types.String,
     required: false
   },
@@ -34,8 +34,8 @@ const eventSchema = new Schema({
   ],
   group: [
     {
-    type: Schema.Types.ObjectId,
-    ref: "Group"
+      type: Schema.Types.ObjectId,
+      ref: "Group"
     }
   ],
   // upvotes: {

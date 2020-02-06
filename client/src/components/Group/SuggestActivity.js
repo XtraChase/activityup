@@ -38,7 +38,7 @@ export default class SuggestActivity extends Component {
   createActivity(event) {
     event.preventDefault();
     API.createActivity(this.state)
-      .then(activity => console.log("GOT IT!", activity))
+      .then(activity => console.log(activity))
       .catch(err => console.log("error", err.response));
     this.setState({
       activityName: "",

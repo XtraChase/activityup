@@ -50,7 +50,7 @@ class YourEvents extends Component {
           >
             <img
               className="image"
-              src={g.imageUrl}
+              src={g.image}
               alt="activity type"
               width="100%"
             />
