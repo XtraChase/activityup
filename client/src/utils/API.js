@@ -36,11 +36,11 @@ export default {
   },
   createEvent(eventObj) {
     return axios.post("api/events/sessionUser/events", eventObj);
-  }
+  },
   // FIXME needs validation check of working route
-  // getEvents() {
-  //   return axios.get("api/events");
-  // },
+  getEvents() {
+    return axios.get("api/events/sessionUser/events");
+  }
   // getEventsByGroup(id) {
   //   return axios.get(`api/events/byGroup?id=${id}`);
   // },

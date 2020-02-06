@@ -47,7 +47,6 @@ export default class Header extends Component {
           <CreateGroup
             show={this.state.addModalShow}
             onHide={() => this.addModalClose()}
-            style={{ background: "none" }}
           />
         </>
       );
