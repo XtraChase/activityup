@@ -6,7 +6,6 @@ function Activity(props) {
     image,
     activity,
     upvotes,
-    key,
     // update,
     subtitle,
     getActivities,
@@ -20,7 +19,7 @@ function Activity(props) {
         <img
           className="groupSuggestion"
           width="100%"
-          key={key}
+          id={id}
           src={image}
           alt={activity}
         />

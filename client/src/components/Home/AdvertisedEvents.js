@@ -66,7 +66,6 @@ class AdvertisedEvents extends Component {
               key={activity._id}
               id={activity._id}
               image={activity.image}
-              activity={activity.activity}
               getActivities={this.handleUpVote.bind(this)}
               // update={this.update}
               activity={activity.activity}
