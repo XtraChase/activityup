@@ -16,7 +16,7 @@ function Body(props) {
       <div className="headerBuffer"></div>
       <Title />
       <ActivityTypes />
-      <AdvertisedEvents />
+      {/* <AdvertisedEvents /> */}
       <Footer />
     </div>
   );

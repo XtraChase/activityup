@@ -13,6 +13,7 @@ function Activity(props) {
             width="100%"
             className="activityTypesImage"
           />
+
           <p
             className="activityTypesText"
             onClick={() => {
