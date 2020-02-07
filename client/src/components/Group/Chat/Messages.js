@@ -2,10 +2,6 @@ import React, { Component } from "react";
 import Message from "./Message";
 import messages from "../../../utils/messages.json";
 import uuid from "uuid";
-// TODO connect Socket.io
-// TODO connect emojis
-// import Emoji from "react-emoji-render";
-// import Picker from 'emoji-picker-react';
 
 class Messages extends Component {
   constructor(props) {
@@ -16,7 +12,7 @@ class Messages extends Component {
     };
   }
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = e => this.setState({ [e.target.message]: e.target.value });
 
   // Chat message submitted
 
@@ -25,7 +21,7 @@ class Messages extends Component {
     const newMessage = {
       id: uuid.v4(),
       userName: "",
-      message: ""
+      message
     };
     this.setState({ messages: [...this.state.messages, newMessage] });
   };
