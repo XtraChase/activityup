@@ -84,7 +84,7 @@ class ActivityTypes extends Component {
               // </Link>
             ))}
         </div>
-        //events
+
         <div className="imageRow events">
           {this.renderEvents()}
           {this.state.activities.map(activity => (

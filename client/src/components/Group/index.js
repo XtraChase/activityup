@@ -3,7 +3,6 @@ import Header from "../Header";
 import EventDetails from "./EventDetails";
 import Chat from "./Chat";
 import Calender from "./Calender";
-import AdvertisedEvents from "../Home/AdvertisedEvents";
 import Footer from "../Footer";
 import "./styleGroup.css";
 
@@ -21,7 +20,6 @@ function Group(props) {
         <Chat />
       </div>
       <Calender />
-      <AdvertisedEvents />
       <Footer />
     </div>
   );
