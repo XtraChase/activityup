@@ -16,7 +16,7 @@ export default class CreateEvent extends Component {
       about: "",
       category: "",
       date: this.props.date,
-      imageUrl: ""
+      image: ""
     };
     console.log(props);
     this.handleChange = this.handleChange.bind(this);
@@ -39,7 +39,7 @@ export default class CreateEvent extends Component {
       subtitle: this.state.subtitle,
       about: this.state.about,
       category: this.state.category,
-      imageUrl: this.state.imageUrl,
+      image: this.state.image,
       date: this.props.date
     })
       .then(newEvent => console.log(newEvent))
@@ -50,7 +50,7 @@ export default class CreateEvent extends Component {
       about: "",
       category: "",
       date: this.props.date,
-      imageUrl: ""
+      image: ""
     });
   }
 
@@ -111,8 +111,8 @@ export default class CreateEvent extends Component {
               Image Url:
               <input
                 type="text"
-                name="imageUrl"
-                value={this.state.imageUrl}
+                name="image"
+                value={this.state.image}
                 onChange={this.handleChange}
               />
             </label>

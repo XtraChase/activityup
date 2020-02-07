@@ -29,7 +29,18 @@ class Activities extends Component {
   handleUpVote = id => {
     API.putActivity(id);
     this.setState({ upvoted: (this.upvoted = true) });
+    // FIXME needs to show upvoted # from database
+    this.getActivities();
   };
+
+  // handleUpVote = id => {
+  //   API.putActivity(id).then(response => {
+  //     this.setState({
+  //       upvoted: (this.upvoted = true),
+  //       activities: response.data
+  //     });
+  //   });
+  // };
 
   // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
   render() {
@@ -52,7 +63,7 @@ class Activities extends Component {
                 id={activity._id}
                 image={activity.image}
                 style={inputStyle}
-                activity={activity.activity}
+                activity={activity.activityName}
                 getActivities={this.handleUpVote.bind(this)}
                 // update={this.update}
                 subtitle={activity.subtitle}

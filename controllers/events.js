@@ -17,7 +17,7 @@ module.exports = {
       subtitle: req.body.subtitle,
       about: req.body.about,
       category: req.body.category,
-      imageUrl: req.body.imageUrl,
+      image: req.body.image,
       date: req.body.date,
       // ended: req.body.ended,
       // upvotes: req.body.upvotes,
@@ -51,7 +51,7 @@ module.exports = {
       .populate("events")
       .then(activities => res.json(activities.events))
       .catch(err => res.status(422).json(err));
-  },
+  }
   // attendees: (req, res) => {
   //   Attendees.findById(req.query.id)
   //     .populate("events")
