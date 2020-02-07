@@ -5,15 +5,12 @@ const { groupController } = require("../../controllers");
 // GET convenience function to find all groups
 // POST convenience function to create new groups
 
-// http://localhost:3000/api/groups/sessionUser/groups
+// http://localhost:3000/api/groups/
 router
-  .route("/sessionUser/groups")
+  .route("/")
   .get(groupController.findAll)
   .post(groupController.create);
 
 router.route("/byUser").get(groupController.byUser);
-
-//route to /api/groups
-router.route("/groups").post(groupController.create);
 
 module.exports = router;

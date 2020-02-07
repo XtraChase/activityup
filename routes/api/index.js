@@ -3,7 +3,7 @@ const userRoutes = require("./users");
 const groupRoutes = require("./groups");
 const eventRoutes = require("./events");
 const activityRoutes = require("./activities");
-const thirdparty = require("./ticketmaster")
+const thirdparty = require("./thirdparty")
 
 router.use("/users", userRoutes);
 router.use("/groups", groupRoutes);
