@@ -3,6 +3,7 @@ import { ReactSVG } from "react-svg";
 
 function Activity(props) {
   const {
+    category,
     image,
     activity,
     upvotes,
@@ -15,7 +16,7 @@ function Activity(props) {
 
   return (
     <>
-      <div className="imageColumn">
+      <div className="imageColumn" category={category}>
         <img
           className="groupSuggestion"
           width="100%"

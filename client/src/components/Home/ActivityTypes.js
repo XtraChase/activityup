@@ -21,7 +21,7 @@ class ActivityTypes extends Component {
     this.setState({ activity: title });
     console.log(this.state.activity);
     // FIXME redirect after setting the set
-    return <Redirect to="/activity"></Redirect>;
+    // return <Redirect to="/activity"></Redirect>;
   };
 
   componentDidMount() {
@@ -61,16 +61,29 @@ class ActivityTypes extends Component {
             activity={e.name}
             getActivities={this.handleUpVote.bind(this)}
             style={inputStyle}
+            category={e.classifications[0].segment.name}
           />
         );
       });
     }
   }
 
+  // filterByCategory(cat) {
+  //   return this.state.activities.filter(e => e.category === cat);
+  // }
+  filterByCategory(cat) {
+    return this.state.activities.filter(e => e.category === cat);
+  }
+
   // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
   render() {
+    let categorizedEvents = this.filterByCategory(
+      this.state.activities.category
+    );
+
     return (
       <>
+        {/* Activity Types */}
         <div className="activityTypesRow">
           {this.state.activityTypes &&
             this.state.activityTypes.map(activity => (
@@ -85,9 +98,10 @@ class ActivityTypes extends Component {
             ))}
         </div>
 
+        {/* API events */}
         <div className="imageRow events">
           {this.renderEvents()}
-          {this.state.activities.map(activity => (
+          {categorizedEvents.map(activity => (
             <Activity
               key={activity._id}
               id={activity._id}
@@ -97,6 +111,7 @@ class ActivityTypes extends Component {
               activity={activity.activity}
               subtitle={activity.subtitle}
               upvotes={activity.upvotes}
+              category={activity.category}
             />
           ))}
         </div>
