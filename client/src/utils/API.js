@@ -17,7 +17,7 @@ export default {
     return axios.get(`api/groups/byUser?id=${id}`);
   },
   createGroup(groupObj) {
-    return axios.post("api/groups/sessionUser/groups", groupObj);
+    return axios.post("api/groups", groupObj);
   },
   createActivity(activityObj) {
     return axios.post("api/activities/activities", activityObj);
@@ -29,7 +29,7 @@ export default {
     return axios.put(`api/activities/activities`, { id });
   },
   getAdvertisedEvents() {
-    return axios.get("api/thirdparty/adevents");
+    return axios.get("api/thirdparty/tmevents");
   },
   getGeekEvents() {
     return axios.get("api/thirdparty/geekevents");
