@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+// import { Link, Redirect } from "react-router-dom";
 import activityTypes from "../../utils/activityTypes.json";
 import ActivityType from "./ActivityType";
 import Activity from "../Activity";
@@ -11,15 +11,14 @@ class ActivityTypes extends Component {
     super(props);
     this.state = {
       activityTypes,
-      activities: [],
-      activity: "",
-      advertisedEvents: null
+      APIevents: [],
+      category: ""
     };
   }
 
   selectActivity = title => {
-    this.setState({ activity: title });
-    console.log(this.state.activity);
+    this.setState({ category: title });
+    console.log(this.state.category);
     // FIXME redirect after setting the set
     // return <Redirect to="/activity"></Redirect>;
   };
@@ -36,12 +35,21 @@ class ActivityTypes extends Component {
   // Gets events from Ticketmaster
   getEvents() {
     API.getAdvertisedEvents()
-      .then(response => this.setState({ advertisedEvents: response.data }))
+      .then(response => this.setState({ APIevents: response.data }))
       .catch(err => console.log(err));
   }
 
-  // Renders events from Ticketmaster
-  renderEvents() {
+  // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
+  render() {
+    const { category, APIevents, activityTypes } = this.state;
+
+    const getCategory = event => event.classifications[0].segment.name;
+    const filterEvent = event =>
+      getCategory(event).toLowerCase() === category.toLowerCase();
+
+    const filteredEvents =
+      "" === category ? APIevents : APIevents.filter(filterEvent);
+
     let inputStyle = this.upvoted
       ? {
           fill: "#ff8900",
@@ -51,47 +59,19 @@ class ActivityTypes extends Component {
           fill: "rgba(255, 255, 255, 0.7)",
           stroke: "rgba(255, 255, 255, 0.5)"
         };
-    if (this.state.advertisedEvents) {
-      return this.state.advertisedEvents.map(e => {
-        return (
-          <Activity
-            key={e.id}
-            id={e.id}
-            image={e.images[0].url}
-            activity={e.name}
-            getActivities={this.handleUpVote.bind(this)}
-            style={inputStyle}
-            category={e.classifications[0].segment.name}
-          />
-        );
-      });
-    }
-  }
-
-  // filterByCategory(cat) {
-  //   return this.state.activities.filter(e => e.category === cat);
-  // }
-  filterByCategory(cat) {
-    return this.state.activities.filter(e => e.category === cat);
-  }
-
-  // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
-  render() {
-    let categorizedEvents = this.filterByCategory(
-      this.state.activities.category
-    );
 
     return (
       <>
         {/* Activity Types */}
         <div className="activityTypesRow">
-          {this.state.activityTypes &&
-            this.state.activityTypes.map(activity => (
+          {activityTypes &&
+            activityTypes.map(types => (
               // <Link to="/activity">
               <ActivityType
-                id={activity.id}
-                title={activity.title}
-                image={activity.image}
+                id={types.id}
+                key={types.id}
+                title={types.title}
+                image={types.image}
                 getActivity={this.selectActivity.bind(this)}
               />
               // </Link>
@@ -100,18 +80,15 @@ class ActivityTypes extends Component {
 
         {/* API events */}
         <div className="imageRow events">
-          {this.renderEvents()}
-          {categorizedEvents.map(activity => (
+          {filteredEvents.map(event => (
             <Activity
-              key={activity._id}
-              id={activity._id}
-              image={activity.image}
+              key={event.id}
+              id={event.id}
+              image={event.images[0].url}
+              activity={event.name}
               getActivities={this.handleUpVote.bind(this)}
-              // update={this.update}
-              activity={activity.activity}
-              subtitle={activity.subtitle}
-              upvotes={activity.upvotes}
-              category={activity.category}
+              style={inputStyle}
+              category={event.classifications[0].segment.name}
             />
           ))}
         </div>
