@@ -5,7 +5,6 @@ import ActivityType from "./ActivityType";
 import Activity from "../Activity";
 import API from "../../utils/API";
 
-// ***** MAPPED VERSION *****
 class ActivityTypes extends Component {
   constructor(props) {
     super(props);
@@ -16,21 +15,9 @@ class ActivityTypes extends Component {
     };
   }
 
-  selectActivity = title => {
-    this.setState({ category: title });
-    console.log(this.state.category);
-    // FIXME redirect after setting the set
-    // return <Redirect to="/activity"></Redirect>;
-  };
-
   componentDidMount() {
     this.getEvents();
   }
-
-  handleUpVote = id => {
-    // API.putActivity(id);
-    this.setState({ upvoted: (this.upvoted = true) });
-  };
 
   // Gets events from Ticketmaster
   getEvents() {
@@ -39,17 +26,36 @@ class ActivityTypes extends Component {
       .catch(err => console.log(err));
   }
 
-  // ACTIVITIES ARE MAPPED THROUGH AND RENDERED
+  // Select API event category and redirect to the activity type page with those filtered API events
+  selectActivity = title => {
+    this.setState({ category: title });
+    console.log(this.state.category);
+    // FIXME redirect to activity type page
+    // return <Redirect to="/activity"></Redirect>;
+  };
+
+  // FIXME upvote based on id
+  // TODO add upvoted API event to database
+  handleUpVote = id => {
+    // API.putActivity(id);
+    this.setState({ upvoted: (this.upvoted = true) });
+  };
+
   render() {
     const { category, APIevents, activityTypes } = this.state;
 
+    // Get the category of the event from the API
     const getCategory = event => event.classifications[0].segment.name;
+
+    // Filter the event based on category
     const filterEvent = event =>
       getCategory(event).toLowerCase() === category.toLowerCase();
 
+    // If selected activity type category is empty show all API events else filter them
     const filteredEvents =
       "" === category ? APIevents : APIevents.filter(filterEvent);
 
+    // If upvoted change the upvote arrow to orange
     let inputStyle = this.upvoted
       ? {
           fill: "#ff8900",
