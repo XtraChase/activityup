@@ -18,7 +18,7 @@ export default class CreateEvent extends Component {
       date: this.props.date,
       image: ""
     };
-    console.log(props);
+    // console.log(props);
     this.handleChange = this.handleChange.bind(this);
     this.createEvent = this.createEvent.bind(this);
   }
@@ -56,7 +56,7 @@ export default class CreateEvent extends Component {
 
   render() {
     const date = this.props.date;
-    console.log(date);
+    // console.log(date);
     return (
       <Modal
         {...this.props}

@@ -21,21 +21,20 @@ export default class DemoApp extends React.Component {
       addModalShow: false,
       date: ""
     };
-  };
+  }
 
   addModalClose() {
     this.setState({ addModalShow: false });
-  };
+  }
 
   // DONE When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
   handleDateClick = arg => {
     this.setState({
-
       //sets state of date to that of date clicked
       date: arg.dateStr,
 
       //triggers modal on date click
-      addModalShow: true,
+      addModalShow: true
 
       // add new event data
       // calendarEvents: this.state.calendarEvents.concat({
@@ -51,7 +50,7 @@ export default class DemoApp extends React.Component {
   render() {
     //stores date from calendar click to be passed as prop to modal - modal now has access to date
     let date = this.state.date;
-    console.log(date);
+    // console.log(date);
     return (
       <div className="demo-app">
         {/* <div className="demo-app-top">

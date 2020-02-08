@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import activityTypes from "../../utils/activityTypes.json";
 import ActivityType from "./ActivityType";
 import Activity from "../Activity";
@@ -29,9 +29,9 @@ class ActivityTypes extends Component {
   // Select API event category and redirect to the activity type page with those filtered API events
   selectActivity = title => {
     this.setState({ category: title });
-    console.log(this.state.category);
-    // FIXME redirect to activity type page
-    // return <Redirect to="/activity"></Redirect>;
+    this.props.parentCallback(title);
+    // FIXME redirect to FilterEvents page
+    // return <Redirect to="/filterevents"></Redirect>;
   };
 
   // FIXME upvote based on id
@@ -72,7 +72,7 @@ class ActivityTypes extends Component {
         <div className="activityTypesRow">
           {activityTypes &&
             activityTypes.map(types => (
-              // <Link to="/activity">
+              // <Link to="/filteredevents">
               <ActivityType
                 id={types.id}
                 key={types.id}

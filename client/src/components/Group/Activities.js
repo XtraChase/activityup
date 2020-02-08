@@ -7,8 +7,8 @@ class Activities extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activities: [],
-      event: 0
+      activities: []
+      // event: 0
     };
   }
 

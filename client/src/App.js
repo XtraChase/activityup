@@ -13,12 +13,18 @@ import "./App.css";
 class App extends Component {
   state = {
     authenticated: false,
-    username: null
+    username: null,
+    category: ""
   };
 
   componentDidMount() {
     this.getUser();
   }
+
+  callbackFunction = title => {
+    this.setState({ category: title });
+    console.log("App.js Parent of Parent: ", this.state.category);
+  };
 
   getUser() {
     API.getUser().then(response => {
@@ -45,13 +51,14 @@ class App extends Component {
                 authenticated={this.state.authenticated}
                 username={this.state.username}
                 updateUser={() => this.getUser()}
+                parentCallback={this.callbackFunction}
               />
             )}
             key={"root" + Date.now()}
           />
 
           <Route
-            path="/activity"
+            path="/filteredevents"
             component={() => (
               <ActivityType
                 authenticated={this.state.authenticated}
