@@ -6,7 +6,7 @@ import Footer from "../Footer";
 
 class Body extends Component {
   callbackFunction = title => {
-    this.props.parentCallback(title);
+    // this.props.parentCallback(title);
   };
 
   render() {
@@ -19,7 +19,7 @@ class Body extends Component {
         />
         <div className="headerBuffer"></div>
         <Title />
-        <ActivityTypes parentCallback={this.callbackFunction} />
+        <ActivityTypes />
         <Footer />
       </>
     );

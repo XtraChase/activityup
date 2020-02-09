@@ -1,30 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Activity(props) {
-  const { id, image, title, getActivity } = props;
+  const { id, image, title } = props;
 
   return (
-    <>
-      <div className="activityTypesColumn" key={id + Date.now()}>
-        <div className="activityTypeContainer">
-          <img
-            src={image}
-            alt={title}
-            width="100%"
-            className="activityTypesImage"
-          />
+    <Link
+      to={`filteredEvents/${title}`}
+      className="activityTypesColumn"
+      key={id + Date.now()}
+    >
+      <div className="activityTypeContainer">
+        <img
+          src={image}
+          alt={title}
+          width="100%"
+          className="activityTypesImage"
+        />
 
-          <p
-            className="activityTypesText"
-            onClick={() => {
-              getActivity(title);
-            }}
-          >
-            {title.toUpperCase()}
-          </p>
-        </div>
+        <p className="activityTypesText">{title.toUpperCase()}</p>
       </div>
-    </>
+    </Link>
   );
 }
 

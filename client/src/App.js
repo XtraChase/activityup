@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/Home";
-import ActivityType from "./components/ActivityType";
+import FilteredEvents from "./components/FilteredEvents";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
@@ -14,17 +14,17 @@ class App extends Component {
   state = {
     authenticated: false,
     username: null,
-    category: ""
+    category: null
   };
 
   componentDidMount() {
     this.getUser();
   }
 
-  callbackFunction = title => {
-    this.setState({ category: title });
-    console.log("App.js Parent of Parent: ", this.state.category);
-  };
+  // callbackFunction = title => {
+  //   this.setState({ category: title });
+  //   console.log("App.js(parent of parent): ", this.state.category);
+  // };
 
   getUser() {
     API.getUser().then(response => {
@@ -58,15 +58,14 @@ class App extends Component {
           />
 
           <Route
-            path="/filteredevents"
+            path="/filteredevents/:category"
             component={() => (
-              <ActivityType
+              <FilteredEvents
                 authenticated={this.state.authenticated}
                 username={this.state.username}
-                updateUser={() => this.getUser()}
+                updateUser={() => this.getUser()} // Update Like
               />
             )}
-            authenticated={this.state.authenticated}
             key={"activity" + Date.now()}
           />
 
