@@ -58,7 +58,7 @@ export default class CreateGroup extends Component {
         <form onSubmit={this.createGroup}>
           <Modal.Body>
             <label>
-              Group Name:
+              Group Name:*
               <input
                 type="text"
                 name="groupName"
@@ -93,12 +93,14 @@ export default class CreateGroup extends Component {
                 onChange={this.handleChange}
               />
               <label>
-                Image Url:
+                Image Url:*
                 <input
                   type="text"
                   name="imageUrl"
                   value={this.state.imageUrl}
                   onChange={this.handleChange}
+                  required
+                  oninvalid="alert('You must add a group image!');"
                 />
               </label>
             </label>

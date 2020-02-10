@@ -375,6 +375,14 @@ header {
   background-color: white !important;
 }
 
+/**
+ * style input elements that have a required
+ * attribute and a hover state
+ */
+input:required:hover {
+  opacity: 1;
+}
+
 .dashboardTitle {
   grid-area: a;
   text-align: center;

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../Header";
 import Footer from "../Footer";
 import Activity from "../Activity";
+import API from "../../utils/API";
 
 class FilteredEvents extends Component {
   constructor(props) {
@@ -9,6 +10,19 @@ class FilteredEvents extends Component {
     this.state = {
       upvoted: false
     };
+  }
+
+  componentDidMount() {
+    this.populateEvents();
+  }
+
+  populateEvents() {
+    API.getEvents().then(events => {
+      console.log(events);
+      this.setState({
+        events: events.data
+      });
+    });
   }
 
   // FIXME upvote based on id
@@ -20,6 +34,7 @@ class FilteredEvents extends Component {
 
   render() {
     const { APIevents = [] } = this.props;
+    const { events = [] } = this.state;
     const category = this.props.match.params.category || "";
 
     // Get the category of the event from the API
@@ -32,6 +47,18 @@ class FilteredEvents extends Component {
     // If selected activity type category is empty show all API events else filter them
     const filteredEvents =
       category === "" ? APIevents : APIevents.filter(filterEvent);
+
+    //Filter Locally sourced events
+    // Get the category of the event from the Locally sourced event
+    const getLocalCategory = event => event.category;
+
+    // Filter the event based on category
+    const filterLocalEvent = event =>
+      getLocalCategory(event).toLowerCase() === category.toLowerCase();
+
+    // If selected activity type category is empty show all API events else filter them
+    const filteredLocalEvents =
+      category === "" ? events : events.filter(filterLocalEvent);
 
     // If upvoted change the upvote arrow to orange
     let inputStyle = this.upvoted
@@ -64,6 +91,21 @@ class FilteredEvents extends Component {
               getActivities={this.handleUpVote.bind(this)}
               style={inputStyle}
               category={event.classifications[0].segment.name}
+            />
+          ))}
+        </div>
+
+        {/* Locally Sourced Events */}
+        <div className="imageRow events">
+          {filteredLocalEvents.map(event => (
+            <Activity
+              key={event.eventName + Date.now()}
+              id={event.eventName + Date.now()}
+              image={event.image}
+              activity={event.eventName}
+              getActivities={this.handleUpVote.bind(this)}
+              style={inputStyle}
+              category={event.category}
             />
           ))}
         </div>
