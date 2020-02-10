@@ -6,8 +6,7 @@ class YourEvents extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
-      events: null
+      user: null
     };
   }
 
@@ -38,41 +37,40 @@ class YourEvents extends Component {
     }
   }
 
-  renderEvents() {
-    if (this.state.events) {
-      let eventdivs = this.state.events.map(g => {
-        // console.log(g);
-        return (
-          <Link
-            to="/group"
-            key={g.eventName + Date.now()}
-            className="imageColumn"
-          >
-            <img
-              className="image"
-              src={g.image}
-              alt="activity type"
-              width="100%"
-            />
-            <div className="text-block">
-              <h4>{g.eventName}</h4>
-            </div>
-          </Link>
-        );
-      });
-      return eventdivs;
-    }
-    return null;
+  renderTitle() {
+    return (
+      <>
+        <h1 className="categoryTitle" style={{ marginTop: "15px" }}>
+          Events
+        </h1>
+      </>
+    );
   }
 
   render() {
+    const { events = [] } = this.state;
     return (
       <>
-        <h1>Events</h1>
+        <div>{events.length > 1 ? this.renderTitle() : ""}</div>
         <div className="imageRow">
-          {this.state.events
-            ? this.renderEvents()
-            : "There are no upcoming events"}
+          {events.map(event => (
+            <Link
+              // to={`/event/${event._id}`}
+              key={event.eventName + Date.now()}
+              className="imageColumn"
+            >
+              <img
+                className="image"
+                src={event.image}
+                alt="activity type"
+                width="100%"
+              />
+              <div className="text-block">
+                <h4>{event.eventName}</h4>
+                <h6>{event.date}</h6>
+              </div>
+            </Link>
+          ))}
         </div>
       </>
     );

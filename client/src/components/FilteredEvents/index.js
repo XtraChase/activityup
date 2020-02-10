@@ -6,19 +6,10 @@ import Activity from "../Activity";
 class FilteredEvents extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      upvoted: false
+    };
   }
-
-  // get API for events and set the category according to the url category
-  // componentDidMount() {
-  //   this.getEvents();
-  // }
-
-  // // Gets events from Ticketmaster
-  // getEvents = () => {
-  //   API.getAdvertisedEvents()
-  //     .then(response => console.log(response))
-  //     .catch(err => console.log(err));
-  // };
 
   // FIXME upvote based on id
   // TODO add upvoted API event to database

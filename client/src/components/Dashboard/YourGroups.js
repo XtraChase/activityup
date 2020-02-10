@@ -6,8 +6,7 @@ class YourGroups extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
-      groups: null
+      user: null
     };
   }
 
@@ -38,39 +37,40 @@ class YourGroups extends Component {
     }
   }
 
-  renderGroups() {
-    if (this.state.groups) {
-      let groupdivs = this.state.groups.map(g => {
-        // console.log(g);
-        return (
-          <Link
-            to={`/group/${g._id}`}
-            key={g.groupName + Date.now()}
-            className="imageColumn"
-          >
-            <img
-              className="image"
-              src={g.imageUrl}
-              alt="activity type"
-              width="100%"
-            />
-            <div className="text-block">
-              <h4>{g.groupName}</h4>
-            </div>
-          </Link>
-        );
-      });
-      return groupdivs;
-    }
-    return null;
+  renderTitle() {
+    return (
+      <>
+        <h1 className="categoryTitle" style={{ marginTop: "15px" }}>
+          Your Groups
+        </h1>
+      </>
+    );
   }
 
   render() {
+    const { groups = [] } = this.state;
     return (
       <>
-        <h1>Your Groups</h1>
+        <div>{groups.length > 1 ? this.renderTitle() : ""}</div>
         <div className="imageRow">
-          {this.state.groups ? this.renderGroups() : "You have no groups"}
+          {groups.map(group => (
+            <Link
+              to={`/group/${group._id}`}
+              key={group.groupName + Date.now()}
+              className="imageColumn"
+            >
+              <img
+                className="image"
+                src={group.imageUrl}
+                alt="activity type"
+                width="100%"
+              />
+              <div className="text-block">
+                <h4>{group.groupName}</h4>
+                <h6>{group.subtitle}</h6>
+              </div>
+            </Link>
+          ))}
         </div>
       </>
     );
