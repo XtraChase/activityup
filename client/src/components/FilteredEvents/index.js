@@ -62,8 +62,6 @@ class FilteredEvents extends Component {
         />
         <div className="headerBuffer"></div>
 
-        <h1>{category}</h1>
-
         {/* API events */}
         <div className="imageRow events">
           {filteredEvents.map(event => (
