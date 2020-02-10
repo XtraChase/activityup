@@ -172,10 +172,15 @@ header {
   }
 }
 
+.activityTypesRow {
+  padding-bottom: 30px;
+}
+
 .activityTypesRow::after {
   content: "";
   clear: both;
   display: table;
+  padding-bottom: 30px;
 }
 
 .activityTypesText {
