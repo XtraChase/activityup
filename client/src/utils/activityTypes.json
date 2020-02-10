@@ -2,51 +2,51 @@
   {
     "id": 101,
     "title": "drinks",
-    "image": "images/Drinks.jpg"
+    "image": "/images/Drinks.jpg"
   },
   {
     "id": 102,
     "title": "sports",
-    "image": "images/sports.jpg"
+    "image": "/images/sports.jpg"
   },
   {
     "id": 103,
     "title": "food",
-    "image": "images/food.jpg"
+    "image": "/images/food.jpg"
   },
   {
     "id": 104,
     "title": "outdoors",
-    "image": "images/hiker.jpg"
+    "image": "/images/hiker.jpg"
   },
   {
     "id": 105,
     "title": "movies",
-    "image": "images/movies.jpg"
+    "image": "/images/movies.jpg"
   },
   {
     "id": 106,
     "title": "professional",
-    "image": "images/Professional.png"
+    "image": "/images/Professional.png"
   },
   {
     "id": 107,
     "title": "shopping",
-    "image": "images/shopping.jpg"
+    "image": "/images/shopping.jpg"
   },
   {
     "id": 108,
     "title": "music",
-    "image": "images/music.jpg"
+    "image": "/images/music.jpg"
   },
   {
     "id": 109,
     "title": "gaming",
-    "image": "images/gaming.jpg"
+    "image": "/images/gaming.jpg"
   },
   {
     "id": 110,
     "title": "sites",
-    "image": "images/sites.jpg"
+    "image": "/images/sites.jpg"
   }
 ]

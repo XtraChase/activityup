@@ -13,7 +13,11 @@ function Footer() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img id="github-icon" src="images/GitHub-Mark-Light-64px.png" alt="github" />
+          <img
+            id="github-icon"
+            src="/images/GitHub-Mark-Light-64px.png"
+            alt="github"
+          />
         </a>
       </div>
     </footer>

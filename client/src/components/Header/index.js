@@ -75,7 +75,7 @@ export default class Header extends Component {
           <Link to="/" className="logoContainer">
             <img
               className="logo"
-              src="images/ActivityUP-Logo.png"
+              src="/images/ActivityUP-Logo.png"
               alt="ActivityUP Logo"
             />
           </Link>

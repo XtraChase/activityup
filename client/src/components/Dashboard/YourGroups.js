@@ -44,7 +44,7 @@ class YourGroups extends Component {
         // console.log(g);
         return (
           <Link
-            to="/group"
+            to={`/group/${g._id}`}
             key={g.groupName + Date.now()}
             className="imageColumn"
           >

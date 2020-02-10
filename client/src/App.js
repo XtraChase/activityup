@@ -14,17 +14,14 @@ class App extends Component {
   state = {
     authenticated: false,
     username: null,
-    category: null
+    category: "",
+    APIevents: []
   };
 
   componentDidMount() {
     this.getUser();
+    this.getEvents();
   }
-
-  // callbackFunction = title => {
-  //   this.setState({ category: title });
-  //   console.log("App.js(parent of parent): ", this.state.category);
-  // };
 
   getUser() {
     API.getUser().then(response => {
@@ -38,6 +35,13 @@ class App extends Component {
       }
     });
   }
+
+  // Gets events from Ticketmaster
+  getEvents = () => {
+    API.getAdvertisedEvents()
+      .then(response => this.setState({ APIevents: response.data }))
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
@@ -59,11 +63,13 @@ class App extends Component {
 
           <Route
             path="/filteredevents/:category"
-            component={() => (
+            component={props => (
               <FilteredEvents
+                {...props}
                 authenticated={this.state.authenticated}
                 username={this.state.username}
-                updateUser={() => this.getUser()} // Update Like
+                updateUser={() => this.getUser()}
+                APIevents={this.state.APIevents}
               />
             )}
             key={"activity" + Date.now()}
@@ -120,9 +126,10 @@ class App extends Component {
           />
 
           <Route
-            path="/group"
-            component={() => (
+            path="/group/:groupid"
+            component={props => (
               <Group
+                {...props}
                 authenticated={this.state.authenticated}
                 username={this.state.username}
                 updateUser={() => this.getUser()}
