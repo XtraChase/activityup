@@ -7,6 +7,8 @@ import Register from "./components/Register";
 import ForgotPassword from "./components/ForgotPassword";
 import Dashboard from "./components/Dashboard";
 import Group from "./components/Group";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import API from "./utils/API";
 import "./App.css";
 
@@ -47,96 +49,56 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
+          <Header
+            authenticated={this.state.authenticated}
+            username={this.state.username}
+            updateUser={() => this.getUser()}
+          />
           <Route
             exact
             path="/"
-            component={() => (
-              <Home
-                authenticated={this.state.authenticated}
-                username={this.state.username}
-                updateUser={() => this.getUser()}
-                parentCallback={this.callbackFunction}
-              />
-            )}
+            component={() => <Home />}
             key={"root" + Date.now()}
           />
-
           <Route
             path="/filteredevents/:category"
             component={props => (
-              <FilteredEvents
-                {...props}
-                authenticated={this.state.authenticated}
-                username={this.state.username}
-                updateUser={() => this.getUser()}
-                APIevents={this.state.APIevents}
-              />
+              <FilteredEvents {...props} APIevents={this.state.APIevents} />
             )}
             key={"activity" + Date.now()}
           />
-
           <Route
             path="/login"
             component={() => (
               <Login
                 authenticated={this.state.authenticated}
-                username={this.state.username}
                 updateUser={() => this.getUser()}
               />
             )}
             key={"login" + Date.now()}
           />
-
           <Route
             path="/register"
-            component={() => (
-              <Register
-                authenticated={this.state.authenticated}
-                username={this.state.username}
-                updateUser={() => this.getUser()}
-              />
-            )}
+            component={() => <Register />}
             key={"register" + Date.now()}
           />
-
           <Route
             path="/forgotpassword"
-            component={() => (
-              <ForgotPassword
-                authenticated={this.state.authenticated}
-                username={this.state.username}
-                updateUser={() => this.getUser()}
-              />
-            )}
+            component={() => <ForgotPassword />}
             authenticated={this.state.authenticated}
             key={"forgotpassword" + Date.now()}
           />
-
           <Route
             path="/dashboard"
-            component={() => (
-              <Dashboard
-                authenticated={this.state.authenticated}
-                username={this.state.username}
-                updateUser={() => this.getUser()}
-              />
-            )}
+            component={() => <Dashboard />}
             key={"dashboard" + Date.now()}
-            user={this.state.username}
           />
-
           <Route
             path="/group/:groupid"
-            component={props => (
-              <Group
-                {...props}
-                authenticated={this.state.authenticated}
-                username={this.state.username}
-                updateUser={() => this.getUser()}
-              />
-            )}
+            component={props => <Group {...props} />}
             key={"group" + Date.now()}
           />
+          <Footer />
         </div>
       </Router>
     );

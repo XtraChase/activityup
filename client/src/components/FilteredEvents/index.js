@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import Header from "../Header";
-import Footer from "../Footer";
 import Activity from "../Activity";
 import API from "../../utils/API";
 
@@ -73,11 +71,6 @@ class FilteredEvents extends Component {
 
     return (
       <>
-        <Header
-          authenticated={this.props.authenticated}
-          username={this.props.username}
-          updateUser={this.props.updateUser}
-        />
         <div className="headerBuffer"></div>
 
         {/* API events */}
@@ -109,8 +102,6 @@ class FilteredEvents extends Component {
             />
           ))}
         </div>
-
-        <Footer />
       </>
     );
   }
