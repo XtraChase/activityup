@@ -46,15 +46,16 @@ class FilteredEvents extends Component {
     const filteredEvents =
       category === "" ? APIevents : APIevents.filter(filterEvent);
 
+    // ********************************************************
     //Filter Locally sourced events
-    // Get the category of the event from the Locally sourced event
+    // Get the category of the event from the user created event
     const getLocalCategory = event => event.category;
 
     // Filter the event based on category
     const filterLocalEvent = event =>
       getLocalCategory(event).toLowerCase() === category.toLowerCase();
 
-    // If selected activity type category is empty show all API events else filter them
+    // If selected activity type category is empty show all user created events else filter them
     const filteredLocalEvents =
       category === "" ? events : events.filter(filterLocalEvent);
 
@@ -87,8 +88,8 @@ class FilteredEvents extends Component {
             />
           ))}
         </div>
-
-        {/* Locally Sourced Events */}
+        {/* *********************************************************** */}
+        {/* User Created Events */}
         <div className="imageRow events">
           {filteredLocalEvents.map(event => (
             <Activity

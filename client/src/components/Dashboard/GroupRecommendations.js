@@ -60,20 +60,19 @@ class GroupRecommendations extends Component {
   render() {
     const { groups = [], userGroups = [] } = this.state;
 
+    // Get the id of the group from the groups array
     const getGroup = group => group._id;
 
-    // Filter the group based on category
-    const filterGroup = group => getGroup(group) === userGroups._id;
+    // Filter the group based on id
+    const filterGroup = group => userGroups._id === getGroup(group);
 
-    // If selected activity type category is empty show all API groups else filter them
-    // const filteredGroups = userGroups ? groups.filter(filterGroup) : groups;
-
-    // no filter
-    const filteredGroups = userGroups ? groups : groups;
+    // If selected group array has objects filter them else show all groups
+    const filteredGroups =
+      userGroups && userGroups.length ? groups.filter(filterGroup) : groups;
 
     return (
       <>
-        <div>{groups.length > 1 ? this.renderTitle() : ""}</div>
+        <div>{groups && groups.length ? this.renderTitle() : ""}</div>
         <div className="imageRow">
           {filteredGroups.map(group => (
             <Link

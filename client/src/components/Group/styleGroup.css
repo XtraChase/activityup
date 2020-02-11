@@ -69,6 +69,13 @@
   letter-spacing: 3px;
 }
 
+@media screen and (max-width: 500px) {
+  .suggest,
+  .leaveEvent {
+    font-size: 0.6em;
+  }
+}
+
 .suggest:hover,
 .leaveEvent:hover {
   background-color: #e27a02;

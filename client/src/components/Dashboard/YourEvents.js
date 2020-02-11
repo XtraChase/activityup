@@ -51,7 +51,7 @@ class YourEvents extends Component {
     const { events = [] } = this.state;
     return (
       <>
-        <div>{events.length > 1 ? this.renderTitle() : ""}</div>
+        <div>{events && events.length ? this.renderTitle() : ""}</div>
         <div className="imageRow">
           {events.map(event => (
             <Link
