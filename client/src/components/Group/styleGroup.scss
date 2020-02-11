@@ -3,6 +3,7 @@
   height: 400px;
   margin: 20px auto;
   display: grid;
+
   grid-template-columns: 2fr 1fr;
   grid-template-areas: "a1 b1";
   grid-template-rows: repeat(2, 400px);

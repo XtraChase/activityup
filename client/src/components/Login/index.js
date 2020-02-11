@@ -31,7 +31,7 @@ export default class Login extends Component {
     e.preventDefault();
     API.logIn(this.state)
       .then(response => {
-        console.log("Login Response: ", response.data);
+        // console.log("Login Response: ", response.data);
         return response.data;
       })
       .then(data => {

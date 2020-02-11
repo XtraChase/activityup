@@ -17,7 +17,7 @@ class GroupRecommendations extends Component {
 
   populateGroups() {
     API.getGroups().then(groups => {
-      console.log(groups);
+      // console.log(groups);
       this.setState({
         groups: groups.data
       });
@@ -27,7 +27,7 @@ class GroupRecommendations extends Component {
   userGroups() {
     if (this.state.user) {
       API.getGroupByUser(this.state.user).then(groups => {
-        console.log(groups);
+        // console.log(groups);
         this.setState({
           userGroups: groups.data
         });
@@ -47,32 +47,23 @@ class GroupRecommendations extends Component {
       .then(() => this.userGroups());
   }
 
-  renderTitle() {
-    return (
-      <>
-        <h1 className="categoryTitle" style={{ marginTop: "15px" }}>
-          Recommended Groups
-        </h1>
-      </>
-    );
-  }
-
   render() {
     const { groups = [], userGroups = [] } = this.state;
 
-    // Get the id of the group from the groups array
-    const getGroup = group => group._id;
+    const userGroupIDs = userGroups.map(group => group._id);
 
     // Filter the group based on id
-    const filterGroup = group => userGroups._id === getGroup(group);
+    const filterGroup = ({ _id }) => !userGroupIDs.includes(_id);
 
-    // If selected group array has objects filter them else show all groups
-    const filteredGroups =
-      userGroups && userGroups.length ? groups.filter(filterGroup) : groups;
+    const filteredGroups = groups.filter(filterGroup);
 
     return (
       <>
-        <div>{groups && groups.length ? this.renderTitle() : ""}</div>
+        {groups && groups.length && (
+          <h1 className="categoryTitle" style={{ marginTop: "15px" }}>
+            Recommended Groups
+          </h1>
+        )}
         <div className="imageRow">
           {filteredGroups.map(group => (
             <Link

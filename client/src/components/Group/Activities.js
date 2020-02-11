@@ -29,10 +29,9 @@ class Activities extends Component {
   // TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
   handleUpVote = id => {
     const { getActivities } = this;
-    console.log("HERE!!!", this);
     API.putActivity(id).then(() => getActivities());
     this.setState({ upvoted: (this.upvoted = true) });
-    // FIXME needs to show upvoted # from database
+    // FIXME needs to show upvoted # from database without refresh of page
   };
 
   // handleUpVote = id => {

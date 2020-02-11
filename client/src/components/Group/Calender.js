@@ -16,7 +16,7 @@ export default class DemoApp extends React.Component {
       calendarWeekends: true,
       calendarEvents: [
         // initial event data
-        { title: "Event Now", start: new Date() }
+        { title: "Today", start: new Date() }
       ],
       addModalShow: false,
       date: ""
@@ -27,22 +27,14 @@ export default class DemoApp extends React.Component {
     this.setState({ addModalShow: false });
   }
 
-  // DONE When a day is clicked on the groups calender a modal pops up | SEE ./CreateEvent.js for modal
+  // When a day is clicked on the groups calender a modal pops up
   handleDateClick = arg => {
+    //  TODO Call callback for filtering activites by date callback(date)
     this.setState({
       //sets state of date to that of date clicked
       date: arg.dateStr,
-
       //triggers modal on date click
       addModalShow: true
-
-      // add new event data
-      // calendarEvents: this.state.calendarEvents.concat({
-      //   // creates a new array
-      //   title: "New Event",
-      //   start: arg.date,
-      //   allDay: arg.allDay
-      // })
     });
     console.log(this.state.date);
   };
@@ -70,13 +62,14 @@ export default class DemoApp extends React.Component {
             ref={this.calendarComponentRef}
             weekends={this.state.calendarWeekends}
             events={this.state.calendarEvents}
-            dateClick={this.handleDateClick}
+            dateClick={this.handleDateClick} // Click date and filter by date & pass as a callback
           />
           <CreateEvent
             date={date}
             show={this.state.addModalShow}
             onHide={() => this.addModalClose()}
             style={{ background: "none" }}
+            group={this.props.group}
           />
         </div>
       </div>

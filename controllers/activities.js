@@ -22,13 +22,13 @@ module.exports = {
     newActivity
       .save()
       .then(data => {
-        console.log(data);
+        // console.log(data);
         return Group.findByIdAndUpdate(req.group._id, {
           $push: { activities: data }
         });
       })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         res.json(data.activities);
       })
       .catch(err => res.status(422).json(err));

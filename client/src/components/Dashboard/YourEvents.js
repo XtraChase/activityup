@@ -29,7 +29,7 @@ class YourEvents extends Component {
   populateEvents() {
     if (this.state.user) {
       API.getEvents().then(events => {
-        console.log(events);
+        // console.log(events);
         this.setState({
           events: events.data
         });
@@ -55,7 +55,8 @@ class YourEvents extends Component {
         <div className="imageRow">
           {events.map(event => (
             <Link
-              // to={`/event/${event._id}`}
+              // TODO when clicking on a user created event go to group id url for that event
+              to={`/event/${event._id}`}
               key={event.eventName + Date.now()}
               className="imageColumn"
             >

@@ -16,7 +16,7 @@ class FilteredEvents extends Component {
 
   populateEvents() {
     API.getEvents().then(events => {
-      console.log(events);
+      // console.log(events);
       this.setState({
         events: events.data
       });

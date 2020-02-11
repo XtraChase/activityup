@@ -40,16 +40,13 @@ export default {
   createEvent(eventObj) {
     return axios.post("/api/events/sessionUser/events", eventObj);
   },
-  // FIXME needs validation check of working route
   getEvents() {
     return axios.get("/api/events/sessionUser/events");
+  },
+  getEventsByGroup(id) {
+    return axios.get(`/api/events/byGroup?id=${id}`);
   }
-  // getEventsByGroup(id) {
-  //   return axios.get(`api/events/byGroup?id=${id}`);
-  // },
-  // createEvent(eventObj) {
-  //   return axios.post("api/sessionUser/groups/events", eventObj);
-  // },
+  // FIXME needs validation check of working route but may not need if activities are filtered on the frontend by date clicked on the calender
   // getActivitiesByEvent(id) {
   //   return axios.get(`api/activities/byEvent?id=${id}`);
   // }

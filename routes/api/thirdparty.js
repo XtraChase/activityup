@@ -27,7 +27,7 @@ router.route("/geekevents").get(async (req, res) => {
   );
 
   try {
-    console.log("events", events.data);
+    // console.log("events", events.data);
     res.json(events.data);
   } catch (err) {
     console.log(err);

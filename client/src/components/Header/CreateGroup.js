@@ -28,7 +28,7 @@ export default class CreateGroup extends Component {
 
   //submit new group to DB
   createGroup(event) {
-    console.log(this.state);
+    // console.log(this.state);
     event.preventDefault();
     API.createGroup(this.state)
       .then(group => console.log(group))

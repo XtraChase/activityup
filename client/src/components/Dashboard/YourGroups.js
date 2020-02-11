@@ -29,7 +29,7 @@ class YourGroups extends Component {
   populateGroups() {
     if (this.state.user) {
       API.getGroupByUser(this.state.user).then(groups => {
-        console.log(groups);
+        // console.log(groups);
         this.setState({
           groups: groups.data
         });

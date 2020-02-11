@@ -35,7 +35,7 @@ class Messages extends Component {
     //if ENTER key is clicked
     if (e.key === "Enter") {
       this.addMessage(this.state.message);
-      console.log("Message: ", this.state.message);
+      // console.log("Message: ", this.state.message);
       this.setState({ message: "" });
     }
   };

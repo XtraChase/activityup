@@ -20,10 +20,11 @@ module.exports = {
       users: [req.user],
       events: [req.events]
     });
+    // console.log(req.body);
     newGroup
       .save()
       .then(data => {
-        console.log(data);
+        // console.log(data);
         return User.findByIdAndUpdate(req.user._id, {
           $push: { groups: data }
         });

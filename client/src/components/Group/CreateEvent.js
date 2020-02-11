@@ -32,7 +32,7 @@ export default class CreateEvent extends Component {
   };
 
   createEvent(e) {
-    console.log(this.state);
+    // console.log(this.state);
     e.preventDefault();
     API.createEvent({
       eventName: this.state.eventName,
@@ -40,7 +40,8 @@ export default class CreateEvent extends Component {
       about: this.state.about,
       category: this.state.category,
       image: this.state.image,
-      date: this.props.date
+      date: this.props.date,
+      group: this.props.group
     })
       .then(newEvent => console.log(newEvent))
       .catch(err => console.log(err.response));
