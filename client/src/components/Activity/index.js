@@ -7,7 +7,6 @@ function Activity(props) {
     image,
     activity,
     upvotes,
-    // update,
     subtitle,
     getActivities,
     style,
@@ -26,14 +25,13 @@ function Activity(props) {
         />
         <ReactSVG
           className="arrow"
-          src="images/Arrow.svg"
+          src="/images/Arrow.svg"
           alt="Up Vote Arrow"
           activity={activity}
           onClick={() => {
             getActivities(id);
           }}
           style={style}
-          // onChange={update}
         />
         <p className="upVoteCount">{upvotes}</p>
         <div className="groupSuggestionTextBlock">

@@ -1,3 +1,5 @@
+const mongoose = require("mongoose");
+const ObjectID = mongoose.mongo.ObjectID;
 const { Group, Event } = require("../models");
 
 // CONTROLLER: functions that are called at /api/events/
@@ -22,25 +24,32 @@ module.exports = {
       // ended: req.body.ended,
       // upvotes: req.body.upvotes,
       // attendees: [req.attendees],
-      group: [req.group],
+      group: [new ObjectID(req.body.group)],
       users: [req.user],
       activities: [req.activities]
     });
+
     newEvent
       .save()
       .then(data => {
-        console.log(data);
+        // console.log(data);
         return Group.findByIdAndUpdate(req.group._id, {
           $push: { events: data }
         });
       })
       .then(data => {
-        console.log(data);
+        // console.log(data);
         res.json(data.events);
       })
       .catch(err => res.status(422).json(err));
   },
   byGroup: (req, res) => {
+    Event.find({ group: [new ObjectID(req.query.id)] })
+      .then(events => {
+        res.json(events);
+      })
+      .catch(err => res.status(422).json(err));
+
     Group.findById(req.query.id)
       .populate("events")
       .then(group => res.json(group.events))

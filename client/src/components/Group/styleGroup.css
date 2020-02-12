@@ -16,12 +16,12 @@
   .upperGroupArea {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
-        grid-template-areas: "b1" "a1";
+        grid-template-areas: "a1" "b1";
     grid-column-gap: 0;
     grid-row-gap: 10px;
-    -ms-grid-rows: 300px 400px;
-        grid-template-rows: 300px 400px;
-    height: 710px;
+    -ms-grid-rows: 400px 350px;
+        grid-template-rows: 400px 350px;
+    height: 760px;
   }
 }
 
@@ -67,6 +67,13 @@
   border-style: none;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+
+@media screen and (max-width: 500px) {
+  .suggest,
+  .leaveEvent {
+    font-size: 0.6em;
+  }
 }
 
 .suggest:hover,
@@ -212,7 +219,7 @@
   grid-area: b1;
   -webkit-box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  background-color: #0051ff38;
+  background-color: #0051ca73;
 }
 
 .chatTitle {

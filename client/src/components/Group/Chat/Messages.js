@@ -10,6 +10,8 @@ class Messages extends Component {
       messages,
       message: ""
     };
+    this.onChange = this.onChange.bind(this);
+    this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
   onChange = e => this.setState({ [e.target.message]: e.target.value });
@@ -20,6 +22,7 @@ class Messages extends Component {
   addMessage = message => {
     const newMessage = {
       id: uuid.v4(),
+      key: uuid.v4(),
       userName: "",
       message
     };
@@ -32,7 +35,7 @@ class Messages extends Component {
     //if ENTER key is clicked
     if (e.key === "Enter") {
       this.addMessage(this.state.message);
-      console.log("Message: ", this.state.message);
+      // console.log("Message: ", this.state.message);
       this.setState({ message: "" });
     }
   };
@@ -47,21 +50,23 @@ class Messages extends Component {
           {this.state.messages &&
             this.state.messages.map(message => (
               <Message
-                id={message.id}
+                id={uuid.v4()}
+                key={uuid.v4()}
                 message={message.message}
                 username={message.username}
               />
             ))}
         </div>
-        <div className="chatInputContainer">
+        <form className="chatInputContainer">
           <input
             className="chatInput"
             type="text"
             onKeyDown={this.handleKeyDown}
-            // value={this.state.message}
+            value={this.state.message}
+            placeholder=" Message..."
             onChange={this.onChange}
           />
-        </div>
+        </form>
       </>
     );
   }

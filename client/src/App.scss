@@ -61,6 +61,7 @@ header {
     justify-self: start;
     margin-right: 0;
     margin-left: 10px;
+    width: 40%;
   }
 }
 
@@ -172,10 +173,15 @@ header {
   }
 }
 
+.activityTypesRow {
+  padding-bottom: 30px;
+}
+
 .activityTypesRow::after {
   content: "";
   clear: both;
   display: table;
+  padding-bottom: 30px;
 }
 
 .activityTypesText {
@@ -321,6 +327,14 @@ header {
   text-align: center;
   color: #ff8900;
   font-size: 1.75em;
+}
+
+.categoryTitle {
+  font-size: 2.5em;
+  margin-left: 20px;
+  width: fit-content;
+  font-weight: bolder;
+  color: #ff8900;
 }
 
 footer {

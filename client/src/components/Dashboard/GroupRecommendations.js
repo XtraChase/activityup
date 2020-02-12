@@ -1,38 +1,92 @@
-import React from "react";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
+import API from "../../utils/API";
 
-function GroupRecommendations() {
-  return (
-    <div>
-      <div>
-        <h1>Recommended Groups</h1>
+class GroupRecommendations extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: null
+    };
+  }
+
+  componentDidMount() {
+    this.populateGroups();
+    this.getUser();
+  }
+
+  populateGroups() {
+    API.getGroups().then(groups => {
+      // console.log(groups);
+      this.setState({
+        groups: groups.data
+      });
+    });
+  }
+
+  userGroups() {
+    if (this.state.user) {
+      API.getGroupByUser(this.state.user).then(groups => {
+        // console.log(groups);
+        this.setState({
+          userGroups: groups.data
+        });
+      });
+    }
+  }
+
+  getUser() {
+    API.getUser()
+      .then(response => {
+        if (response.data.user) {
+          this.setState({
+            user: response.data.user._id
+          });
+        }
+      })
+      .then(() => this.userGroups());
+  }
+
+  render() {
+    const { groups = [], userGroups = [] } = this.state;
+
+    const userGroupIDs = userGroups.map(group => group._id);
+
+    // Filter the group based on id
+    const filterGroup = ({ _id }) => !userGroupIDs.includes(_id);
+
+    const filteredGroups = groups.filter(filterGroup);
+
+    return (
+      <>
+        {groups && groups.length && (
+          <h1 className="categoryTitle" style={{ marginTop: "15px" }}>
+            Recommended Groups
+          </h1>
+        )}
         <div className="imageRow">
-          <div className="imageColumn">
-            <img
-              className="image"
-              src="https://s3.amazonaws.com/activejunky-cdn/aj-content/hikinggroup.jpg"
-              alt="activity type"
-              width="100%"
-            />
-            <div className="text-block">
-              <h4>Hiking Group</h4>
-              <p>Just out here doin it!</p>
-            </div>
-          </div>
-          <div className="imageColumn">
-            <img
-              className="image"
-              src="https://cdn2.atlantamagazine.com/wp-content/uploads/sites/4/2017/01/falconsflags_getty_oneuseonly.jpg"
-              alt="activity type"
-              width="100%"
-            />
-            <div className="text-block">
-              <h4>Falcons Sports Group</h4>
-            </div>
-          </div>
+          {filteredGroups.map(group => (
+            <Link
+              to={`/group/${group._id}`}
+              key={group.groupName + Date.now()}
+              className="imageColumn"
+            >
+              <img
+                className="image"
+                src={group.imageUrl}
+                alt="activity type"
+                width="100%"
+              />
+              <div className="text-block">
+                <h4>{group.groupName}</h4>
+                <h6>{group.subtitle}</h6>
+              </div>
+            </Link>
+          ))}
         </div>
-      </div>
-    </div>
-  );
+      </>
+    );
+  }
 }
 
 export default GroupRecommendations;

@@ -18,7 +18,7 @@ router.route("/register").post(userController.register);
 // POST logs body from login form then sends that to authenticate then sends the logged in user id in response
 router.route("/login").post(
   function(req, res, next) {
-    console.log("LOGIN BODY", req.body);
+    // console.log("LOGIN BODY", req.body);
     next();
   },
   (req, res, next) => {
@@ -27,8 +27,8 @@ router.route("/login").post(
       if (info) return res.json(info);
       req.logIn(user, e => {
         if (e) return next(e);
-        return res.json(user)
-      })
+        return res.json(user);
+      });
     })(req, res, next);
   }
   // },
@@ -41,8 +41,8 @@ router.route("/login").post(
 router.route("/logout").get((req, res) => {
   console.log("log out!!!");
   req.logOut();
-  res.json({ message: "You are logged out" })
-})
+  res.json({ message: "You are logged out" });
+});
 
 // routes to /api/user/sessionUser/
 // GET if there is a session user returns that in the response else returns null

@@ -7,9 +7,10 @@ class Activities extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activities: [],
-      event: 0
+      activities: []
+      // event: 0
     };
+    this.getActivities = this.getActivities.bind(this);
   }
 
   componentDidMount() {
@@ -27,10 +28,10 @@ class Activities extends Component {
   // TODO Clicking the upvote arrow changes color to orange
   // TODO Clicking an upvoted arrow again removes the increment and changes the arrow color back
   handleUpVote = id => {
-    API.putActivity(id);
+    const { getActivities } = this;
+    API.putActivity(id).then(() => getActivities());
     this.setState({ upvoted: (this.upvoted = true) });
-    // FIXME needs to show upvoted # from database
-    this.getActivities();
+    // FIXME needs to show upvoted # from database without refresh of page
   };
 
   // handleUpVote = id => {

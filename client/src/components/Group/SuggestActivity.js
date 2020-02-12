@@ -30,7 +30,7 @@ export default class SuggestActivity extends Component {
   };
 
   suggestActivity(event) {
-    console.log(this.state);
+    // console.log(this.state);
   }
 
   // FIXME preventDefault not working

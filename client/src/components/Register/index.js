@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import API from "../../utils/API";
 // import Header from "../Header";
 
@@ -12,7 +12,8 @@ class Register extends Component {
       username: "",
       email: "",
       password: "",
-      confirmPassword: ""
+      confirmPassword: "",
+      registered: false
     };
     this.update = this.update.bind(this);
     this.register = this.register.bind(this);
@@ -42,9 +43,14 @@ class Register extends Component {
         confirmPassword: ""
       });
     }
+    this.setState({ registered: true });
   }
 
   render() {
+    if (this.state.registered === true) {
+      return <Redirect to="/login" />;
+    }
+
     return (
       <>
         <Link to="/" className="logoContainer">
@@ -55,11 +61,6 @@ class Register extends Component {
           />
         </Link>
         <br />
-        {/* <Header
-          authenticated={this.props.authenticated}
-          username={this.props.username}
-          updateUser={this.props.updateUser}
-        /> */}
         <div className="register">
           <form onSubmit={this.register}>
             <h2>Create an account</h2>
@@ -108,9 +109,7 @@ class Register extends Component {
                 onChange={this.update}
               />
             </div>
-            <Link to="/login">
-              <input type="submit" value="Sign Up" />
-            </Link>
+            <input type="submit" value="Sign Up" />
           </form>
           <div className="accountQuestionContainer">
             <p>Already have an account?</p>

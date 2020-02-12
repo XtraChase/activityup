@@ -3,17 +3,18 @@
   height: 400px;
   margin: 20px auto;
   display: grid;
+
   grid-template-columns: 2fr 1fr;
   grid-template-areas: "a1 b1";
   grid-template-rows: repeat(2, 400px);
   grid-column-gap: 10px;
   @media screen and (max-width: 640px) {
     grid-template-columns: 1fr;
-    grid-template-areas: "b1" "a1";
+    grid-template-areas: "a1" "b1";
     grid-column-gap: 0;
     grid-row-gap: 10px;
-    grid-template-rows: 300px 400px;
-    height: 710px;
+    grid-template-rows: 400px 350px;
+    height: 760px;
   }
 }
 
@@ -50,6 +51,9 @@
   border-style: none;
   text-transform: uppercase;
   letter-spacing: 3px;
+  @media screen and (max-width: 500px) {
+    font-size: 0.6em;
+  }
 }
 
 .suggest:hover,
@@ -168,7 +172,7 @@
 .chatPage {
   grid-area: b1;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-  background-color: #0051ff38;
+  background-color: #0051ca73;
 }
 
 .chatTitle {

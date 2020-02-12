@@ -10,6 +10,10 @@ const groupSchema = new Schema({
     type: Schema.Types.String,
     required: true
   },
+  subtitle: {
+    type: Schema.Types.String,
+    required: false
+  },
   type: {
     type: Schema.Types.String,
     default: "open"

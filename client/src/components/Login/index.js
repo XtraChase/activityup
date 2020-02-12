@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { FacebookLoginButton } from "react-social-login-buttons";
 import { GoogleLoginButton } from "react-social-login-buttons";
-import Header from "../Header";
 import API from "../../utils/API";
 import "./styles.css";
 
@@ -32,7 +31,7 @@ export default class Login extends Component {
     e.preventDefault();
     API.logIn(this.state)
       .then(response => {
-        console.log("Login Response: ", response.data);
+        // console.log("Login Response: ", response.data);
         return response.data;
       })
       .then(data => {
@@ -68,11 +67,6 @@ export default class Login extends Component {
 
     return (
       <>
-        <Header
-          authenticated={this.props.authenticated}
-          username={this.props.username}
-          updateUser={this.props.updateUser}
-        />
         <div className="headerBuffer"></div>
         <div className="errorMsg">{this.errorMsg()}</div>
         <div className="col border-right leftColumn login">
