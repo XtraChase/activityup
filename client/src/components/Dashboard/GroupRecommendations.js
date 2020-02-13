@@ -59,6 +59,7 @@ class GroupRecommendations extends Component {
 
     return (
       <>
+        {/* FIXME display a "0" in the dom */}
         {groups && groups.length && (
           <h1 className="categoryTitle" style={{ marginTop: "15px" }}>
             Recommended Groups

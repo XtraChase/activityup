@@ -15,7 +15,7 @@ module.exports = {
   },
   create: (req, res) => {
     const newEvent = new Event({
-      eventName: req.body.eventName,
+      title: req.body.title,
       subtitle: req.body.subtitle,
       about: req.body.about,
       category: req.body.category,

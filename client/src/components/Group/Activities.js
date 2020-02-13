@@ -8,7 +8,6 @@ class Activities extends Component {
     super(props);
     this.state = {
       activities: []
-      // event: 0
     };
     this.getActivities = this.getActivities.bind(this);
   }

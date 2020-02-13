@@ -35,42 +35,49 @@ class Group extends Component {
 
   render() {
     const group = this.props.match.params.groupid;
+    console.log(this.state.events);
+
     return (
       <div>
         <div className="headerBuffer"></div>
         <div className="upperGroupArea">
-          {/* TODO Update EventDetails to take in "events" to display instead of fetching from api */}
           <EventDetails
           // TODO activities={this.getEvent()}
+          // TODO Update EventDetails to take in "events" to display instead of fetching from api
           />
           <Chat />
         </div>
 
         <Calender
-          group={group}
+          groupId={group}
+          // groupEvents={this.state.events}
+          // TODO display events on the calender
           // TODO Click and grad date and filter with that
-
           // TODO onEventSelect={(eventID) => this.setState({eventSelected: eventID})}
           // TODO onChange = Clicking on event on the calender.
         />
-        <div style={{ height: "600px", paddingBottom: "20px" }}>
+        <div className="imageRow events" style={{ paddingBottom: "50px" }}>
           <h2 style={{ margin: "-20px 0 10px 15px", color: "#ff8900" }}>
-            Events For This Group
+            Upcoming Group Events
           </h2>
-          {/* Fetch and Display List */}
-          {/* TODO display events on the calender */}
           {this.state.events.map(event => (
-            <div className="imageColumn" category={event.category}>
+            <div
+              className="imageColumn"
+              category={event.category}
+              title={event.title}
+              date={event.date}
+              key={event.id}
+            >
               <img
                 className="groupSuggestion"
                 width="100%"
                 id={event.id}
                 src={event.image}
-                alt={event.eventName}
+                alt={event.title}
               />
 
               <div className="groupSuggestionTextBlock">
-                <h4>{event.eventName}</h4>
+                <h4>{event.title}</h4>
                 <p>{event.subtitle}</p>
               </div>
             </div>

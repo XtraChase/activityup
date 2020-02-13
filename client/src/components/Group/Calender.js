@@ -5,6 +5,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import interactionPlugin from "@fullcalendar/interaction"; // needed for dayClick
 import CreateEvent from "./CreateEvent";
 import "./calender.scss";
+import API from "./../../utils/API";
 
 // Resource: https://fullcalendar.io/
 export default class DemoApp extends React.Component {
@@ -13,14 +14,25 @@ export default class DemoApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      calendarWeekends: true,
-      calendarEvents: [
-        // initial event data
-        { title: "Today", start: new Date() }
-      ],
       addModalShow: false,
+      calendarWeekends: true,
+      calenderEvents: [],
       date: ""
     };
+  }
+
+  componentDidMount() {
+    this.populateEvents();
+  }
+
+  populateEvents() {
+    const group = this.props.groupId;
+    API.getEventsByGroup(group).then(events => {
+      console.log(events.data);
+      this.setState({
+        calenderEvents: events.data
+      });
+    });
   }
 
   addModalClose() {
@@ -36,13 +48,12 @@ export default class DemoApp extends React.Component {
       //triggers modal on date click
       addModalShow: true
     });
-    console.log(this.state.date);
   };
 
   render() {
     //stores date from calendar click to be passed as prop to modal - modal now has access to date
     let date = this.state.date;
-    // console.log(date);
+
     return (
       <div className="demo-app">
         {/* <div className="demo-app-top">
@@ -61,7 +72,7 @@ export default class DemoApp extends React.Component {
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
             ref={this.calendarComponentRef}
             weekends={this.state.calendarWeekends}
-            events={this.state.calendarEvents}
+            events={this.state.calenderEvents}
             dateClick={this.handleDateClick} // Click date and filter by date & pass as a callback
           />
           <CreateEvent
@@ -69,7 +80,7 @@ export default class DemoApp extends React.Component {
             show={this.state.addModalShow}
             onHide={() => this.addModalClose()}
             style={{ background: "none" }}
-            group={this.props.group}
+            group={this.props.groupId}
           />
         </div>
       </div>
