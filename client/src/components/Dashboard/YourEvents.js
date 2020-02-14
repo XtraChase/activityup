@@ -57,7 +57,7 @@ class YourEvents extends Component {
             <Link
               // TODO when clicking on a user created event go to group id url for that event
               to={`/event/${event._id}`}
-              key={event.eventName + Date.now()}
+              key={event.title + Date.now()}
               className="imageColumn"
             >
               <img
@@ -67,7 +67,7 @@ class YourEvents extends Component {
                 width="100%"
               />
               <div className="text-block">
-                <h4>{event.eventName}</h4>
+                <h4>{event.title}</h4>
                 <h6>{event.date}</h6>
               </div>
             </Link>

@@ -11,14 +11,13 @@ export default class CreateEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      eventName: "",
+      title: "",
       subtitle: "",
       about: "",
       category: "",
       date: this.props.date,
       image: ""
     };
-    // console.log(props);
     this.handleChange = this.handleChange.bind(this);
     this.createEvent = this.createEvent.bind(this);
   }
@@ -35,7 +34,7 @@ export default class CreateEvent extends Component {
     // console.log(this.state);
     e.preventDefault();
     API.createEvent({
-      eventName: this.state.eventName,
+      title: this.state.title,
       subtitle: this.state.subtitle,
       about: this.state.about,
       category: this.state.category,
@@ -46,7 +45,7 @@ export default class CreateEvent extends Component {
       .then(newEvent => console.log(newEvent))
       .catch(err => console.log(err.response));
     this.setState({
-      eventName: "",
+      title: "",
       subtitle: "",
       about: "",
       category: "",
@@ -76,8 +75,8 @@ export default class CreateEvent extends Component {
               Event Name:
               <input
                 type="text"
-                name="eventName"
-                value={this.state.eventName}
+                name="title"
+                value={this.state.title}
                 onChange={this.handleChange}
               />
             </label>

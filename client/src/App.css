@@ -19,6 +19,10 @@ a {
   min-height: 100vh;
 }
 
+#text {
+  color: white;
+}
+
 header {
   position: absolute;
   top: 0;

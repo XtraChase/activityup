@@ -93,10 +93,10 @@ class FilteredEvents extends Component {
         <div className="imageRow events">
           {filteredLocalEvents.map(event => (
             <Activity
-              key={event.eventName + Date.now()}
-              id={event.eventName + Date.now()}
+              key={event.title + Date.now()}
+              id={event.title + Date.now()}
               image={event.image}
-              activity={event.eventName}
+              activity={event.title}
               getActivities={this.handleUpVote.bind(this)}
               style={inputStyle}
               category={event.category}

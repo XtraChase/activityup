@@ -32,7 +32,7 @@ export default class EventDetails extends Component {
             onHide={() => this.addModalClose()}
           />
           <div className="eventDate">Febuary 11, 2020</div>
-          <button className="leaveEvent">Leave Event</button>
+          <button className="leaveEvent">Event Details</button>
         </div>
         <div className="eventSuggestions">
           <Activities />
