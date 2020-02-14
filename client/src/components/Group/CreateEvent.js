@@ -18,7 +18,6 @@ export default class CreateEvent extends Component {
       date: this.props.date,
       image: ""
     };
-    // console.log(props);
     this.handleChange = this.handleChange.bind(this);
     this.createEvent = this.createEvent.bind(this);
   }

@@ -10,9 +10,9 @@ router
   .post(activityController.create)
   .put(activityController.upvote);
 
-// router.route("/byGroupActivities").get(activityController.byGroupActivities);
+router.route("/byEvent").get(activityController.byEvent);
 
-// // route to /api/activities
-// router.route("/activities").post(activitiesController.create);
+// route to /api/activities
+router.route("/activities").post(activityController.create);
 
 module.exports = router;

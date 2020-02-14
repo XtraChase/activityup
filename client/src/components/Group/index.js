@@ -10,7 +10,8 @@ class Group extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      events: []
+      events: [],
+      activities: []
     };
   }
 
@@ -27,15 +28,21 @@ class Group extends Component {
     });
   }
 
-  getActivies() {
+  getActivies = childData => {
+    console.log("Event ID:", childData);
+    API.getActivitiesByEvent(childData).then(activities => {
+      this.setState({
+        activities: activities.data
+      });
+      console.log("Activities for this event:", activities.data);
+    });
     // TODO const {events, eventID} = this.state
     // TODO Filter by the ID in state
     // TODO return filtered event array
-  }
+  };
 
   render() {
     const group = this.props.match.params.groupid;
-    console.log(this.state.events);
 
     return (
       <div>
@@ -50,8 +57,7 @@ class Group extends Component {
 
         <Calender
           groupId={group}
-          // groupEvents={this.state.events}
-          // TODO display events on the calender
+          parentCallback={this.getActivies}
           // TODO Click and grad date and filter with that
           // TODO onEventSelect={(eventID) => this.setState({eventSelected: eventID})}
           // TODO onChange = Clicking on event on the calender.
@@ -78,7 +84,7 @@ class Group extends Component {
 
               <div className="groupSuggestionTextBlock">
                 <h4>{event.title}</h4>
-                <p>{event.subtitle}</p>
+                <p>{event.date}</p>
               </div>
             </div>
           ))}

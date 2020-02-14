@@ -1,4 +1,6 @@
-const { Activity, Group } = require("../models");
+const mongoose = require("mongoose");
+const ObjectID = mongoose.mongo.ObjectID;
+const { Activity, Group, Event } = require("../models");
 
 // CONTROLLER: functions that are called at /api/activities/
 
@@ -14,10 +16,8 @@ module.exports = {
       activityName: req.body.activityName,
       subtitle: req.body.subtitle,
       image: req.body.image,
-      // category: req.body.category,
-      // groupResponsible: [req.group],
-      // hostingEvent: [req.events],
-      upvotes: req.body.upvotes
+      upvotes: req.body.upvotes,
+      event: [new ObjectID(req.body.event)]
     });
     newActivity
       .save()
@@ -42,18 +42,20 @@ module.exports = {
     );
   },
 
-  byGroup: (req, res) => {
-    Group.findById(req.query.id)
-      .populate("activities")
-      .then(group => res.json(group.activities))
-      .catch(err => res.status(422).json(err));
-  },
+  // FIXME
   byEvent: (req, res) => {
+    Activity.find({ event: [new ObjectID(req.query.id)] })
+      .then(activity => {
+        res.json(activity);
+      })
+      .catch(err => res.status(422).json(err));
+
     Event.findById(req.query.id)
       .populate("activities")
-      .then(events => res.json(events.activities))
+      .then(event => res.json(event.activities))
       .catch(err => res.status(422).json(err));
   },
+
   createActivity: (req, res) => {
     const { name } = req.body;
 

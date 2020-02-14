@@ -35,8 +35,8 @@ export default class SuggestActivity extends Component {
 
   // FIXME preventDefault not working
   // TODO render to page without page refresh
-  createActivity(event) {
-    event.preventDefault();
+  createActivity(activity) {
+    activity.preventDefault();
     API.createActivity(this.state)
       .then(activity => console.log(activity))
       .catch(err => console.log("error", err.response));
@@ -44,9 +44,6 @@ export default class SuggestActivity extends Component {
       activityName: "",
       subtitle: "",
       image: "",
-      // category: "",
-      // groupResponsible: "",
-      // hostingEvent: "",
       upvotes: 0
     });
   }
