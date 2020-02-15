@@ -46,7 +46,7 @@ export default {
   getEventsByGroup(id) {
     return axios.get(`/api/events/byGroup?id=${id}`);
   },
-  // FIXME needs validation check of working route but may not need if activities are filtered on the frontend by date clicked on the calender
+  // FIXME: needs validation check of working route but may not need if activities are filtered on the frontend by date clicked on the calender
   getActivitiesByEvent(id) {
     return axios.get(`/api/activities/byEvent?id=${id}`);
   }

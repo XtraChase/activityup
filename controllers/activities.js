@@ -42,20 +42,17 @@ module.exports = {
     );
   },
 
-  // FIXME
   byEvent: (req, res) => {
-    Activity.find({ event: [new ObjectID(req.query.id)] })
-      .then(activity => {
-        res.json(activity);
-      })
-      .catch(err => res.status(422).json(err));
-
     Event.findById(req.query.id)
-      .populate("activities")
-      .then(event => res.json(event.activities))
-      .catch(err => res.status(422).json(err));
+      .then(event =>
+        Activity.find({ _id: { $in: event.activities } })
+          .then(activities => res.json(activities))
+          .catch(err => res.status(422).json([]))
+      )
+      .catch(err => res.status(422).json([]));
   },
 
+  // TODO: Add activity to event
   createActivity: (req, res) => {
     const { name } = req.body;
 

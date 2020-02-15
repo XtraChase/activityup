@@ -3,7 +3,6 @@ import EventDetails from "./EventDetails";
 import Chat from "./Chat";
 import Calender from "./Calender";
 import "./styleGroup.css";
-
 import API from "./../../utils/API";
 
 class Group extends Component {
@@ -13,6 +12,7 @@ class Group extends Component {
       events: [],
       activities: []
     };
+    this.populateEvents = this.populateEvents.bind(this);
   }
 
   componentDidMount() {
@@ -20,6 +20,7 @@ class Group extends Component {
   }
 
   populateEvents() {
+    // console.log("called populate events...", this);
     const group = this.props.match.params.groupid;
     API.getEventsByGroup(group).then(events => {
       this.setState({
@@ -45,7 +46,7 @@ class Group extends Component {
     const group = this.props.match.params.groupid;
 
     return (
-      <div>
+      <>
         <div className="headerBuffer"></div>
         <div className="upperGroupArea">
           <EventDetails
@@ -58,11 +59,13 @@ class Group extends Component {
         <Calender
           groupId={group}
           parentCallback={this.getActivies}
+          events={this.state.events}
+          populateEvents={this.populateEvents}
           // TODO Click and grad date and filter with that
           // TODO onEventSelect={(eventID) => this.setState({eventSelected: eventID})}
           // TODO onChange = Clicking on event on the calender.
         />
-        <div className="imageRow events" style={{ paddingBottom: "50px" }}>
+        {/* <div className="imageRow events" style={{ paddingBottom: "50px" }}>
           <h2 style={{ margin: "-20px 0 10px 15px", color: "#ff8900" }}>
             Upcoming Group Events
           </h2>
@@ -88,8 +91,8 @@ class Group extends Component {
               </div>
             </div>
           ))}
-        </div>
-      </div>
+        </div> */}
+      </>
     );
   }
 }

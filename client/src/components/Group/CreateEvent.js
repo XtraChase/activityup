@@ -15,7 +15,6 @@ export default class CreateEvent extends Component {
       subtitle: "",
       about: "",
       category: "",
-      date: this.props.date,
       image: ""
     };
     this.handleChange = this.handleChange.bind(this);
@@ -42,14 +41,14 @@ export default class CreateEvent extends Component {
       date: this.props.date,
       group: this.props.group
     })
-      .then(newEvent => console.log(newEvent))
+      .then(newEvent => this.props.populateEvents())
       .catch(err => console.log(err.response));
+
     this.setState({
       title: "",
       subtitle: "",
       about: "",
       category: "",
-      date: this.props.date,
       image: ""
     });
   }
@@ -66,7 +65,8 @@ export default class CreateEvent extends Component {
       >
         <Modal.Header closeButton>
           <Modal.Title id="contained-modal-title-vcenter">
-            Add A New Event for {date}
+            {/* TODO: Update to mutate event time */}
+            Add A New Event for {date.toDateString()}
           </Modal.Title>
         </Modal.Header>
         <form onSubmit={this.createEvent}>
