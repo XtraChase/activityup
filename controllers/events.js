@@ -33,7 +33,7 @@ module.exports = {
       .save()
       .then(data => {
         // console.log(data);
-        return Group.findByIdAndUpdate(req.group._id, {
+        return Group.findByIdAndUpdate(req.body.group, {
           $push: { events: data }
         });
       })
