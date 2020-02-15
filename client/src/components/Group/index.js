@@ -65,7 +65,7 @@ class Group extends Component {
           // TODO onEventSelect={(eventID) => this.setState({eventSelected: eventID})}
           // TODO onChange = Clicking on event on the calender.
         />
-        {/* <div className="imageRow events" style={{ paddingBottom: "50px" }}>
+        <div className="imageRow events" style={{ paddingBottom: "50px" }}>
           <h2 style={{ margin: "-20px 0 10px 15px", color: "#ff8900" }}>
             Upcoming Group Events
           </h2>
@@ -91,7 +91,7 @@ class Group extends Component {
               </div>
             </div>
           ))}
-        </div> */}
+        </div>
       </>
     );
   }
