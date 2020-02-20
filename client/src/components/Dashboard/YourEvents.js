@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
+import uuid from "uuid";
 
 class YourEvents extends Component {
   constructor(props) {
@@ -57,7 +58,7 @@ class YourEvents extends Component {
             <Link
               // TODO when clicking on a user created event go to group id url for that event
               to={`/event/${event._id}`}
-              key={event.title + Date.now()}
+              key={uuid.v4()}
               className="imageColumn"
             >
               <img

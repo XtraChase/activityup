@@ -8,7 +8,7 @@ function Activity(props) {
     <Link
       to={`filteredEvents/${title}`}
       className="activityTypesColumn"
-      key={id + Date.now()}
+      key={id}
     >
       <div className="activityTypeContainer">
         <img

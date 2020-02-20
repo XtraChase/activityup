@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import Activity from "../Activity";
+import uuid from "uuid";
 
 // ACTIVITIES THAT ARE DISPLAYED IN THE GROUPS PAGE IN THE EVENTS SECTION
 class Activities extends Component {
@@ -59,13 +60,12 @@ class Activities extends Component {
           {this.state.activities &&
             this.state.activities.map(activity => (
               <Activity
-                key={activity._id}
+                key={uuid.v4()}
                 id={activity._id}
                 image={activity.image}
                 style={inputStyle}
                 activity={activity.activityName}
                 getActivities={this.handleUpVote.bind(this)}
-                // update={this.update}
                 subtitle={activity.subtitle}
                 upvotes={activity.upvotes}
               />

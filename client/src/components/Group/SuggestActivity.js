@@ -12,9 +12,7 @@ export default class SuggestActivity extends Component {
       activityName: "",
       subtitle: "",
       image: ""
-      // category: "",
       // groupResponsible: "",
-      // hostingEvent: "",
       // upvotes: 0
     };
     this.handleChange = this.handleChange.bind(this);

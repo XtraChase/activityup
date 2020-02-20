@@ -3,6 +3,7 @@ import EventDetails from "./EventDetails";
 import Chat from "./Chat";
 import Calender from "./Calender";
 import "./styleGroup.css";
+import uuid from "uuid";
 import API from "./../../utils/API";
 
 class Group extends Component {
@@ -20,7 +21,6 @@ class Group extends Component {
   }
 
   populateEvents() {
-    // console.log("called populate events...", this);
     const group = this.props.match.params.groupid;
     API.getEventsByGroup(group).then(events => {
       this.setState({
@@ -75,7 +75,7 @@ class Group extends Component {
               category={event.category}
               title={event.title}
               date={event.date}
-              key={event.id}
+              key={uuid.v4()}
             >
               <img
                 className="groupSuggestion"

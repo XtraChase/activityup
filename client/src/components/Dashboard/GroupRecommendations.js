@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import API from "../../utils/API";
+import uuid from "uuid";
 
 class GroupRecommendations extends Component {
   constructor(props) {
@@ -69,7 +70,7 @@ class GroupRecommendations extends Component {
           {filteredGroups.map(group => (
             <Link
               to={`/group/${group._id}`}
-              key={group.groupName + Date.now()}
+              key={uuid.v4()}
               className="imageColumn"
             >
               <img

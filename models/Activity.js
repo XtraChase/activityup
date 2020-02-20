@@ -14,10 +14,6 @@ const activitySchema = new Schema({
     type: Schema.Types.String,
     required: false
   },
-  event: {
-    type: Schema.Types.String,
-    required: false
-  },
   upvotes: {
     type: Schema.Types.Number,
     default: 0
