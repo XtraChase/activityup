@@ -29,7 +29,7 @@
   "homepage": "https://github.com/XtraChase/activityup#readme",
   "dependencies": {
     "auth": "0.0.9",
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
